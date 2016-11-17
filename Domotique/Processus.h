@@ -4,7 +4,7 @@
  *  Created on: 14 nov. 2016
  *      Author: jordanmetz
  */
-//De update_JO to Update JO
+
 #ifndef PROCESSUS_H_
 #define PROCESSUS_H_
 
