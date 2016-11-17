@@ -4,7 +4,7 @@
  *  Created on: 14 nov. 2016
  *      Author: Vassili
  */
-/*heheeheh*/
+/*Je modifie contrôle*/
 #include "Control.h"
 #include "Serveur.h"
 #include "Etat.h"
