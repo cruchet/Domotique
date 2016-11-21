@@ -22,7 +22,7 @@ Phenomene::~Phenomene() {
 	// TODO Auto-generated destructor stub
 }
 
-double Phenomene::genere(void){
+double Phenomene::run(void){
 	srand(time(NULL));
 	return ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
 }

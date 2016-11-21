@@ -25,7 +25,7 @@ public:
 	vector<double> get_valphen(){return valphen_;};
 	vector<double> get_etat_courant(){return etat_courant_;};
 	vector<double> get_valctrl(){return valctrl_;};
-
+	void run();
 private:
 	vector<double> valphen_;
 	vector<double> etat_courant_;
