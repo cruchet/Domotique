@@ -13,7 +13,7 @@
 namespace Domotique {
 using namespace std;
 
-class Serveur {
+class Serveur: public Processus {
 public:
 	Serveur();
 	virtual ~Serveur();
