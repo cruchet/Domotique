@@ -18,7 +18,7 @@ Sim::Sim(unsigned int max_tic): ntic(max_tic), tic(0){ }
 Sim::~Sim() {
 	// TODO Auto-generated destructor stub
 }
-S
+
 void Sim::run(void) {
 	for(tic=0; tic<=ntic;tic++) {
 		// execution des processus: (ils sont par triplet dans vecteur(vecteur(processus)) )
