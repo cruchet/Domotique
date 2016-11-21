@@ -8,13 +8,18 @@
 #ifndef SIM_H_
 #define SIM_H_
 
+#include "Processus.h"
+#include <vector>
+
+using namespace std;
+
 namespace Domotique {
 
 class Sim {
 public:
 	Sim();
 	virtual ~Sim();
-	void run();
+	void run(void);
 
 private:
 	const int ntic;
