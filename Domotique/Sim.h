@@ -17,7 +17,7 @@ namespace Domotique {
 
 class Sim {
 public:
-	Sim();
+	Sim(unsigned int max_tic);
 	virtual ~Sim();
 	void run(void);
 

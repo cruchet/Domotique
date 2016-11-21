@@ -13,7 +13,7 @@ using namespace std;
 
 namespace Domotique {
 
-Sim::Sim(): ntic(100), tic(0){ }
+Sim::Sim(unsigned int max_tic): ntic(max_tic), tic(0){ }
 
 Sim::~Sim() {
 	// TODO Auto-generated destructor stub
