@@ -21,7 +21,6 @@ void Control::run(void) {
 	Processus& etat = this->get_refetat();
 	double valphen = etat.get_valphen();
 	double etat_courant =static_cast<etat&>(etat).get_etat_courant();
-
 	set_valphen(valphen);
 	serveur.save_valphen(valphen);
 	set_etat_courant(etat_courant);
