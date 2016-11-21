@@ -14,7 +14,7 @@
 namespace Domotique {
 using namespace std;
 
-Serveur::Serveur(): Processus(), valphen_(0), valctrl_(0), etat_courant_(0) {}
+Serveur::Serveur(): Processus(), valctrl_(0), etat_courant_(0) {}
 
 Serveur::~Serveur() {}
 void Serveur::run(){
@@ -23,9 +23,9 @@ void Serveur::run(){
 
 	// ouverture du flot de sortie
 	ofstream f_dest(dest_name.c_str(), ios::app); // ouverture du fichier destination
-	// vérification que le fichier a pu être ouvert (en mode écriture)
+	// verification que le fichier a pu etre ouvert (en mode ecriture)
 	if (f_dest.fail()) {
-	cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en écriture" << endl;
+	cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en ecriture" << endl;
 	}
 
 	// Ecriture
