@@ -10,6 +10,7 @@
 
 #include "Processus.h"
 #include <vector>
+#include "Serveur.h"
 
 using namespace std;
 
@@ -19,12 +20,12 @@ class Sim {
 public:
 	Sim(unsigned int max_tic);
 	virtual ~Sim();
-	void run(void);
+	void run(Serveur& serveur);
 
 private:
 	int ntic;
 	unsigned int tic;
-	vector<Processus*> process_;
+	vector<Processus&> process_;
 };
 
 } /* namespace Domotique */

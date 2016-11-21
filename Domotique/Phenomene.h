@@ -19,7 +19,7 @@ public:
 	void set_valmax(double valmax){valmax_=valmax;};
 	double get_valmin(){return valmin_;};
 	double get_valmax(){return valmax_;};
-	double get_valphen(){return valphen_;};
+	double get_valphen(){return 0;}
 	void run(void);
 private:
 	double valmin_;

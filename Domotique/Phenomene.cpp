@@ -24,7 +24,11 @@ Phenomene::~Phenomene() {
 
 void Phenomene::run(void){
 	srand(time(nullptr));
-	this->set_valphen(( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_);
+	double val= ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_
+	this->set_valphen(val);
+	Processus& etat = this->get_refetat();
+	etat.set_valphen(val);
+
 }
 
 } /* namespace Domotique */
