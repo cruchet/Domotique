@@ -24,7 +24,7 @@ public:
 
 	void save_valctrl(double valctrl){valctrl_.push_back(valctrl);};
 
-	vector<double> get_valphen(){return this->get_valphen()};
+	vector<double> get_valphen(){return valphen_;};
 	vector<double> get_etat_courant(){return etat_courant_;};
 	vector<double> get_valctrl(){return valctrl_;};
 	void run();
