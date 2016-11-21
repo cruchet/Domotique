@@ -10,7 +10,7 @@
 
 namespace Domotique {
 
-Etat::Etat( double Iphen, double Ictrl,):
+Etat::Etat( double Iphen, double Ictrl):
 	valphen_(0), valctrl_(0), etat_courant_(0), Iphen_(Iphen), Ictrl_(Ictrl) {}
 
 double Etat::calcul_etat_eff() {

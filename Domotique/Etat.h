@@ -9,6 +9,7 @@
 #define ETAT_H_
 
 #include "Control.h"
+#include "Processus.h"
 
 namespace Domotique {
 
