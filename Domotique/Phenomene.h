@@ -24,7 +24,6 @@ public:
 private:
 	double valmin_;
 	double valmax_;
-	double valphen_;
 };
 
 } /* namespace Domotique */
