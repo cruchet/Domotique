@@ -18,5 +18,9 @@ Sim::~Sim() {
 	// TODO Auto-generated destructor stub
 }
 
+void Sim::run() {
+
+}
+
 } /* namespace Domotique */
 

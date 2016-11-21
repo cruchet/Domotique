@@ -14,6 +14,7 @@ class Sim {
 public:
 	Sim();
 	virtual ~Sim();
+	void run();
 };
 
 } /* namespace Domotique */
