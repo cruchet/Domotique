@@ -19,7 +19,7 @@ public:
 	virtual ~Control();
 	void set_valphen(double valphen) {this->set_valphen(valphen);};
 	void set_etat_courant(double etat) {etat_courant_ = etat;};
-	void run(Serveur &serveur, Etat &etat);
+	void run(void);
 	double calcul_valctrl(double etat_courant);
 
 private:

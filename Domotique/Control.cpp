@@ -8,15 +8,19 @@
 
 #include "Processus.h"
 #include "Control.h"
-#include "Serveur.h"
 #include "Etat.h"
+
+using namespace std;
+
 namespace Domotique {
 
 Control::Control(): Processus("ctrl"), etat_courant_(0), val_sat_(10) {}
 
-void Control::run(Serveur &serveur, Etat &etat) {
+void Control::run(void) {
+	Processus& serveur = this->get_refserveur();
+	Processus& etat = this->get_refetat();
 	double valphen = etat.get_valphen();
-	double etat_courant =etat.get_etat_courant();
+	double etat_courant =static_cast<etat&>(etat).get_etat_courant();
 
 	set_valphen(valphen);
 	serveur.save_valphen(valphen);
