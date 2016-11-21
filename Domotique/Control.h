@@ -19,7 +19,7 @@ public:
 	void set_valphen(double valphen) {valphen_= valphen;}
 	void set_etat_courant(double etat) {etat_courant_ = etat;}
 	void run(double valphen, double etat_courant, Serveur &serveur, Etat &etat);
-	double calcul_val_ctrl(double etat_courant);
+	double calcul_valctrl(double etat_courant);
 
 private:
 	double valphen_;

@@ -18,17 +18,17 @@ void Control::run(double valphen, double etat_courant, Serveur &serveur, Etat &e
 	serveur.save_valphen(valphen);
 	set_etat_courant(etat_courant);
 	serveur.save_etat_courant(etat_courant);
-	double val_ctrl = calcul_val_ctrl(etat_courant_);
-	serveur.save_valctl(val_ctrl);
-	etat.set_val_ctrl(val_ctrl);
+	double valctrl = calcul_valctrl(etat_courant_);
+	serveur.save_valctrl(valctrl);
+	etat.set_valctrl(valctrl);
 }
-double Control::calcul_val_ctrl(double etat_courant) {
-	double val_ctrl;
+double Control::calcul_valctrl(double etat_courant) {
+	double valctrl;
 	if(etat_courant > val_sat_)
-		val_ctrl = val_sat_;
+		valctrl = val_sat_;
 	else
-		val_ctrl = etat_courant;
-	return val_ctrl;
+		valctrl = etat_courant;
+	return valctrl;
 }
 
 Control::~Control() {}

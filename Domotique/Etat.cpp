@@ -11,11 +11,11 @@
 namespace Domotique {
 
 Etat::Etat( double Iphen, double Ictrl,):
-	valphen_(0), val_ctrl_(0), etat_courant_(0), Iphen_(Iphen), Ictrl_(Ictrl) {}
+	valphen_(0), valctrl_(0), etat_courant_(0), Iphen_(Iphen), Ictrl_(Ictrl) {}
 
 double Etat::calcul_etat_eff() {
 	double etat_eff = etat_courant_ + (valphen_ - etat_courant_)*Iphen_
-			   + (val_ctrl_ - etat_courant_)*Ictrl_;
+			   + (valctrl_ - etat_courant_)*Ictrl_;
 	return etat_eff;
 }
 
