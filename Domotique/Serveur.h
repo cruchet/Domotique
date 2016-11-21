@@ -30,8 +30,8 @@ public:
 	void run();
 private:
 	vector<double> valphen_;
-	vector<double> etat_courant_;
 	vector<double> valctrl_;
+	vector<double> etat_courant_;
 };
 
 } /* namespace Domotique */
