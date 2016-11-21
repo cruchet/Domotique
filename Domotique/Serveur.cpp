@@ -7,6 +7,7 @@
 
 #include "Serveur.h"
 #include <string>
+#include <vector>
 #include <fstream>
 #include <iostream>
 #include "Processus.h"
@@ -14,7 +15,7 @@
 namespace Domotique {
 using namespace std;
 
-Serveur::Serveur(): Processus(), valctrl_(0), etat_courant_(0) {}
+Serveur::Serveur(): Processus("serveur")),valphen_(0), valctrl_(0), etat_courant_(0) {}
 
 Serveur::~Serveur() {}
 void Serveur::run(){
