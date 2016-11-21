@@ -19,10 +19,12 @@ public:
 	void set_valmax(double valmax){valmax_=valmax;};
 	double get_valmin(){return valmin_;};
 	double get_valmax(){return valmax_;};
-	double run(void);
+	double get_valphen(){return valphen_;};
+	void run(void);
 private:
 	double valmin_;
 	double valmax_;
+	double valphen_;
 };
 
 } /* namespace Domotique */

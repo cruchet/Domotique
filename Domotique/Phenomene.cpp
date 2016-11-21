@@ -22,9 +22,9 @@ Phenomene::~Phenomene() {
 	// TODO Auto-generated destructor stub
 }
 
-double Phenomene::run(void){
+void Phenomene::run(void){
 	srand(time(NULL));
-	return ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
+	valphen_ = ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
 }
 
 } /* namespace Domotique */
