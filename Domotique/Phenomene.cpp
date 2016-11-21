@@ -23,7 +23,7 @@ Phenomene::~Phenomene() {
 }
 
 void Phenomene::run(void){
-	srand(time(NULL));
+	srand(time(0));
 	valphen_ = ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
 }
 
