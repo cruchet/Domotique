@@ -14,7 +14,10 @@ namespace Domotique {
 
 Control::Control(): Processus(), valphen_(0), etat_courant_(0), val_sat_(10) {}
 
-void Control::run(double valphen, double etat_courant, Serveur &serveur, Etat &etat) {
+void Control::run(Serveur &serveur, Etat &etat) {
+	double valphen = etat.get_valphen();
+	double etat_courant =etat.get_etat_courant();
+
 	set_valphen(valphen);
 	serveur.save_valphen(valphen);
 	set_etat_courant(etat_courant);

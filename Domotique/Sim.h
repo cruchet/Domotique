@@ -4,7 +4,7 @@
  *  Created on: 14 nov. 2016
  *      Author: Vassili
  */
-//SIM.h à update_JO
+
 #ifndef SIM_H_
 #define SIM_H_
 

@@ -24,7 +24,6 @@ void Etat::run(double valphen, Control &control) {
 	set_valphen(valphen);
 	etat_courant_= calcul_etat_eff(); //calcul du nouvel état
 	control.set_valphen(valphen);
-	control.set_etat_courant(etat_courant_); //transmission du nouvel état
 }
 Etat::~Etat() {}
 

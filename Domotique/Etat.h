@@ -19,6 +19,8 @@ public:
 	virtual ~Etat();
 	void set_valctrl(double valctrl) {valctrl_ = valctrl;}
 	void set_valphen(double valphen) {valphen_ = valphen;}
+	double get_etat_courant(void) {return etat_courant_;}
+	double get_valphen(void) {return valphen_;}
 	double calcul_etat_eff();
 	void run(double valphen, Control &control);
 
