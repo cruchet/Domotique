@@ -21,7 +21,7 @@ public:
 	double get_etat_courant(void) {return etat_courant_;}
 	double get_valphen(void) {return this->get_valphen();}
 	double calcul_etat_eff();
-	void run(double valphen);
+	void run();
 
 private:
 	double valctrl_;

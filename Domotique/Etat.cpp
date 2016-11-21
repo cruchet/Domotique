@@ -19,9 +19,9 @@ double Etat::calcul_etat_eff() {
 	return etat_eff;
 }
 
-void Etat::run(double valphen) {
-	set_valphen(valphen);
-	etat_courant_= calcul_etat_eff(); //calcul du nouvel �tat
+void Etat::run() {
+	set_valphen((this->get_refctrl()).get_valphen());
+	etat_courant_= calcul_etat_eff(); //calcul du nouvel etat
 }
 Etat::~Etat() {}
 
