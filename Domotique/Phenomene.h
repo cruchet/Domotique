@@ -7,13 +7,22 @@
 
 #ifndef PHENOMENE_H_
 #define PHENOMENE_H_
+#include "processus.h"
 
 namespace Domotique {
 
-class Phenomene {
+class Phenomene: public Processus{
 public:
-	Phenomene();
+	Phenomene(double valmin, double valmax);
 	virtual ~Phenomene();
+	void set_valmin(double valmin){valmin_=valmin;};
+	void set_valmax(double valmax){valmax_=valmax;};
+	double get_valmin(){return valmin_;};
+	double get_valmax(){return valmax_;};
+	double genere(void);
+private:
+	double valmin_;
+	double valmax_;
 };
 
 } /* namespace Domotique */

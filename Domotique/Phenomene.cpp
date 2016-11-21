@@ -6,10 +6,11 @@
  */
 
 #include "Phenomene.h"
-
+#include <cstdlib>
 namespace Domotique {
 
-Phenomene::Phenomene() {
+Phenomene::Phenomene(double valmin, double valmax):
+	valmin_(valmin), valmax_(valmax) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -19,3 +20,8 @@ Phenomene::~Phenomene() {
 }
 
 } /* namespace Domotique */
+
+double Phenomene::genere(void){
+	double val = valmin_ + rand() % valmax_;
+	return 1;
+}

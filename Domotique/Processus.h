@@ -15,7 +15,8 @@ public:
 	Processus();
 	virtual ~Processus();
 private:
-//TEST
+
+
 };
 
 } /* namespace Domotique */
