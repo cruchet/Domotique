@@ -19,9 +19,11 @@ Phenomene::~Phenomene() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace Domotique */
-
 double Phenomene::genere(void){
 	double val = valmin_ + rand() % valmax_;
 	return 1;
 }
+
+} /* namespace Domotique */
+
+
