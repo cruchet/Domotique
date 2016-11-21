@@ -20,18 +20,16 @@ public:
 	void save_etat_courant(double etat_courant)
 	{etat_courant_.push_back(etat_courant);};
 
-	void save_valctl(double valctl){valctl_.push_back(valctl);};
+	void save_valctrl(double valctrl){valctrl_.push_back(valctrl);};
 
 	vector<double> get_valphen(){return valphen_;};
 	vector<double> get_etat_courant(){return etat_courant_;};
-	vector<double> get_valctl(){return valctl_;};
-
-
+	vector<double> get_valctrl(){return valctrl_;};
 
 private:
 	vector<double> valphen_;
 	vector<double> etat_courant_;
-	vector<double> valctl_;
+	vector<double> valctrl_;
 };
 
 } /* namespace Domotique */
