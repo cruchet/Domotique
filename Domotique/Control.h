@@ -23,7 +23,6 @@ public:
 	double calcul_valctrl(double etat_courant);
 
 private:
-	double valphen_;
 	double etat_courant_;
 	const double val_sat_;
 };

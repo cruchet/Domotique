@@ -12,7 +12,7 @@
 #include "Etat.h"
 namespace Domotique {
 
-Control::Control(): Processus(), valphen_(0), etat_courant_(0), val_sat_(10) {}
+Control::Control(): Processus("ctrl"), etat_courant_(0), val_sat_(10) {}
 
 void Control::run(Serveur &serveur, Etat &etat) {
 	double valphen = etat.get_valphen();
