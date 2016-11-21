@@ -7,7 +7,7 @@
 
 #ifndef PROCESSUS_H_
 #define PROCESSUS_H_
-#include <string.h>
+#include <string>
 namespace Domotique {
 using namespace std;
 

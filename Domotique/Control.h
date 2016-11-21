@@ -17,8 +17,8 @@ class Control: public Processus {
 public:
 	Control();
 	virtual ~Control();
-	void set_valphen(double valphen) {valphen_= valphen;}
-	void set_etat_courant(double etat) {etat_courant_ = etat;}
+	void set_valphen(double valphen) {this->set_valphen(valphen);};
+	void set_etat_courant(double etat) {etat_courant_ = etat;};
 	void run(Serveur &serveur, Etat &etat);
 	double calcul_valctrl(double etat_courant);
 
