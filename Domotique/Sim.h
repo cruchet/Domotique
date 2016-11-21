@@ -15,6 +15,11 @@ public:
 	Sim();
 	virtual ~Sim();
 	void run();
+
+private:
+	const int ntic;
+	unsigned int tic;
+
 };
 
 } /* namespace Domotique */
