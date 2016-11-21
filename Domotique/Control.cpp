@@ -17,10 +17,12 @@ namespace Domotique {
 Control::Control(): Processus("ctrl"), etat_courant_(0), val_sat_(10) {}
 
 void Control::run(void) {
-	Processus& serveur = this->get_refserveur();
-	Processus& etat = this->get_refetat();
+	Serveur& serveur = static_cast<Serveur&>(this->get_refserveur());
+	Etat& etat = static_cast<Etat&>(this->get_refetat());
+
 	double valphen = etat.get_valphen();
-	double etat_courant =static_cast<etat&>(etat).get_etat_courant();
+	double etat_courant =etat.get_etat_courant();
+
 	set_valphen(valphen);
 	serveur.save_valphen(valphen);
 	set_etat_courant(etat_courant);
