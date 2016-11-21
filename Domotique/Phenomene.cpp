@@ -7,7 +7,10 @@
 
 #include "Phenomene.h"
 #include <cstdlib>
+#include <ctime>
+
 namespace Domotique {
+using namespace std;
 
 Phenomene::Phenomene(double valmin, double valmax):
 	Processus(), valmin_(valmin), valmax_(valmax) {
@@ -20,7 +23,8 @@ Phenomene::~Phenomene() {
 }
 
 double Phenomene::genere(void){
-	double val = valmin_ + rand() % valmax_;
+	srand(time(NULL));
+	double val = valmin_ + rand()/ valmax_;
 	return 1;
 }
 
