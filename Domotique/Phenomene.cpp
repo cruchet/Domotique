@@ -13,7 +13,7 @@ namespace Domotique {
 using namespace std;
 
 Phenomene::Phenomene(double valmin, double valmax):
-	Processus(), valmin_(valmin), valmax_(valmax), valphen_(0) {
+	Processus("Phenomene"), valmin_(valmin), valmax_(valmax) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -23,7 +23,7 @@ Phenomene::~Phenomene() {
 }
 
 void Phenomene::run(void){
-	srand(time(0));
+	srand(time(nullptr));
 	valphen_ = ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
 }
 
