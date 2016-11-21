@@ -7,7 +7,6 @@
 
 #include "Processus.h"
 #include "Etat.h"
-#include "Control.h"
 
 namespace Domotique {
 
@@ -20,10 +19,9 @@ double Etat::calcul_etat_eff() {
 	return etat_eff;
 }
 
-void Etat::run(double valphen, Control &control) {
+void Etat::run(double valphen) {
 	set_valphen(valphen);
 	etat_courant_= calcul_etat_eff(); //calcul du nouvel état
-	control.set_valphen(valphen);
 }
 Etat::~Etat() {}
 

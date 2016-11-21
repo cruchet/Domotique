@@ -8,7 +8,6 @@
 #ifndef ETAT_H_
 #define ETAT_H_
 
-#include "Control.h"
 #include "Processus.h"
 
 namespace Domotique {
@@ -22,7 +21,7 @@ public:
 	double get_etat_courant(void) {return etat_courant_;}
 	double get_valphen(void) {return valphen_;}
 	double calcul_etat_eff();
-	void run(double valphen, Control &control);
+	void run(double valphen);
 
 private:
 	double valphen_;
