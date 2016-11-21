@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include "Processus.h"
 
 namespace Domotique {
 using namespace std;
