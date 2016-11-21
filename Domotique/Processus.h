@@ -15,7 +15,6 @@ public:
 	Processus();
 	virtual ~Processus();
 	virtual void run() =0;
-	virtual
 private:
 
 
