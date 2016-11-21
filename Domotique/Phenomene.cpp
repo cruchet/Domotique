@@ -24,8 +24,7 @@ Phenomene::~Phenomene() {
 
 double Phenomene::genere(void){
 	srand(time(NULL));
-	double val = valmin_ + rand()/ valmax_;
-	return 1;
+	return ( rand()/(double)RAND_MAX ) * (valmax_-valmin_) + valmin_;
 }
 
 } /* namespace Domotique */
