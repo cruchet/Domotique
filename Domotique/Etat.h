@@ -24,7 +24,6 @@ public:
 	void run(double valphen);
 
 private:
-	double valphen_;
 	double valctrl_;
 	double etat_courant_;
 	double Iphen_;

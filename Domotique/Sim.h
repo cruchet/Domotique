@@ -22,7 +22,7 @@ public:
 	void run(void);
 
 private:
-	const int ntic;
+	int ntic;
 	unsigned int tic;
 
 };
