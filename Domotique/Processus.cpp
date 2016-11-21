@@ -6,7 +6,7 @@
  */
 
 #include "Processus.h"
-//DE MAS_TER
+
 namespace Domotique {
 
 Processus::Processus() {

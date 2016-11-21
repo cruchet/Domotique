@@ -10,7 +10,7 @@
 namespace Domotique {
 
 Phenomene::Phenomene(double valmin, double valmax):
-	valmin_(valmin), valmax_(valmax) {
+	Processus(), valmin_(valmin), valmax_(valmax) {
 	// TODO Auto-generated constructor stub
 
 }
