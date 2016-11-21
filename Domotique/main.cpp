@@ -5,6 +5,9 @@
  *      Author: Vassili & Jordan
  */
 
+int main(void) {
 
+	return 1;
+}
 
 
