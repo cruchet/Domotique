@@ -7,12 +7,13 @@
 
 #ifndef CONTROL_H_
 #define CONTROL_H_
+#include "Processus.h"
 #include "Serveur.h"
 #include "Etat.h"
 
 namespace Domotique {
 
-class Control {
+class Control: public Processus {
 public:
 	Control();
 	virtual ~Control();
