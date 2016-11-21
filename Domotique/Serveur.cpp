@@ -29,7 +29,7 @@ void Serveur::run(){
 	}
 
 	// Ecriture
-	for (int i=0; i <= etat_courant_.size(); i++){
+	for (unsigned int i=0; i <= etat_courant_.size(); i++){
 		f_dest << i << " "
 				<<valphen_.at(i) << " "
 				<< valctrl_.at(i) << " "
