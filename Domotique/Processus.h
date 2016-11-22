@@ -18,19 +18,11 @@ public:
 	virtual void run() =0;
 
 	string get_type(void){return type_;};
-	double get_valphen(void){return valphen_;};
-	double get_etat_courant(void){return etat_courant_;};
-	double get_valctrl(void){return valctrl_;};
-
-	void set_valphen(double valphen){valphen_=valphen;};
-	void set_etat_courant(double etat_courant){etat_courant_=etat_courant;};
-	void set_valctrl(double valctrl){valctrl_=valctrl;};
-
+	vector<double> get_param(void){return param_;};
+	void set_param(vector<double> param){param_=param;};
 private:
 	string type_;
-	double valphen_;
-	double etat_courant_;
-	double valctrl_;
+	vector<double> param_;
 };
 
 } /* namespace Domotique */

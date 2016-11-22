@@ -20,9 +20,16 @@ Sim::~Sim() {
 }
 
 void Sim::run(Serveur& serveur) {
+	vector<double> param;
 	for(tic=0; tic<=ntic;tic++) {
 		// execution des processus:
-		(process_.at(tic)).run();
+		for(int i=0;i<process_.size(); i++){
+			(process_.at(i)).set_param(param);
+			(process_.at(i)).run();
+			param=(process_.at(i)).get_param();
+		}
+
+
 	}
 	serveur.run();
 
