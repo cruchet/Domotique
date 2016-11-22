@@ -8,6 +8,8 @@
 #ifndef PROCESSUS_H_
 #define PROCESSUS_H_
 #include <string>
+#include <vector>
+
 namespace Domotique {
 using namespace std;
 
@@ -20,6 +22,8 @@ public:
 	string get_type(void){return type_;};
 	vector<double> get_param(void){return param_;};
 	void set_param(vector<double> param){param_=param;};
+
+	enum param_id {VALPHEN, VALCTRL, ETAT_COURANT};
 private:
 	string type_;
 	vector<double> param_;
