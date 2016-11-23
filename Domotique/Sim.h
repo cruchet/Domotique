@@ -25,7 +25,7 @@ public:
 private:
 	int ntic_;
 	unsigned int tic_;
-	vector<Processus&> process_;
+	vector<Processus*> process_;
 };
 
 } /* namespace Domotique */
