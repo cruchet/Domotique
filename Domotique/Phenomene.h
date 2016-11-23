@@ -22,6 +22,7 @@ public:
 	double get_valphen(){return 0;}
 	void run(void);
 private:
+	double calcul_valphen();
 	double valmin_;
 	double valmax_;
 };

@@ -16,7 +16,11 @@ namespace Domotique {
 Control::Control(): Processus("ctrl"), valsat_(10) {}
 
 void Control::run(void) {
-	param_.at(VALCTRL) = calcul_valctrl(param_.at(ETAT_COURANT));
+	vector<double> param=this->get_param();
+
+	param.at(VALCTRL) = calcul_valctrl(param.at(ETAT_COURANT));
+
+	this->set_param(param);
 }
 double Control::calcul_valctrl(double etat_courant) {
 	double valctrl;
