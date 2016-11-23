@@ -14,13 +14,11 @@ namespace Domotique {
 
 class Etat: public Processus {
 public:
-	Etat(string nom, double Iphen, double Ictrl);
+	Etat(string nom, vector<double> setting);
 	virtual ~Etat();
-	void run();
+	vector<double> run(vector<double> param);
 
 private:
-	double Iphen_;
-	double Ictrl_;
 	double calcul_etat_eff(vector<double> param);
 };
 

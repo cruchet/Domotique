@@ -98,10 +98,11 @@ int main(void) {
 				TiXmlElement* child5 = child2->FirstChild("etat")->ToElement();
 				string nom_etat = child5->Attribute( "nom");
 				etat_initial.push_back (get_attr_dbl(child5,"etat_initial"));
-				double Iphen = get_attr_dbl(child5,"Iphen", true, 1);
-				double Ictrl = get_attr_dbl(child5,"Ictrl", true, 1);
+				vector<double> param_etat(2);
+				param_etat.at(0)= get_attr_dbl(child5,"Iphen", true, 1);
+				param_etat.at(0)= get_attr_dbl(child5,"Ictrl", true, 1);
 
-				Etat* etat = new Etat(nom_etat, Iphen, Ictrl);
+				Etat* etat = new Etat(nom_etat, param_etat);
 				zone.push_back(etat);
 
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2

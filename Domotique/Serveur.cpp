@@ -15,29 +15,48 @@
 namespace Domotique {
 using namespace std;
 
-Serveur::Serveur(string nom): Processus("serveur", nom),valphen_(0), valctrl_(0), etat_courant_(0) {}
+Serveur::Serveur(string nom, vector<double> setting):
+		Processus(nom, "serveur", setting), nom_fichier_("domo_serv.txt"),
+		data_(setting.at(0)), nb_zone_(setting.at(0)), zone_courante_(0), nb_tic_(0)
+		{}
 
 Serveur::~Serveur() {}
-void Serveur::run(){
-	string source_name;
-	string dest_name("dom_serv.txt");
 
-	// ouverture du flot de sortie
-	ofstream f_dest(dest_name.c_str(), ios::app); // ouverture du fichier destination
-	// verification que le fichier a pu etre ouvert (en mode ecriture)
-	if (f_dest.fail()) {
-	cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en ecriture" << endl;
-	}
+string Serveur::ecriture(){
+	string dest_name(nom_fichier_);
 
-	// Ecriture
-	for (unsigned int i=0; i <= etat_courant_.size(); i++){
-		f_dest << i << " "
-				<<valphen_.at(i) << " "
-				<< valctrl_.at(i) << " "
-				<< etat_courant_.at(i) << " "
-				<<endl;
+		// ouverture du flot de sortie
+		ofstream f_dest(dest_name.c_str(), ios::app); // ouverture du fichier destination
+		// verification que le fichier a pu etre ouvert (en mode ecriture)
+		if (f_dest.fail()) {
+		cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en ecriture" << endl;
+		}
+
+		// Ecriture
+		for (int zone=0; zone==nb_zone_; zone++)
+		{
+			f_dest << "# ZONE n°" << zone << endl;
+			vector<vector< double> > pourchaquetic= data_.at(zone);
+			for (unsigned int tic=0; tic <= nb_tic_; tic++){
+				vector<double> threedata = pourchaquetic.at(tic);
+				f_dest << tic << " "
+					<<threedata.at(VALPHEN) << " "
+					<< threedata.at(ETAT_COURANT) << " "
+					<< threedata.at(VALCTRL) << " "
+					<<endl;
+			}
+		}
+		f_dest.close();
+	return nom_fichier_;
+}
+vector<double> Serveur::run(vector<double> param){
+	nb_tic_= nb_tic_+1;
+	(data_.at(zone_courante_)).push_back(param);
+	zone_courante_=zone_courante_ +1;
+	if (zone_courante_==nb_zone_){
+		zone_courante_=0;
 	}
-	f_dest.close();
+	return param;
 }
 
 } /* namespace Domotique */

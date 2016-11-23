@@ -9,7 +9,8 @@
 
 namespace Domotique {
 using namespace std;
-Processus::Processus(string type, string nom): type_(type), nom_(nom) {
+Processus::Processus(string nom, string type, vector<double> setting):
+		nom_(nom), type_(type), setting_(setting) {
 	// TODO Auto-generated constructor stub
 
 }

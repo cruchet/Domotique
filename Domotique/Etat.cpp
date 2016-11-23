@@ -11,22 +11,21 @@
 
 namespace Domotique {
 
-Etat::Etat(string nom, double Iphen, double Ictrl):
-	Processus("etat", nom), Iphen_(Iphen), Ictrl_(Ictrl) {}
+Etat::Etat(string nom, vector<double> setting):
+	Processus(nom, "etat", setting) {}
 
 double Etat::calcul_etat_eff(vector<double> param) {
-
+	double Iphen = (this->get_setting()).at(0);
+	double Ictrl = (this->get_setting()).at(1);
 	double etat_eff = param.at(ETAT_COURANT)
-					+ (param.at(VALPHEN) - param.at(ETAT_COURANT))*Iphen_
-					+ (param.at(VALCTRL) - param.at(ETAT_COURANT))*Ictrl_;
+					+ (param.at(VALPHEN) - param.at(ETAT_COURANT))*Iphen
+					+ (param.at(VALCTRL) - param.at(ETAT_COURANT))*Ictrl;
 	return etat_eff;
 }
 
-void Etat::run() {
-	vector<double> param = this->get_param();
-
+vector<double> Etat::run(vector<double> param) {
 	param.at(ETAT_COURANT)= calcul_etat_eff(param);
-	this->set_param(param);
+	return param;
 }
 Etat::~Etat() {}
 
