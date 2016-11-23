@@ -11,7 +11,7 @@
 using namespace Domotique;
 
 int main(void) {
-/****************** Création du paysage *********************/
+/****************** Creation du paysage *********************/
 
 
 	return 0;
