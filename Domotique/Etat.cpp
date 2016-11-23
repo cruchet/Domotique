@@ -7,21 +7,26 @@
 
 #include "Processus.h"
 #include "Etat.h"
+#include <vector>
 
 namespace Domotique {
 
 Etat::Etat( double Iphen, double Ictrl):
-	Processus("etat"), valctrl_(0), etat_courant_(0), Iphen_(Iphen), Ictrl_(Ictrl) {}
+	Processus("etat"), Iphen_(Iphen), Ictrl_(Ictrl) {}
 
-double Etat::calcul_etat_eff() {
-	double etat_eff = etat_courant_ + (this->get_valphen() - etat_courant_)*Iphen_
-			   + (valctrl_ - etat_courant_)*Ictrl_;
+double Etat::calcul_etat_eff(vector<double> param) {
+
+	double etat_eff = param.at(ETAT_COURANT)
+					+ (param.at(VALPHEN) - param.at(ETAT_COURANT))*Iphen_
+					+ (param.at(VALCTRL) - param.at(ETAT_COURANT))*Ictrl_;
 	return etat_eff;
 }
 
 void Etat::run() {
-	set_valphen((this->get_refctrl()).get_valphen());
-	etat_courant_= calcul_etat_eff(); //calcul du nouvel etat
+	vector<double> param = this->get_param();
+
+	param.at(ETAT_COURANT)= calcul_etat_eff(param);
+	this->set_param(param);
 }
 Etat::~Etat() {}
 

@@ -8,8 +8,8 @@
 #ifndef SIM_H_
 #define SIM_H_
 
-#include "Processus.h"
 #include <vector>
+#include "Processus.h"
 #include "Serveur.h"
 
 using namespace std;
@@ -23,9 +23,9 @@ public:
 	void run(Serveur& serveur);
 
 private:
-	int ntic;
-	unsigned int tic;
-	vector<Processus&> process_;
+	unsigned int ntic_;
+	unsigned int tic_;
+	vector<Processus*> process_;
 };
 
 } /* namespace Domotique */

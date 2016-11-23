@@ -4,7 +4,6 @@
  *  Created on: 14 nov. 2016
  *      Author: Vassili
  */
-/*heheeheh*/
 
 #include "Processus.h"
 #include "Control.h"
@@ -14,29 +13,19 @@ using namespace std;
 
 namespace Domotique {
 
-Control::Control(): Processus("ctrl"), etat_courant_(0), val_sat_(10) {}
+Control::Control(): Processus("ctrl"), valsat_(10) {}
 
 void Control::run(void) {
-	Serveur& serveur = static_cast<Serveur&>(this->get_refserveur());
-	Etat& etat = static_cast<Etat&>(this->get_refetat());
+	vector<double> param=this->get_param();
 
-	double valphen = etat.get_valphen();
-	double etat_courant =etat.get_etat_courant();
+	param.at(VALCTRL) = calcul_valctrl(param.at(ETAT_COURANT));
 
-	set_valphen(valphen);
-	serveur.save_valphen(valphen);
-	set_etat_courant(etat_courant);
-	serveur.save_etat_courant(etat_courant);
-
-	double valctrl = calcul_valctrl(etat_courant_);
-
-	serveur.save_valctrl(valctrl);
-	etat.set_valctrl(valctrl);
+	this->set_param(param);
 }
 double Control::calcul_valctrl(double etat_courant) {
 	double valctrl;
-	if(etat_courant > val_sat_)
-		valctrl = val_sat_;
+	if(etat_courant > valsat_)
+		valctrl = valsat_;
 	else
 		valctrl = etat_courant;
 	return valctrl;

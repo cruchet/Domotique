@@ -17,14 +17,11 @@ class Control: public Processus {
 public:
 	Control();
 	virtual ~Control();
-	void set_valphen(double valphen) {this->set_valphen(valphen);};
-	void set_etat_courant(double etat) {etat_courant_ = etat;};
 	void run(void);
 	double calcul_valctrl(double etat_courant);
-
+	void set_valsat(double valsat){valsat_=valsat;};
 private:
-	double etat_courant_;
-	const double val_sat_;
+	double valsat_;
 };
 
 } /* namespace Domotique */

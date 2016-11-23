@@ -8,6 +8,8 @@
 #ifndef PROCESSUS_H_
 #define PROCESSUS_H_
 #include <string>
+#include <vector>
+
 namespace Domotique {
 using namespace std;
 
@@ -18,25 +20,13 @@ public:
 	virtual void run() =0;
 
 	string get_type(void){return type_;};
-	double get_valphen(void){return valphen_;};
-	Processus& get_refphen(){return refphen_;};
-	Processus& get_refetat(){return refetat_;};
-	Processus& get_refctrl(){return refctrl_;};
-	Processus& get_refserveur(){return refserveur_;};
+	vector<double> get_param(void){return param_;};
+	void set_param(vector<double> param){param_=param;};
 
-	void set_valphen(double valphen){valphen_=valphen;};
-	void set_refphen(Processus& ref){refphen_ =ref;};
-	void set_refetat(Processus& ref){refetat_ =ref;};
-	void set_refctrl(Processus& ref){refctrl_ =ref;};
-	void set_refserveur(Processus& ref){refserveur_ =ref;};
-
+	enum param_id {VALPHEN, VALCTRL, ETAT_COURANT};
 private:
 	string type_;
-	double valphen_;
-	Processus& refphen_;
-	Processus& refetat_;
-	Processus& refctrl_;
-	Processus& refserveur_;
+	vector<double> param_;
 };
 
 } /* namespace Domotique */
