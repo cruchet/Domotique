@@ -23,8 +23,8 @@ public:
 	void run(Serveur& serveur);
 
 private:
-	int ntic;
-	unsigned int tic;
+	int ntic_;
+	unsigned int tic_;
 	vector<Processus&> process_;
 };
 

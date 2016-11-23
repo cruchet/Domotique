@@ -13,7 +13,7 @@ using namespace std;
 
 namespace Domotique {
 
-Sim::Sim(unsigned int max_tic): ntic(max_tic), tic(0), process_(0){ }
+Sim::Sim(unsigned int max_tic): ntic_(max_tic), tic_(0), process_(0){ }
 
 Sim::~Sim() {
 	// TODO Auto-generated destructor stub
@@ -21,7 +21,7 @@ Sim::~Sim() {
 
 void Sim::run(Serveur& serveur) {
 	vector<double> param;
-	for(tic=0; tic<=ntic;tic++) {
+	for(tic_=0; tic_<=ntic_;tic_++) {
 		// execution des processus:
 		for(int i=0;i<process_.size(); i++){
 			(process_.at(i)).set_param(param);
