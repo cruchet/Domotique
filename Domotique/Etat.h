@@ -22,6 +22,7 @@ private:
 	double Iphen_;
 	double Ictrl_;
 
+
 	double calcul_etat_eff(vector<double> param);
 };
 
