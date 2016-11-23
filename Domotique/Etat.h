@@ -16,12 +16,13 @@ class Etat: public Processus {
 public:
 	Etat(double Iphen, double Ictrl);
 	virtual ~Etat();
-	double calcul_etat_eff(vector<double> param);
 	void run();
 
 private:
 	double Iphen_;
 	double Ictrl_;
+
+	double calcul_etat_eff(vector<double> param);
 };
 
 } /* namespace Domotique */
