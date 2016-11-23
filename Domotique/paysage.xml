@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  Description du paysage de simulation -->
+<paysage >
+	<zone nom="zone1" ID="0">
+		<phenomene nom="phen1" type="aleatoire" >
+			<parametres valmin="-10" valmax="10"/>
+		</phenomene>
+		<etat nom="etat_zone1" etat_initial="0" Iphen="1" Ictrl="1" />
+		<control nom="ctrl_phen1" type="saturation" >
+			<parametres valsat="5"/>
+		</control>		
+	</zone>
+</paysage>
