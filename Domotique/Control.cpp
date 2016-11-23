@@ -13,7 +13,8 @@ using namespace std;
 
 namespace Domotique {
 
-Control::Control(): Processus("ctrl"), valsat_(10) {}
+Control::Control(string nom, string mode, vector<double> param_ctrl):
+		Processus("ctrl", nom), mode_(mode), param_ctrl_(param_ctrl) {}
 
 void Control::run(void) {
 	vector<double> param=this->get_param();
@@ -24,11 +25,16 @@ void Control::run(void) {
 }
 double Control::calcul_valctrl(double etat_courant) {
 	double valctrl;
-	if(etat_courant > valsat_)
-		valctrl = valsat_;
-	else
-		valctrl = etat_courant;
-	return valctrl;
+	if (mode_ == "saturation"){
+		double valsat = param_ctrl_.at(0);
+		if(etat_courant > valsat)
+			valctrl = valsat;
+		else
+			valctrl = etat_courant;
+		return valctrl;
+	}
+	else {return etat_courant;}
+
 }
 
 Control::~Control() {}

@@ -15,9 +15,9 @@ using namespace std;
 
 class Processus {
 public:
-	Processus(string type);
+	Processus(string type, string nom);
 	virtual ~Processus();
-	virtual void run() =0;
+	virtual void run() = 0;
 
 	string get_type(void){return type_;};
 	vector<double> get_param(void){return param_;};
@@ -26,6 +26,7 @@ public:
 	enum param_id {VALPHEN, VALCTRL, ETAT_COURANT};
 private:
 	string type_;
+	string nom_;
 	vector<double> param_;
 };
 

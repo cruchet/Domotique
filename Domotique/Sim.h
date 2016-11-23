@@ -21,11 +21,11 @@ public:
 	Sim(unsigned int max_tic);
 	virtual ~Sim();
 	void run(Serveur& serveur);
-
+	enum sim_id {PHEN, ETAT, CTRL};
 private:
 	unsigned int ntic_;
 	unsigned int tic_;
-	vector<Processus*> process_;
+	vector<Processus*>  process_;
 };
 
 } /* namespace Domotique */

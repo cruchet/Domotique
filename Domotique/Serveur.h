@@ -16,7 +16,7 @@ using namespace std;
 
 class Serveur: public Processus {
 public:
-	Serveur();
+	Serveur(string nom);
 	virtual ~Serveur();
 	void save_valphen(double valphen){valphen_.push_back(valphen);};
 	void save_etat_courant(double etat_courant)

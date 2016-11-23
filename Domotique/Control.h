@@ -15,13 +15,15 @@ namespace Domotique {
 
 class Control: public Processus {
 public:
-	Control();
+	Control(string nom, string mode, vector<double> param_ctrl);
 	virtual ~Control();
 	void run(void);
 	double calcul_valctrl(double etat_courant);
-	void set_valsat(double valsat){valsat_=valsat;};
+	vector<double> get_param_ctrl(void){return param_ctrl_;};
+	void set_param_ctrl(vector<double> param_ctrl){param_ctrl_=param_ctrl;};
 private:
-	double valsat_;
+	string mode_;
+	vector<double> param_ctrl_;
 };
 
 } /* namespace Domotique */

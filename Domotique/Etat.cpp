@@ -11,8 +11,8 @@
 
 namespace Domotique {
 
-Etat::Etat( double Iphen, double Ictrl):
-	Processus("etat"), Iphen_(Iphen), Ictrl_(Ictrl) {}
+Etat::Etat(string nom, double Iphen, double Ictrl):
+	Processus("etat", nom), Iphen_(Iphen), Ictrl_(Ictrl) {}
 
 double Etat::calcul_etat_eff(vector<double> param) {
 

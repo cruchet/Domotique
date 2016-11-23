@@ -15,7 +15,7 @@
 namespace Domotique {
 using namespace std;
 
-Serveur::Serveur(): Processus("serveur"),valphen_(0), valctrl_(0), etat_courant_(0) {}
+Serveur::Serveur(string nom): Processus("serveur", nom),valphen_(0), valctrl_(0), etat_courant_(0) {}
 
 Serveur::~Serveur() {}
 void Serveur::run(){
