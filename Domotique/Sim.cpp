@@ -5,9 +5,9 @@
  *      Author: Vassili
  */
 
+#include <vector>
 #include "Sim.h"
 #include "Processus.h"
-#include <vector>
 #include "Serveur.h"
 using namespace std;
 
