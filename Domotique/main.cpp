@@ -7,6 +7,7 @@
 
 #include "Processus.h"
 #include <vector>
+#include "tinyxml_epfl/tinyxml.h"
 
 using namespace Domotique;
 
