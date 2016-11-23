@@ -8,8 +8,8 @@
 #ifndef SIM_H_
 #define SIM_H_
 
-#include "Processus.h"
 #include <vector>
+#include "Processus.h"
 #include "Serveur.h"
 
 using namespace std;
