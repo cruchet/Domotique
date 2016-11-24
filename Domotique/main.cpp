@@ -38,6 +38,7 @@ int main(void) {
 		printf( "Lecture correcte du fichier 'paysage.xml'.\n");
 	}
 
+
 	TiXmlElement* child1 = doc.FirstChildElement();
 	//methode d'element permet d'acceder au premier fils de l'arborescence qui est l'element Paysage
 
