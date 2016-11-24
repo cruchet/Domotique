@@ -23,7 +23,6 @@ using namespace Domotique;
 
 int main(void) {
 /****************** Creation du paysage *********************/
-
 	vector<vector<Processus*> > paysage;
 	vector<double> etat_initial;
 
@@ -38,10 +37,8 @@ int main(void) {
 		printf( "Lecture correcte du fichier 'paysage.xml'.\n");
 	}
 
-
 	TiXmlElement* child1 = doc.FirstChildElement();
 	//methode d'element permet d'acceder au premier fils de l'arborescence qui est l'element Paysage
-
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
 	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
@@ -94,7 +91,6 @@ int main(void) {
 						// EXTRACTION parametre ooffset du phenomene: NIVEAU 5
 					}
 				}--------------FIN POUR RENDU 2 ---------------------------*/
-
 				// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
 				TiXmlElement* child5 = child2->FirstChild("etat")->ToElement();
 				string nom_etat = child5->Attribute( "nom");
@@ -102,12 +98,12 @@ int main(void) {
 				vector<double> param_etat(2);
 				param_etat.at(0)= get_attr_dbl(child5,"Iphen", true, 1);
 				param_etat.at(0)= get_attr_dbl(child5,"Ictrl", true, 1);
-
 				Etat* etat = new Etat(nom_etat, param_etat);
 				zone.push_back(etat);
-
+				cout << "11" << endl;
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
 				TiXmlElement* child6 = child2->FirstChild("controle")->ToElement();
+				cout << "12" << endl;
 				vector<double> param_ctrl(0);
 				string nom_ctrl = child6->Attribute( "nom");
 				string mode_ctrl=  child6->Attribute( "mode");
@@ -119,10 +115,11 @@ int main(void) {
 				zone.push_back(ctrl);
 
 				paysage.push_back(zone);
-			}
-			else cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;
-			// element autre que zone
-}
 
+			}
+			else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
+			// element autre que zone
+	}
+	cout << "YES" << endl;
 	return 0;
 }
