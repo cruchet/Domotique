@@ -18,14 +18,15 @@ namespace Domotique {
 
 class Sim {
 public:
-	Sim(unsigned int max_tic);
+	Sim(vector< vector<Processus*> > process_, int nb_zone, unsigned int max_tic);
 	virtual ~Sim();
-	void run(Serveur& serveur);
-
+	string run(Serveur* serveur);
+	enum sim_id {PHEN, ETAT, CTRL};
 private:
+	vector< vector<Processus*> > process_;
+	int nb_zone_;
 	unsigned int ntic_;
 	unsigned int tic_;
-	vector<Processus*> process_;
 };
 
 } /* namespace Domotique */

@@ -15,18 +15,19 @@ using namespace std;
 
 class Processus {
 public:
-	Processus(string type);
+	Processus(string nom, string type, vector<double> setting);
 	virtual ~Processus();
-	virtual void run() =0;
-
+	virtual vector<double> run(vector<double> param) = 0;
 	string get_type(void){return type_;};
-	vector<double> get_param(void){return param_;};
-	void set_param(vector<double> param){param_=param;};
+	vector<double> get_setting(void){return setting_;};
+	void set_setting(vector<double> setting){setting_=setting;};
 
 	enum param_id {VALPHEN, VALCTRL, ETAT_COURANT};
 private:
+	string nom_;
 	string type_;
-	vector<double> param_;
+	vector<double> setting_;
+
 };
 
 } /* namespace Domotique */

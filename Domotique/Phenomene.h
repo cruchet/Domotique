@@ -13,18 +13,13 @@ namespace Domotique {
 
 class Phenomene: public Processus{
 public:
-	Phenomene(double valmin, double valmax);
+	Phenomene(string nom, string mode, vector<double> setting);
 	virtual ~Phenomene();
-	void set_valmin(double valmin){valmin_=valmin;};
-	void set_valmax(double valmax){valmax_=valmax;};
-	double get_valmin(){return valmin_;};
-	double get_valmax(){return valmax_;};
 	double get_valphen(){return 0;}
-	void run(void);
+	vector<double> run(vector<double> param);
 private:
 	double calcul_valphen();
-	double valmin_;
-	double valmax_;
+	string modephen_;
 };
 
 } /* namespace Domotique */
