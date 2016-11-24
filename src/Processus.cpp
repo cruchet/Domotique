@@ -5,7 +5,7 @@
  *      Author: jordanmetz
  */
 
-#include "Processus.h"
+#include "../src/Processus.h"
 
 namespace Domotique {
 using namespace std;

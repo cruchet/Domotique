@@ -9,7 +9,8 @@
 #define SERVEUR_H_
 #include <vector>
 #include <string>
-#include "Processus.h"
+
+#include "../src/Processus.h"
 
 namespace Domotique {
 using namespace std;

@@ -5,9 +5,10 @@
  *      Author: Vassili
  */
 
-#include "Processus.h"
-#include "Control.h"
-#include "Etat.h"
+#include "../src/Control.h"
+
+#include "../src/Etat.h"
+#include "../src/Processus.h"
 
 using namespace std;
 

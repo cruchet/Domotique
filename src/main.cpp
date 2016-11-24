@@ -5,19 +5,20 @@
  *      Author: Vassili & Jordan
  */
 
-#include "Processus.h"
-#include "Serveur.h"
-#include "Phenomene.h"
-#include "Control.h"
-#include "Etat.h"
-#include "sim.h"
-#include "tinyxml_epfl/tinyxml.h"
-#include "tinyxml_epfl/xml_utils.h"
 #include <vector>
 #include <list>
 #include <string>
 #include <stdio.h>
 #include <iostream>
+
+#include "../src/Control.h"
+#include "../src/Etat.h"
+#include "../src/Phenomene.h"
+#include "../src/Processus.h"
+#include "../src/Serveur.h"
+#include "../src/Sim.h"
+#include "../src/tinyxml_epfl/tinyxml.h"
+#include "../src/tinyxml_epfl/xml_utils.h"
 
 using namespace Domotique;
 

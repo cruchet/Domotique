@@ -8,7 +8,7 @@
 #ifndef ETAT_H_
 #define ETAT_H_
 
-#include "Processus.h"
+#include "../src/Processus.h"
 
 namespace Domotique {
 

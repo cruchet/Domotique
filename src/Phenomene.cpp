@@ -5,7 +5,8 @@
  *      Author: jordanmetz
  */
 
-#include "Phenomene.h"
+#include "../src/Phenomene.h"
+
 #include <string>
 #include <cstdlib>
 #include <ctime>

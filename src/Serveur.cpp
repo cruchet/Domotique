@@ -5,12 +5,14 @@
  *      Author: jordanmetz
  */
 
-#include "Serveur.h"
+#include "../src/Serveur.h"
+
 #include <string>
 #include <vector>
 #include <fstream>
 #include <iostream>
-#include "Processus.h"
+
+#include "../src/Processus.h"
 
 namespace Domotique {
 using namespace std;

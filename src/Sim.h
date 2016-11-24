@@ -9,8 +9,9 @@
 #define SIM_H_
 
 #include <vector>
-#include "Processus.h"
-#include "Serveur.h"
+
+#include "../src/Processus.h"
+#include "../src/Serveur.h"
 
 using namespace std;
 

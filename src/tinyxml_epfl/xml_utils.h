@@ -8,7 +8,7 @@
 #ifndef SRC_XML_UTILS_H_
 #define SRC_XML_UTILS_H_
 
-#include "tinyxml.h"
+#include "../../src/tinyxml_epfl/tinyxml.h"
 
 //! Check if element exists.
 //! Throw an exception if element is missing.
