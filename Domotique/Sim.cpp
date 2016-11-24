@@ -28,10 +28,10 @@ string Sim::run(Serveur* serveur) {
 		for (int zone=0; zone < nb_zone_; zone++)
 		{
 			for(unsigned int i=0;i<process_.size(); i++){
-			param = ((process_.at(zone)).at(i))->run(param);
-			if (i==CTRL){
-				param=serveur->run(param);
-			}
+				param = ((process_.at(zone)).at(i))->run(param);
+				if (i==CTRL){
+					param=serveur->run(param);
+				}
 			}
 		}
 
