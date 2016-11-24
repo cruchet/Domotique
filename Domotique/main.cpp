@@ -48,7 +48,7 @@ int main(void) {
 			if (strcmp(child2->Value(),"zone")==0){
 				vector<Processus*> zone(0);
 				string nom_zone =child2->Attribute( "nom");
-				int id_zone = get_attr_int(child2,"ID", true, 0);
+				//int id_zone = get_attr_int(child2,"ID", true, 0);
 
 				// EXTRACTION DU PHENOMENE: NIVEAU 2
 				TiXmlElement* child3 = child2->FirstChild("phenomene")->ToElement () ;

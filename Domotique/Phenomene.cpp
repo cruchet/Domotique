@@ -13,8 +13,8 @@
 namespace Domotique {
 using namespace std;
 
-Phenomene::Phenomene(string nom, string type, vector<double> setting):
-	Processus(nom, "phen", setting),typephen_(type) {
+Phenomene::Phenomene(string nom, string mode, vector<double> setting):
+	Processus(nom, "phen", setting),modephen_(mode) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -30,7 +30,7 @@ vector<double> Phenomene::run(vector<double> param){
 double Phenomene::calcul_valphen(void){
 	vector<double> phen_param = this->get_setting();
 
-	if (typephen_ == "aleatoire")
+	if (modephen_ == "aleatoire")
 	{
 		srand(time(0));
 		double valmin = phen_param.at(0);
