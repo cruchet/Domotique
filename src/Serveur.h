@@ -26,7 +26,7 @@ private:
 	vector< vector <vector <double> > > data_;
 	int nb_zone_;
 	int zone_courante_;
-	int nb_tic_;
+	unsigned int nb_tic_;
 };
 
 } /* namespace Domotique */
