@@ -103,7 +103,7 @@ int main(void) {
 				zone.push_back(etat);
 				cout << "11" << endl;
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
-				TiXmlElement* child6 = child2->FirstChild("controle")->ToElement();
+				TiXmlElement* child6 = child2->FirstChild("control")->ToElement();
 				cout << "12" << endl;
 				vector<double> param_ctrl(0);
 				string nom_ctrl = child6->Attribute( "nom");
