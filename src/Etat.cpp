@@ -8,7 +8,7 @@
 #include "../src/Etat.h"
 
 #include <vector>
-
+#include <iostream>
 #include "../src/Processus.h"
 
 namespace Domotique {
