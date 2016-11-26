@@ -18,7 +18,7 @@ namespace Domotique {
 using namespace std;
 
 Serveur::Serveur(string nom, vector<double> setting):
-		Processus(nom, "serveur", setting), nom_fichier_("domo_serv.txt"),
+		Processus(nom, "serveur", setting), nom_fichier_("data_serveur.txt"),
 		data_(setting.at(0)), nb_zone_(setting.at(0)), zone_courante_(0), nb_tic_(0)
 		{}
 
