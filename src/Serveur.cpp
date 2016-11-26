@@ -36,7 +36,7 @@ string Serveur::ecriture(){
 	}
 
 	// Ecriture
-	for (int zone=0; zone==nb_zone_; zone++)
+	for (int zone=0; zone<=nb_zone_; zone++)
 	{
 		f_dest << "# ZONE n°" << zone << endl;
 		vector<vector< double> > pourchaquetic= data_.at(zone);
