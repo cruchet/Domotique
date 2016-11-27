@@ -121,16 +121,15 @@ int main(void) {
 			}
 		else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
 		// element autre que zone
-
-		//----- Creation du simulateur et lancement de la simulation ------//
-		Sim * sim = new Sim(paysage, paysage.size(), 10);
-
-		vector<double> setting;
-		setting.push_back(paysage.size()); //nb_zone
-		Serveur * serveur = new Serveur("Serveur", setting);
-		string out_file = sim->run(serveur);
-
 	}
+
+	//----- Creation du simulateur et lancement de la simulation ------//
+	Sim * sim = new Sim(paysage, paysage.size(), 2);
+
+	vector<double> setting;
+	setting.push_back(paysage.size()); //nb_zone
+	Serveur * serveur = new Serveur("Serveur", setting);
+	string out_file = sim->run(serveur);
 
 	return 0;
 }
