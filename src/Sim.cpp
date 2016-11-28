@@ -38,7 +38,7 @@ string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 					param=serveur->run(param);
 				}
 			}
-			cout << "Parametres de la zone " << nom_zone.at(zone) << ":" << endl;
+			cout << "Parametres de la zone: " << nom_zone.at(zone) << ":" << endl;
 			for(unsigned int i=0; i<param.size(); i++) {
 
 				switch(i) {
