@@ -24,6 +24,7 @@
 namespace Domotique {
 using namespace std;
 
+
 Parser::Parser(string nom_fichier) {
 	vector<double> etat_initial;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------

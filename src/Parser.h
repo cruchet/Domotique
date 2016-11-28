@@ -22,6 +22,7 @@
 #include "tinyxml_epfl/tinyxml.h"
 #include "tinyxml_epfl/xml_utils.h"
 
+
 using namespace std;
 
 namespace Domotique {

@@ -22,6 +22,7 @@
 #include "tinyxml_epfl/xml_utils.h"
 #include "Parser.h"
 
+
 using namespace Domotique;
 
 int main(void) {
