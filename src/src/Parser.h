@@ -19,8 +19,8 @@
 #include "Processus.h"
 #include "Serveur.h"
 #include "Sim.h"
-#include "../tinyxml_epfl/tinyxml.h"
-#include "../tinyxml_epfl/xml_utils.h"
+#include "tinyxml_epfl/tinyxml.h"
+#include "tinyxml_epfl/xml_utils.h"
 
 
 using namespace std;
@@ -34,11 +34,11 @@ public:
 
 	vector<vector<Processus*> > get_paysage() {return paysage_;};
 	vector<string> get_nom_zone(){return nom_zone_;};
-
+	void run();
 private:
 	vector<vector<Processus*> > paysage_;
 	vector<string> nom_zone_;
-
+	string nom_fichier_;
 };
 }
 
