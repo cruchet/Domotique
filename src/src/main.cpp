@@ -34,7 +34,7 @@ int main(void) {
 	lecture_xml("paysage.xml", &paysage, &nom_zone, &etat_initial);
 
 	//----- Creation du simulateur et lancement de la simulation ------//
-	Sim * sim = new Sim(paysage, paysage.size(), 2);
+	Sim * sim = new Sim(paysage, paysage.size(), 20);
 
 	vector<double> setting;
 	setting.push_back(paysage.size()); //nb_zone

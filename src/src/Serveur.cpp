@@ -41,7 +41,7 @@ string Serveur::ecriture(vector<string> nom_zone){
 	{
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
 		vector<vector< double> > pourchaquetic= data_.at(zone);
-		for (unsigned int tic=0; tic <= nb_tic_; tic++){
+		for (unsigned int tic=0; tic < nb_tic_; tic++){
 			vector<double> threedata = pourchaquetic.at(tic);
 			f_dest << tic << "\t"
 					<<threedata.at(VALPHEN) << "\t"
