@@ -4,7 +4,7 @@
  *  Created on: 21 nov. 2016
  *      Author: Vassili & Jordan
  */
-
+//A envoyer: eytan.zysman@epfl.ch
 #include <vector>
 #include <list>
 #include <string>
@@ -18,7 +18,7 @@
 #include "Processus.h"
 #include "Serveur.h"
 #include "Sim.h"
-#include "Parser.h"
+#include "AParser.h"
 
 
 using namespace Domotique;
@@ -27,9 +27,9 @@ int main(void) {
 	srand(std::time(NULL));
 
 	//----- Lecture du fichier xml et creation du paysage -----//
-	Parser parser("payage.xml");
-	vector<vector<Processus*> > paysage = parser.get_paysage();
-	vector<string> nom_zone = parser.get_nom_zone();
+	AParser aparser("paysage.xml");
+	vector<vector<Processus*> > paysage = aparser.get_paysage();
+	vector<string> nom_zone = aparser.get_nom_zone();
 
 
 	//----- Creation du simulateur et lancement de la simulation ------//

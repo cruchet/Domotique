@@ -1,25 +1,26 @@
 /*
- * Parser.cpp
+ * AParser.cpp
  *
  *  Created on: 28 nov. 2016
- *      Author: vassili
+ *      Author: jordanmetz
  */
 
-#include "Parser.h"
+#include "AParser.h"
 
 namespace Domotique {
+
 using namespace std;
 
 
-Parser::Parser(string nom_fichier): nom_fichier_(nom_fichier){
+AParser::AParser(string nom_fichier): nom_fichier_(nom_fichier){
 
 }
 
-Parser::~Parser() {
+AParser::~AParser() {
 	// TODO Auto-generated destructor stub
 }
 
-void Parser::run(){
+void AParser::run(){
 
 	vector<double> etat_initial;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------

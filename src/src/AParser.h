@@ -1,12 +1,12 @@
 /*
- * Parser.h
+ * AParser.h
  *
  *  Created on: 28 nov. 2016
- *      Author: vassili
+ *      Author: jordanmetz
  */
 
-#ifndef PARSER_H_
-#define PARSER_H_
+#ifndef SRC_APARSER_H_
+#define SRC_APARSER_H_
 
 #include <string>
 #include <vector>
@@ -19,18 +19,18 @@
 #include "Processus.h"
 #include "Serveur.h"
 #include "Sim.h"
-#include "tinyxml_epfl/tinyxml.h"
-#include "tinyxml_epfl/xml_utils.h"
+#include "tinyxml.h"
+#include "xml_utils.h"
 
 
 using namespace std;
 
 namespace Domotique {
 
-class Parser {
+class AParser {
 public:
-	Parser(string nom_fichier);
-	virtual ~Parser();
+	AParser(string nom_fichier);
+	virtual ~AParser();
 
 	vector<vector<Processus*> > get_paysage() {return paysage_;};
 	vector<string> get_nom_zone(){return nom_zone_;};
@@ -40,6 +40,8 @@ private:
 	vector<string> nom_zone_;
 	string nom_fichier_;
 };
+extern AParser aparser;
 }
 
-#endif /* PARSER_H_ */
+
+#endif /* SRC_APARSER_H_ */
