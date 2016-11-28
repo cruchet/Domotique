@@ -11,11 +11,19 @@ namespace Domotique {
 using namespace std;
 
 
-Parser::Parser(string nom_fichier) {
+Parser::Parser(string nom_fichier): nom_fichier_(nom_fichier){
+
+}
+
+Parser::~Parser() {
+	// TODO Auto-generated destructor stub
+}
+
+void Parser::run(){
 
 	vector<double> etat_initial;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
-	TiXmlDocument doc_=nom_fichier;
+	TiXmlDocument doc_=nom_fichier_;
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
 		printf( "Lecture impossible du fichier 'paysage_.xml'. "
@@ -112,9 +120,4 @@ Parser::Parser(string nom_fichier) {
 		}
 }
 
-Parser::~Parser() {
-	// TODO Auto-generated destructor stub
 }
-
-}
-
