@@ -24,7 +24,7 @@ Serveur::Serveur(string nom, vector<double> setting):
 
 Serveur::~Serveur() {}
 
-string Serveur::ecriture(){
+string Serveur::ecriture(vector<string> nom_zone){
 	string dest_name(nom_fichier_);
 
 	cout << "Enregistrement dans le fichier: " << nom_fichier_ << endl;
@@ -38,7 +38,7 @@ string Serveur::ecriture(){
 	// Ecriture
 	for (int zone=0; zone<nb_zone_; zone++)
 	{
-		f_dest << "# ZONE n°" << zone << endl;
+		f_dest << "# ZONE" << nom_zone.at(zone) << endl;
 		vector<vector< double> > pourchaquetic= data_.at(zone);
 		for (unsigned int tic=0; tic <= nb_tic_; tic++){
 			vector<double> threedata = pourchaquetic.at(tic);

@@ -23,7 +23,7 @@ Sim::~Sim() {
 	// TODO Auto-generated destructor stub
 }
 
-string Sim::run(Serveur* serveur) {
+string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 	cout << "Lancement de la simulation:" << endl;
 	vector<double> param (3);
 
@@ -38,7 +38,7 @@ string Sim::run(Serveur* serveur) {
 					param=serveur->run(param);
 				}
 			}
-			cout << "Parametres de la zone " << zone << ":" << endl;
+			cout << "Parametres de la zone " << nom_zone.at(zone) << ":" << endl;
 			for(unsigned int i=0; i<param.size(); i++) {
 
 				switch(i) {
@@ -52,7 +52,7 @@ string Sim::run(Serveur* serveur) {
 			}
 		}
 	}
-	return serveur->ecriture();
+	return serveur->ecriture(nom_zone);
 }
 
 } /* namespace Domotique */
