@@ -36,10 +36,8 @@ public:
 	vector<string> get_nom_zone(){return nom_zone_;};
 
 private:
-	TiXmlDocument doc_;
 	vector<vector<Processus*> > paysage_;
 	vector<string> nom_zone_;
-
 
 };
 }
