@@ -10,6 +10,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <ctime>
 
 #include "../src/Control.h"
 #include "../src/Etat.h"
@@ -23,7 +24,7 @@
 using namespace Domotique;
 
 int main(void) {
-
+	std::srand(std::time(NULL));
 	vector<vector<Processus*> > paysage;
 	vector<double> etat_initial;
 	vector<string> nom_zone;

@@ -6,9 +6,9 @@
 		<phenomene nom="phen1" mode="aleatoire" >
 			<parametres valmin="-10" valmax="10"/>
 		</phenomene>
-		<etat nom="etat_zone1" etat_initial="0" Iphen="1" Ictrl="1" />
 		<control nom="ctrl_phen1" mode="saturation" >
-			<parametres valsat="5"/>
-		</control>		
+         <parametres valsat="5"/>
+      </control>     
+		<etat nom="etat_zone1" etat_initial="0" Iphen="1" Ictrl="1" />
 	</zone>
 </paysage>
