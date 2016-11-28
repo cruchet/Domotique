@@ -19,8 +19,8 @@
 #include "Processus.h"
 #include "Serveur.h"
 #include "Sim.h"
-#include "../tinyxml_epfl/tinyxml.h"
-#include "../tinyxml_epfl/xml_utils.h"
+#include "tinyxml_epfl/tinyxml.h"
+#include "tinyxml_epfl/xml_utils.h"
 
 
 using namespace std;
