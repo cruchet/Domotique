@@ -35,7 +35,7 @@ double Phenomene::calcul_valphen(void){
 	{
 		double valmin = phen_param.at(0);
 		double valmax = phen_param.at(1);
-		return ( rand()/(double)RAND_MAX ) * (valmax-valmin) + valmin;
+		return (static_cast<double>(rand())/RAND_MAX)*(valmax-valmin) + valmin;
 
 	}
 	else return 0;

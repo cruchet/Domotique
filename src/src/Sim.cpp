@@ -42,12 +42,12 @@ string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 			for(unsigned int i=0; i<param.size(); i++) {
 
 				switch(i) {
-				case 0 :
-					cout << "\tvalphen: " << param.at(i) << endl; break;
-				case 1 :
-					cout << "\tvalctrl: " << param.at(i) << endl; break;
-				case 2 :
-					cout << "\tetat courant: " << param.at(i) << endl; break;
+				case PHEN :
+					cout << "\tvalphen:\t" << param.at(i) << endl; break;
+				case CTRL :
+					cout << "\tvalctrl:\t" << param.at(i) << endl; break;
+				case ETAT :
+					cout << "\tetat courant\t: " << param.at(i) << endl; break;
 				}
 			}
 		}
