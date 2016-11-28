@@ -26,7 +26,7 @@ int main(void) {
 
 	vector<vector<Processus*> > paysage;
 	vector<double> etat_initial;
-
+	vector<string> nom_zone;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
 	TiXmlDocument doc( "paysage.xml" );
 	bool loadOkay = doc.LoadFile();
@@ -46,7 +46,7 @@ int main(void) {
 
 			if (strcmp(child2->Value(),"zone")==0){
 				vector<Processus*> zone(0);
-				string nom_zone =child2->Attribute( "nom");
+				nom_zone.push_back(child2->Attribute( "nom"));
 				//int id_zone = get_attr_int(child2,"ID", true, 0);
 
 				// EXTRACTION DU PHENOMENE: NIVEAU 2
@@ -129,7 +129,7 @@ int main(void) {
 	vector<double> setting;
 	setting.push_back(paysage.size()); //nb_zone
 	Serveur * serveur = new Serveur("Serveur", setting);
-	string out_file = sim->run(serveur);
+	string out_file = sim->run(serveur, nom_zone);
 
 	return 0;
 }
