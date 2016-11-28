@@ -26,7 +26,7 @@
 using namespace Domotique;
 
 int main(void) {
-	std::srand(std::time(NULL));
+	srand(std::time(NULL));
 
 	//----- Lecture du fichier xml et creation du paysage -----//
 	Parser parser("payage.xml");
