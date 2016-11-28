@@ -29,7 +29,7 @@ int main(void) {
 	srand(std::time(NULL));
 
 	//----- Lecture du fichier xml et creation du paysage -----//
-	Parser parser("../payage.xml");
+	Parser parser("payage.xml");
 	vector<vector<Processus*> > paysage = parser.get_paysage();
 	vector<string> nom_zone = parser.get_nom_zone();
 
