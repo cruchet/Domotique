@@ -7,20 +7,6 @@
 
 #include "Parser.h"
 
-#include <string>
-#include <vector>
-#include <list>
-#include <stdio.h>
-
-#include "Control.h"
-#include "Etat.h"
-#include "Phenomene.h"
-#include "Processus.h"
-#include "Serveur.h"
-#include "Sim.h"
-#include "tinyxml_epfl/tinyxml.h"
-#include "tinyxml_epfl/xml_utils.h"
-
 namespace Domotique {
 using namespace std;
 
@@ -29,7 +15,7 @@ Parser::Parser(string nom_fichier) {
 
 	vector<double> etat_initial;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
-	TiXmlDocument doc_(nom_fichier);
+	TiXmlDocument doc_=nom_fichier;
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
 		printf( "Lecture impossible du fichier 'paysage_.xml'. "
