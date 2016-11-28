@@ -94,27 +94,28 @@ int main(void) {
 					}
 				}--------------FIN POUR RENDU 2 ---------------------------*/
 
-				// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
-				TiXmlElement* child5 = child2->FirstChild("etat")->ToElement();
-				string nom_etat = child5->Attribute( "nom");
-				etat_initial.push_back (get_attr_dbl(child5,"etat_initial"));
-				vector<double> param_etat(2);
-				param_etat.at(0)= get_attr_dbl(child5,"Iphen", true, 1);
-				param_etat.at(1)= get_attr_dbl(child5,"Ictrl", true, 1);
-				Etat* etat = new Etat(nom_etat, param_etat);
-				zone.push_back(etat);
 
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
-				TiXmlElement* child6 = child2->FirstChild("control")->ToElement();
+				TiXmlElement* child5 = child2->FirstChild("control")->ToElement();
 				vector<double> param_ctrl(0);
-				string nom_ctrl = child6->Attribute( "nom");
-				string mode_ctrl=  child6->Attribute( "mode");
-				if (strcmp(child6->Attribute("mode"),"saturation")==0){
-					TiXmlElement* child7 = child6->FirstChild("parametres")->ToElement();
+				string nom_ctrl = child5->Attribute( "nom");
+				string mode_ctrl=  child5->Attribute( "mode");
+				if (strcmp(child5->Attribute("mode"),"saturation")==0){
+					TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
 					param_ctrl.push_back (get_attr_dbl(child7,"valsat", true, 1));
 				}
 				Control* ctrl = new Control(nom_ctrl, mode_ctrl, param_ctrl);
 				zone.push_back(ctrl);
+
+				// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
+				TiXmlElement* child6 = child2->FirstChild("etat")->ToElement();
+				string nom_etat = child6->Attribute( "nom");
+				etat_initial.push_back (get_attr_dbl(child6,"etat_initial"));
+				vector<double> param_etat(2);
+				param_etat.at(0)= get_attr_dbl(child6,"Iphen", true, 1);
+				param_etat.at(1)= get_attr_dbl(child6,"Ictrl", true, 1);
+				Etat* etat = new Etat(nom_etat, param_etat);
+				zone.push_back(etat);
 
 				paysage.push_back(zone);
 

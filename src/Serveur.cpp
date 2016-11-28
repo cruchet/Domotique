@@ -36,6 +36,7 @@ string Serveur::ecriture(vector<string> nom_zone){
 	}
 
 	// Ecriture
+	f_dest << "# Ordre: VALPHEN\tVALCTRL\tETAT COURANT" << endl;
 	for (int zone=0; zone<nb_zone_; zone++)
 	{
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
@@ -44,8 +45,8 @@ string Serveur::ecriture(vector<string> nom_zone){
 			vector<double> threedata = pourchaquetic.at(tic);
 			f_dest << tic << "\t"
 					<<threedata.at(VALPHEN) << "\t"
-					<< threedata.at(ETAT_COURANT) << "\t"
-					<< threedata.at(VALCTRL) << endl;
+					<< threedata.at(VALCTRL) << "\t"
+					<< threedata.at(ETAT_COURANT) << endl;
 		}
 	}
 	f_dest.close();
