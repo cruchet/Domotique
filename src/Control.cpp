@@ -10,6 +10,8 @@
 #include "../src/Etat.h"
 #include "../src/Processus.h"
 
+#include <iostream>
+
 using namespace std;
 
 namespace Domotique {

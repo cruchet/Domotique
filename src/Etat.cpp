@@ -8,7 +8,7 @@
 #include "../src/Etat.h"
 
 #include <vector>
-
+#include <iostream>
 #include "../src/Processus.h"
 
 namespace Domotique {
@@ -22,6 +22,8 @@ double Etat::calcul_etat_eff(vector<double> param) {
 	double etat_eff = param.at(ETAT_COURANT)
 					+ (param.at(VALPHEN) - param.at(ETAT_COURANT))*Iphen
 					+ (param.at(VALCTRL) - param.at(ETAT_COURANT))*Ictrl;
+	cout << "etat courant - effectif " << param.at(ETAT_COURANT) << " " <<  etat_eff << endl;
+	cout << Iphen << " " << Ictrl << " " << param.at(VALCTRL) << endl;
 	return etat_eff;
 }
 

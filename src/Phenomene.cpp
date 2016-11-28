@@ -6,7 +6,7 @@
  */
 
 #include "../src/Phenomene.h"
-
+#include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
@@ -25,7 +25,7 @@ Phenomene::~Phenomene() {
 }
 
 vector<double> Phenomene::run(vector<double> param){
-	param.at(VALPHEN)= calcul_valphen();
+	param.at(VALPHEN)=calcul_valphen();
 	return param;
 }
 double Phenomene::calcul_valphen(void){
@@ -33,10 +33,10 @@ double Phenomene::calcul_valphen(void){
 
 	if (modephen_ == "aleatoire")
 	{
-		srand(time(0));
 		double valmin = phen_param.at(0);
 		double valmax = phen_param.at(1);
 		return ( rand()/(double)RAND_MAX ) * (valmax-valmin) + valmin;
+
 	}
 	else return 0;
 

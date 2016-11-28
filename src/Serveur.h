@@ -20,7 +20,7 @@ public:
 	Serveur(string nom, vector<double> setting);
 	virtual ~Serveur();
 	vector<double> run(vector<double> param);
-	string ecriture(void);
+	string ecriture(vector<string> nom_zone);
 private:
 	const string nom_fichier_;
 	vector< vector <vector <double> > > data_;

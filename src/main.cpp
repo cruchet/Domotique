@@ -23,10 +23,10 @@
 using namespace Domotique;
 
 int main(void) {
-/****************** Creation du paysage *********************/
+
 	vector<vector<Processus*> > paysage;
 	vector<double> etat_initial;
-
+	vector<string> nom_zone;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
 	TiXmlDocument doc( "paysage.xml" );
 	bool loadOkay = doc.LoadFile();
@@ -39,13 +39,14 @@ int main(void) {
 	}
 
 	TiXmlElement* child1 = doc.FirstChildElement();
-	//methode d'element permet d'acceder au premier fils de l'arborescence qui est l'element Paysage
+
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
 	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
+
 			if (strcmp(child2->Value(),"zone")==0){
 				vector<Processus*> zone(0);
-				string nom_zone =child2->Attribute( "nom");
+				nom_zone.push_back(child2->Attribute( "nom"));
 				//int id_zone = get_attr_int(child2,"ID", true, 0);
 
 				// EXTRACTION DU PHENOMENE: NIVEAU 2
@@ -92,19 +93,19 @@ int main(void) {
 						// EXTRACTION parametre ooffset du phenomene: NIVEAU 5
 					}
 				}--------------FIN POUR RENDU 2 ---------------------------*/
+
 				// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
 				TiXmlElement* child5 = child2->FirstChild("etat")->ToElement();
 				string nom_etat = child5->Attribute( "nom");
 				etat_initial.push_back (get_attr_dbl(child5,"etat_initial"));
 				vector<double> param_etat(2);
 				param_etat.at(0)= get_attr_dbl(child5,"Iphen", true, 1);
-				param_etat.at(0)= get_attr_dbl(child5,"Ictrl", true, 1);
+				param_etat.at(1)= get_attr_dbl(child5,"Ictrl", true, 1);
 				Etat* etat = new Etat(nom_etat, param_etat);
 				zone.push_back(etat);
-				cout << "11" << endl;
+
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
 				TiXmlElement* child6 = child2->FirstChild("control")->ToElement();
-				cout << "12" << endl;
 				vector<double> param_ctrl(0);
 				string nom_ctrl = child6->Attribute( "nom");
 				string mode_ctrl=  child6->Attribute( "mode");
@@ -118,9 +119,17 @@ int main(void) {
 				paysage.push_back(zone);
 
 			}
-			else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
-			// element autre que zone
+		else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
+		// element autre que zone
 	}
-	cout << "YES" << endl;
+
+	//----- Creation du simulateur et lancement de la simulation ------//
+	Sim * sim = new Sim(paysage, paysage.size(), 2);
+
+	vector<double> setting;
+	setting.push_back(paysage.size()); //nb_zone
+	Serveur * serveur = new Serveur("Serveur", setting);
+	string out_file = sim->run(serveur, nom_zone);
+
 	return 0;
 }
