@@ -24,7 +24,7 @@
 using namespace Domotique;
 
 int main(void) {
-	std::srand(std::time(NULL));
+	srand(std::time(NULL));
 	vector<vector<Processus*> > paysage;
 	vector<double> etat_initial;
 	vector<string> nom_zone;
