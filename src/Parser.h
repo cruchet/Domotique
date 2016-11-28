@@ -38,6 +38,7 @@ public:
 private:
 	vector<vector<Processus*> > paysage_;
 	vector<string> nom_zone_;
+
 };
 }
 
