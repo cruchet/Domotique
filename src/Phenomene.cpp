@@ -15,7 +15,7 @@ namespace Domotique {
 using namespace std;
 
 Phenomene::Phenomene(string nom, string mode, vector<double> setting):
-	Processus(nom, "phen", setting),modephen_(mode) {
+	Processus(nom, "phen", setting),modephen_(mode) {std::srand(std::time(NULL));
 	// TODO Auto-generated constructor stub
 
 }
