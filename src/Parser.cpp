@@ -28,7 +28,7 @@ using namespace std;
 Parser::Parser(string nom_fichier) {
 	vector<double> etat_initial;
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
-	doc_( nom_fichier );
+	TiXmlDocument doc_(nom_fichier);
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
 		printf( "Lecture impossible du fichier 'paysage_.xml'. "
