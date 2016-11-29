@@ -53,9 +53,9 @@ string Serveur::ecriture(vector<string> nom_zone){
 	return nom_fichier_;
 }
 vector<double> Serveur::run(vector<double> param){
-	nb_tic_= nb_tic_+1;
+	nb_tic_++;
 	(data_.at(zone_courante_)).push_back(param);
-	zone_courante_=zone_courante_ +1;
+	zone_courante_++;
 	if (zone_courante_==nb_zone_){
 		zone_courante_=0;
 	}
