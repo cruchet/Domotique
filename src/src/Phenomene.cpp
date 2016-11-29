@@ -5,7 +5,7 @@
  *      Author: jordanmetz
  */
 
-#include "../src/Phenomene.h"
+#include "Phenomene.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>

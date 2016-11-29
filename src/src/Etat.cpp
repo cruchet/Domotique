@@ -5,11 +5,11 @@
  *      Author: Vassili
  */
 
-#include "../src/Etat.h"
+#include "Etat.h"
 
 #include <vector>
 #include <iostream>
-#include "../src/Processus.h"
+#include "Processus.h"
 
 namespace Domotique {
 

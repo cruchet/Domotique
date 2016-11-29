@@ -7,7 +7,7 @@
 
 #ifndef PHENOMENE_H_
 #define PHENOMENE_H_
-#include "../src/Processus.h"
+#include "Processus.h"
 
 namespace Domotique {
 

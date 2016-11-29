@@ -12,14 +12,14 @@
 #include <iostream>
 #include <ctime>
 
-#include "../src/Serveur.h"
-#include "../src/Sim.h"
-#include "../src/Processus.h"
-#include "../src/Control.h"
-#include "../src/Etat.h"
-#include "../src/Phenomene.h"
-#include "../src/tinyxml_epfl/tinyxml.h"
-#include "../src/tinyxml_epfl/xml_utils.h"
+#include "Serveur.h"
+#include "Sim.h"
+#include "Processus.h"
+#include "Control.h"
+#include "Etat.h"
+#include "Phenomene.h"
+#include "tinyxml_epfl/tinyxml.h"
+#include "tinyxml_epfl/xml_utils.h"
 
 using namespace Domotique;
 

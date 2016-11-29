@@ -5,13 +5,13 @@
  *      Author: Vassili
  */
 
-#include "../src/Sim.h"
+#include "Sim.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
-#include "../src/Processus.h"
-#include "../src/Serveur.h"
+#include "Processus.h"
+#include "Serveur.h"
 using namespace std;
 
 namespace Domotique {

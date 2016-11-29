@@ -10,7 +10,7 @@
 #include <vector>
 #include <string>
 
-#include "../src/Processus.h"
+#include "Processus.h"
 
 namespace Domotique {
 using namespace std;

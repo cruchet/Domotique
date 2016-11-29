@@ -10,8 +10,8 @@
 
 #include <vector>
 
-#include "../src/Processus.h"
-#include "../src/Serveur.h"
+#include "Processus.h"
+#include "Serveur.h"
 
 using namespace std;
 

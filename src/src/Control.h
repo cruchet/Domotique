@@ -7,9 +7,9 @@
 
 #ifndef CONTROL_H_
 #define CONTROL_H_
-#include "../src/Etat.h"
-#include "../src/Processus.h"
-#include "../src/Serveur.h"
+#include "Etat.h"
+#include "Processus.h"
+#include "Serveur.h"
 
 namespace Domotique {
 

@@ -5,10 +5,10 @@
  *      Author: Vassili
  */
 
-#include "../src/Control.h"
+#include "Control.h"
 
-#include "../src/Etat.h"
-#include "../src/Processus.h"
+#include "Etat.h"
+#include "Processus.h"
 
 #include <iostream>
 
