@@ -80,39 +80,6 @@ void lecture_xml(string nom_fichier,vector<vector<Processus*> >* paysage,
 					Phenomene* phen = new Phenomene(nom_phen, mode_phen, phen_param);
 					zone.push_back(phen);
 				}
-				/*----------------------POUR RENDU 2:
-						// EXTRACTION DES PARAMETRES DU PHENOMENE SELON SON TYPE ---------
-						if (strcmp(child3->Attribute("type"),"sinus")==0){ // Detection d'un phenomene sinusoidal
-						TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
-						// EXTRACTION seule serie de parametre pour le sinu: NIVEAU 4
-						cout << "offset phenomene : " << child4->Attribute( "offset") <<endl;
-						// EXTRACTION parametre offset du phenomene:NIVEAU 5
-						cout << "amplitude du phenomene : " << child4->Attribute( "ampl") <<endl;
-						// EXTRACTION parametre ampl du phenomene: NIVEAU 5
-						cout << "periode du phenomene : " << child4->Attribute( "periode") <<endl;
-						// EXTRACTION parametre periode du phenomene: NIVEAU 5
-						cout << "etendue maximale du phenomene : " << child4->Attribute( "em") <<endl;
-						// EXTRACTION parametre em du phenomene: NIVEAU 5
-						cout << "zero decale du phenomene : " << child4->Attribute( "zerodecale") <<endl;
-						// EXTRACTION parametre zerodecale du phenomene: NIVEAU 5
-						}
-						else if (strcmp(child3->Attribute("type"),"trapeze")==0){ // Detection d'un phenomene trapezoïdal
-							for(TiXmlElement * child4 = child3->FirstChild("parametres")->ToElement(); child4; child4=child4->NextSiblingElement())
-							{ 	//BOUCLE pour extraire les series de "parametres" du phenomene.
-								//Il y en a plusieurs pour le trapeze: NIVEAU 4
-								cout << "tranche du phenomene : " << child4->Attribute( "tranche") <<endl;
-								// EXTRACTION parametre tranche du phenomene: NIVEAU 5
-								cout << "debut de la tranche en mn : " << child4->Attribute( "debut") <<endl;
-								// EXTRACTION parametre debut du phenomene:NIVEAU 5
-								cout << "fin de la tranche en minutes : " << child4->Attribute( "fin") <<endl;
-								// EXTRACTION parametre fin du phenomene: NIVEAU 5
-								cout << "pente de la tranche : " << child4->Attribute( "pente") <<endl;
-								// EXTRACTION parametre pente du phenomene:NIVEAU 5
-								cout << "offset de la tranche : " << child4->Attribute( "offset") <<endl;
-								// EXTRACTION parametre ooffset du phenomene: NIVEAU 5
-							}
-						}--------------FIN POUR RENDU 2 ---------------------------*/
-
 
 				// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
 				TiXmlElement* child5 = child2->FirstChild("control")->ToElement();
