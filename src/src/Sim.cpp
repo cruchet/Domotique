@@ -6,12 +6,11 @@
  */
 
 #include "Sim.h"
+
 #include <iostream>
 #include <vector>
 #include <string>
 
-#include "Processus.h"
-#include "Serveur.h"
 using namespace std;
 
 namespace Domotique {

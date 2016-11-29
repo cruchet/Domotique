@@ -8,8 +8,6 @@
 #ifndef SIM_H_
 #define SIM_H_
 
-#include <vector>
-
 #include "Processus.h"
 #include "Serveur.h"
 

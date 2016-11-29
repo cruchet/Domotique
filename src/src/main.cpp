@@ -4,14 +4,6 @@
  *  Created on: 21 nov. 2016
  *      Author: Vassili & Jordan
  */
-
-#include <vector>
-#include <list>
-#include <string>
-#include <stdio.h>
-#include <iostream>
-#include <ctime>
-
 #include "Serveur.h"
 #include "Sim.h"
 #include "Processus.h"
@@ -20,6 +12,13 @@
 #include "Phenomene.h"
 #include "tinyxml_epfl/tinyxml.h"
 #include "tinyxml_epfl/xml_utils.h"
+
+#include <vector>
+#include <list>
+#include <string>
+#include <stdio.h>
+#include <iostream>
+#include <ctime>
 
 using namespace Domotique;
 

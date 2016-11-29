@@ -7,8 +7,6 @@
 
 #ifndef SERVEUR_H_
 #define SERVEUR_H_
-#include <vector>
-#include <string>
 
 #include "Processus.h"
 

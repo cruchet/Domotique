@@ -7,9 +7,6 @@
 
 #include "Control.h"
 
-#include "Etat.h"
-#include "Processus.h"
-
 #include <iostream>
 
 using namespace std;
