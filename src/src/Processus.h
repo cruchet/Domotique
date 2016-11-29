@@ -22,7 +22,7 @@ public:
 	vector<double> get_setting(void){return setting_;};
 	void set_setting(vector<double> setting){setting_=setting;};
 
-	enum param_id {VALPHEN, VALCTRL, ETAT_COURANT};
+	enum Param_id {VALPHEN, VALCTRL, ETAT_COURANT};
 private:
 	string nom_;
 	string type_;

@@ -22,7 +22,7 @@ public:
 	Sim(vector< vector<Processus*> > process_, int nb_zone, unsigned int max_tic);
 	virtual ~Sim();
 	string run(Serveur* serveur,vector<string> nom_zone); //gere la simulation et retourne le nom du fichier de sortie
-	enum sim_id {PHEN, CTRL, ETAT};
+	enum Sim_id {PHEN, CTRL, ETAT};
 private:
 	vector< vector<Processus*> > process_;
 	int nb_zone_;
