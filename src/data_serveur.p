@@ -1,5 +1,5 @@
 # Script Gnuplot pout creer les graph a partir du fichier "data_serveur.txt" genere par Domotique.
-# Ce fichier s'appelle data_serveur.p
+# Ce fichier s appelle data_serveur.p
 
 set autoscale
 unset log
