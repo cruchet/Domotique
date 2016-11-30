@@ -2,7 +2,7 @@
 
 <!--  Description du paysage de simulation -->
 <paysage >
-	<zone nom="zone" ID="0">
+	<zone nom="zone 1" ID="0">
 		<phenomene nom="phen1" mode="aleatoire" >
 			<parametres valmin="-10" valmax="10"/>
 		</phenomene>
@@ -11,7 +11,7 @@
       </control>     
 		<etat nom="etat_zone1" etat_initial="0" Iphen="1" Ictrl="1" />
 	</zone>
-	<zone nom="zone" ID="1">
+	<zone nom="zone 2" ID="1">
       <phenomene nom="phen2" mode="aleatoire" >
          <parametres valmin="-5" valmax="5"/>
       </phenomene>

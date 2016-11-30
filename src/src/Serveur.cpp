@@ -39,15 +39,9 @@ string Serveur::ecriture(vector<string> nom_zone){
 	f_dest << "# Ordre: VALPHEN\tVALCTRL\tETAT COURANT" << endl;
 	cout << nb_zone_ << endl;
 	for (int zone=0; zone<nb_zone_; zone++)
-	{	cout << zone << endl;
+	{
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
-		//vector<vector< double> > pourchaquetic= data_.at(zone);
 		for (unsigned int tic=0; tic < nb_tic_; tic++){
-			//vector<double> threedata = pourchaquetic.at(tic);
-			/*f_dest << tic << "\t"
-					<<threedata.at(VALPHEN) << "\t"
-					<< threedata.at(VALCTRL) << "\t"
-					<< threedata.at(ETAT_COURANT) << endl;*/
 			f_dest << tic << "\t"
 					<<data_.at(zone).at(tic).at(VALPHEN) << "\t"
 					<< data_.at(zone).at(tic).at(VALCTRL) << "\t"
@@ -60,11 +54,11 @@ string Serveur::ecriture(vector<string> nom_zone){
 	return nom_fichier_;
 }
 vector<double> Serveur::run(vector<double> param){
-	data_.at(zone_courante_).at(nb_tic_)=param;;
-	nb_tic_++;
+	(data_.at(zone_courante_)).push_back(param);
 	zone_courante_++;
 	if (zone_courante_==nb_zone_){
 		zone_courante_=0;
+		nb_tic_++;
 	}
 	return param;
 }
