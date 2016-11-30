@@ -16,16 +16,18 @@ namespace Domotique {
 using namespace std;
 
 Serveur::Serveur(string nom, vector<double> setting):
-		Processus(nom, "serveur", setting), nom_fichier_("data_serveur.txt"),
-		data_(setting.at(0)), nb_zone_(setting.at(0)), zone_courante_(0), nb_tic_(0)
-		{}
+		Processus(nom, "serveur", setting), nom_fichier_("data_serveur.dat"),
+		nb_zone_(setting.at(0)), zone_courante_(0), nb_tic_(0)
+		{vector< vector <vector <double> > >data(nb_zone_, vector<vector<double> > (nb_tic_, vector<double>(3)));
+		data_ =data;}
+
 
 Serveur::~Serveur() {}
 
 string Serveur::ecriture(vector<string> nom_zone){
 	string dest_name(nom_fichier_);
 
-	cout << "Enregistrement dans le fichier: " << nom_fichier_ << endl;
+	cout << endl <<"#Enregistrement dans le fichier: " << nom_fichier_ << endl << endl;
 	// ouverture du flot de sortie
 	ofstream f_dest(dest_name.c_str(), ios::out); // ouverture du fichier destination
 	// verification que le fichier a pu etre ouvert (en mode ecriture)
@@ -38,24 +40,24 @@ string Serveur::ecriture(vector<string> nom_zone){
 	for (int zone=0; zone<nb_zone_; zone++)
 	{
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
-		vector<vector< double> > pourchaquetic= data_.at(zone);
 		for (unsigned int tic=0; tic < nb_tic_; tic++){
-			vector<double> threedata = pourchaquetic.at(tic);
 			f_dest << tic << "\t"
-					<<threedata.at(VALPHEN) << "\t"
-					<< threedata.at(VALCTRL) << "\t"
-					<< threedata.at(ETAT_COURANT) << endl;
+					<<data_.at(zone).at(tic).at(VALPHEN) << "\t"
+					<< data_.at(zone).at(tic).at(VALCTRL) << "\t"
+					<< data_.at(zone).at(tic).at(ETAT_COURANT) << endl;
+
+
 		}
 	}
 	f_dest.close();
 	return nom_fichier_;
 }
 vector<double> Serveur::run(vector<double> param){
-	nb_tic_++;
 	(data_.at(zone_courante_)).push_back(param);
 	zone_courante_++;
 	if (zone_courante_==nb_zone_){
 		zone_courante_=0;
+		nb_tic_++;
 	}
 	return param;
 }

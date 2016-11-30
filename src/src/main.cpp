@@ -39,7 +39,7 @@ int main(void) {
 	vector<double> setting;
 	setting.push_back(paysage.size()); //nb_zone
 	Serveur * serveur = new Serveur("Serveur", setting);
-	string out_file = sim->run(serveur, nom_zone);
+	string out_file = sim->run(serveur,etat_initial, nom_zone);
 
 	return 0;
 }
@@ -50,23 +50,22 @@ void lecture_xml(string nom_fichier,vector<vector<Processus*> >* paysage,
 	TiXmlDocument doc_=nom_fichier;
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
-		printf( "Lecture impossible du fichier 'paysage_.xml'. "
+		printf( "#Lecture impossible du fichier 'paysage_.xml'. "
 				"Error='%s' \n", doc_.ErrorDesc() );
 		exit( 1 );
 	}
 	else {
-		printf( "Lecture correcte du fichier 'paysage_.xml'.\n");
+		printf( "#Lecture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 	TiXmlElement* child1 = doc_.FirstChildElement();
 
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
-	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage_
+	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
 
 		if (strcmp(child2->Value(),"zone")==0){
 			vector<Processus*> zone(0);
 			nom_zone->push_back(child2->Attribute( "nom"));
-			//int id_zone = get_attr_int(child2,"ID", true, 0);
 
 			// EXTRACTION DU PHENOMENE: NIVEAU 2
 			TiXmlElement* child3 = child2->FirstChild("phenomene")->ToElement () ;
@@ -96,8 +95,8 @@ void lecture_xml(string nom_fichier,vector<vector<Processus*> >* paysage,
 			// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
 			TiXmlElement* child6 = child2->FirstChild("etat")->ToElement();
 			string nom_etat = child6->Attribute( "nom");
-			etat_initial->push_back (get_attr_dbl(child6,"etat_initial"));
 			vector<double> param_etat(2);
+			etat_initial->push_back (get_attr_dbl(child6,"etat_initial"));
 			param_etat.at(0)= get_attr_dbl(child6,"Iphen", true, 1);
 			param_etat.at(1)= get_attr_dbl(child6,"Ictrl", true, 1);
 			Etat* etat = new Etat(nom_etat, param_etat);

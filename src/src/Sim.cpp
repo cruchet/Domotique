@@ -22,31 +22,33 @@ Sim::~Sim() {
 	// TODO Auto-generated destructor stub
 }
 
-string Sim::run(Serveur* serveur, vector<string> nom_zone) {
-	cout << "Lancement de la simulation:" << endl;
+string Sim::run(Serveur* serveur,vector<double> etat_initial, vector<string> nom_zone) {
+	cout << "#Lancement de la simulation:" << endl<<endl;
 	vector<vector<double> >param(nb_zone_ , vector<double> (3));
-
 	for(tic_=0; tic_<=ntic_;tic_++) {
 		cout << "t = " << tic_ << ":" << endl;
 		// execution des processus:
 		for (int zone=0; zone < nb_zone_; zone++)
 		{
+			if(tic_==0){
+				param.at(zone).at(ETAT) = etat_initial.at(zone);
+			}
 			for(unsigned int i=0;i<process_.at(zone).size(); i++){
 				param.at(zone) = (process_.at(zone).at(i))->run(param.at(zone));
 				if (i==CTRL){
 					param.at(zone)=serveur->run(param.at(zone));
 				}
 			}
-			cout << "Parametres de la zone: " << nom_zone.at(zone) << ":" << endl;
+			cout << "\tParametres de la zone: " << nom_zone.at(zone) << ":" << endl;
 			for(unsigned int i=0; i<(param.at(zone)).size(); i++) {
 
 				switch(i) {
 				case PHEN :
-					cout << "\tvalphen:\t" << param.at(zone).at(i) << endl; break;
+					cout << "\t\tvalphen:\t" << param.at(zone).at(i) << endl; break;
 				case CTRL :
-					cout << "\tvalctrl:\t" << param.at(zone).at(i) << endl; break;
+					cout << "\t\tvalctrl:\t" << param.at(zone).at(i) << endl; break;
 				case ETAT :
-					cout << "\tetat courant\t: " << param.at(zone).at(i) << endl; break;
+					cout << "\t\tetat courant:\t" << param.at(zone).at(i) << endl; break;
 				}
 			}
 		}
