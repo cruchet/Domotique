@@ -24,7 +24,7 @@ Sim::~Sim() {
 
 string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 	cout << "Lancement de la simulation:" << endl;
-	vector<double> param (3);
+	vector<vector<double> >param(nb_zone_ , vector<double> (3));
 
 	for(tic_=0; tic_<=ntic_;tic_++) {
 		cout << "t = " << tic_ << ":" << endl;
@@ -32,21 +32,21 @@ string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 		for (int zone=0; zone < nb_zone_; zone++)
 		{
 			for(unsigned int i=0;i<process_.at(zone).size(); i++){
-				param = (process_.at(zone).at(i))->run(param);
+				param.at(zone) = (process_.at(zone).at(i))->run(param.at(zone));
 				if (i==CTRL){
-					param=serveur->run(param);
+					param.at(zone)=serveur->run(param.at(zone));
 				}
 			}
 			cout << "Parametres de la zone: " << nom_zone.at(zone) << ":" << endl;
-			for(unsigned int i=0; i<param.size(); i++) {
+			for(unsigned int i=0; i<(param.at(zone)).size(); i++) {
 
 				switch(i) {
 				case PHEN :
-					cout << "\tvalphen:\t" << param.at(i) << endl; break;
+					cout << "\tvalphen:\t" << param.at(zone).at(i) << endl; break;
 				case CTRL :
-					cout << "\tvalctrl:\t" << param.at(i) << endl; break;
+					cout << "\tvalctrl:\t" << param.at(zone).at(i) << endl; break;
 				case ETAT :
-					cout << "\tetat courant\t: " << param.at(i) << endl; break;
+					cout << "\tetat courant\t: " << param.at(zone).at(i) << endl; break;
 				}
 			}
 		}
