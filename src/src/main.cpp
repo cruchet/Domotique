@@ -95,10 +95,10 @@ void lecture_xml(string nom_fichier,vector<vector<Processus*> >* paysage,
 			// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
 			TiXmlElement* child6 = child2->FirstChild("etat")->ToElement();
 			string nom_etat = child6->Attribute( "nom");
-			vector<double> param_etat(3);
+			vector<double> param_etat(2);
+			etat_initial->push_back (get_attr_dbl(child6,"etat_initial"));
 			param_etat.at(0)= get_attr_dbl(child6,"Iphen", true, 1);
 			param_etat.at(1)= get_attr_dbl(child6,"Ictrl", true, 1);
-			param_etat.at(3)= get_attr_dbl(child6,"etat_initial", true, 1);
 			Etat* etat = new Etat(nom_etat, param_etat);
 			zone.push_back(etat);
 
