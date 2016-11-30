@@ -25,6 +25,7 @@ Sim::~Sim() {
 string Sim::run(Serveur* serveur, vector<string> nom_zone) {
 	cout << "#Lancement de la simulation:" << endl<<endl;
 	vector<vector<double> >param(nb_zone_ , vector<double> (3));
+	//param.at(ETAT-COURANT) = etat. get_setting.at(3)
 
 	for(tic_=0; tic_<=ntic_;tic_++) {
 		cout << "t = " << tic_ << ":" << endl;
