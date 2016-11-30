@@ -12,4 +12,4 @@
 		<etat nom="etat_zone1" etat_initial="7" Iphen="1" Ictrl="1" />
 	</zone>
 </paysage>
-<simulation nb_tic="2"/>
+<simulation nb_tic="10"/>
