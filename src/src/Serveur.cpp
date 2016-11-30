@@ -37,8 +37,9 @@ string Serveur::ecriture(vector<string> nom_zone){
 
 	// Ecriture
 	f_dest << "# Ordre: VALPHEN\tVALCTRL\tETAT COURANT" << endl;
+	cout << nb_zone_ << endl;
 	for (int zone=0; zone<nb_zone_; zone++)
-	{
+	{	cout << zone << endl;
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
 		vector<vector< double> > pourchaquetic= data_.at(zone);
 		for (unsigned int tic=0; tic < nb_tic_; tic++){

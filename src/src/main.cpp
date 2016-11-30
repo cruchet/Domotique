@@ -37,6 +37,7 @@ int main(void) {
 	Sim * sim = new Sim(paysage, paysage.size(), nb_tic);
 
 	vector<double> setting;
+	cout << paysage.size() << endl;
 	setting.push_back(paysage.size()); //nb_zone
 	Serveur * serveur = new Serveur("Serveur", setting);
 	string out_file = sim->run(serveur, nom_zone);
