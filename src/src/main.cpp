@@ -39,7 +39,7 @@ int main(void) {
 	vector<double> setting;
 	setting.push_back(paysage.size()); //nb_zone
 	Serveur * serveur = new Serveur("Serveur", setting);
-	string out_file = sim->run(serveur, nom_zone);
+	string out_file = sim->run(serveur,etat_initial, nom_zone);
 
 	return 0;
 }

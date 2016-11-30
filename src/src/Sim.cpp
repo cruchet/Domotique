@@ -22,15 +22,17 @@ Sim::~Sim() {
 	// TODO Auto-generated destructor stub
 }
 
-string Sim::run(Serveur* serveur, vector<string> nom_zone) {
+string Sim::run(Serveur* serveur,vector<double> etat_initial, vector<string> nom_zone) {
 	cout << "#Lancement de la simulation:" << endl<<endl;
 	vector<vector<double> >param(nb_zone_ , vector<double> (3));
-
 	for(tic_=0; tic_<=ntic_;tic_++) {
 		cout << "t = " << tic_ << ":" << endl;
 		// execution des processus:
 		for (int zone=0; zone < nb_zone_; zone++)
 		{
+			if(tic_==0){
+				param.at(zone).at(ETAT) = etat_initial.at(zone);
+			}
 			for(unsigned int i=0;i<process_.at(zone).size(); i++){
 				param.at(zone) = (process_.at(zone).at(i))->run(param.at(zone));
 				if (i==CTRL){
