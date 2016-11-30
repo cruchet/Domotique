@@ -37,7 +37,6 @@ int main(void) {
 	Sim * sim = new Sim(paysage, paysage.size(), nb_tic);
 
 	vector<double> setting;
-	cout << paysage.size() << endl;
 	setting.push_back(paysage.size()); //nb_zone
 	Serveur * serveur = new Serveur("Serveur", setting);
 	string out_file = sim->run(serveur, nom_zone);
@@ -51,12 +50,12 @@ void lecture_xml(string nom_fichier,vector<vector<Processus*> >* paysage,
 	TiXmlDocument doc_=nom_fichier;
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
-		printf( "Lecture impossible du fichier 'paysage_.xml'. "
+		printf( "#Lecture impossible du fichier 'paysage_.xml'. "
 				"Error='%s' \n", doc_.ErrorDesc() );
 		exit( 1 );
 	}
 	else {
-		printf( "Lecture correcte du fichier 'paysage_.xml'.\n");
+		printf( "#Lecture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 	TiXmlElement* child1 = doc_.FirstChildElement();
 

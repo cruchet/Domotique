@@ -27,7 +27,7 @@ Serveur::~Serveur() {}
 string Serveur::ecriture(vector<string> nom_zone){
 	string dest_name(nom_fichier_);
 
-	cout << "Enregistrement dans le fichier: " << nom_fichier_ << endl;
+	cout << endl <<"#Enregistrement dans le fichier: " << nom_fichier_ << endl << endl;
 	// ouverture du flot de sortie
 	ofstream f_dest(dest_name.c_str(), ios::out); // ouverture du fichier destination
 	// verification que le fichier a pu etre ouvert (en mode ecriture)
@@ -37,7 +37,6 @@ string Serveur::ecriture(vector<string> nom_zone){
 
 	// Ecriture
 	f_dest << "# Ordre: VALPHEN\tVALCTRL\tETAT COURANT" << endl;
-	cout << nb_zone_ << endl;
 	for (int zone=0; zone<nb_zone_; zone++)
 	{
 		f_dest << "# ZONE: " << nom_zone.at(zone) << endl;
