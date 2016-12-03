@@ -1,8 +1,8 @@
 <map id="src/Serveur.h" name="src/Serveur.h">
-<area shape="rect" id="node2" href="$Control_8h.html" title="src/Control.h" alt="" coords="44,80,141,107"/>
+<area shape="rect" id="node2" href="$Control_8h.html" title="src/Control.h" alt="" coords="53,80,151,107"/>
 <area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="140,155,237,181"/>
-<area shape="rect" id="node5" href="$Sim_8h.html" title="src/Sim.h" alt="" coords="217,80,296,107"/>
-<area shape="rect" id="node6" href="$Sim_8cpp.html" title="src/Sim.cpp" alt="" coords="271,155,363,181"/>
-<area shape="rect" id="node7" href="$Serveur_8cpp.html" title="src/Serveur.cpp" alt="" coords="371,80,486,107"/>
+<area shape="rect" id="node5" href="$Sim_8h.html" title="src/Sim.h" alt="" coords="227,80,305,107"/>
+<area shape="rect" id="node7" href="$Serveur_8cpp.html" title="src/Serveur.cpp" alt="" coords="330,80,445,107"/>
 <area shape="rect" id="node3" href="$Control_8cpp.html" title="src/Control.cpp" alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node6" href="$Sim_8cpp.html" title="src/Sim.cpp" alt="" coords="261,155,353,181"/>
 </map>

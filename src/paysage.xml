@@ -11,5 +11,14 @@
       </control>     
 		<etat nom="etat_zone1" etat_initial="7" Iphen="1" Ictrl="1" />
 	</zone>
+		<zone nom="zone 2" ID="0">
+		<phenomene nom="phen1" mode="aleatoire" >
+			<parametres valmin="-10" valmax="10"/>
+		</phenomene>
+		<control nom="ctrl_phen1" mode="saturation" >
+         <parametres valsat="5"/>
+      </control>     
+		<etat nom="etat_zone1" etat_initial="7" Iphen="1" Ictrl="1" />
+	</zone>
 </paysage>
 <simulation nb_tic="10"/>

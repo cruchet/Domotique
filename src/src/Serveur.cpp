@@ -48,6 +48,7 @@ string Serveur::ecriture(vector<string> nom_zone){
 
 
 		}
+		f_dest << endl;
 	}
 	f_dest.close();
 	return nom_fichier_;
