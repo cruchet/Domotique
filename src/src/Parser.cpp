@@ -42,7 +42,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 			for(TiXmlElement* param = child3->FirstChild()->ToElement(); param; param=param->NextSiblingElement()) {
 				double val;
-			//TODO
+				//TODO
 				phen_param.push_back(val);
 			}
 
