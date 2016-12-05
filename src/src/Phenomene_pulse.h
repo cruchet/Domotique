@@ -9,7 +9,6 @@
 #define SRC_PHENOMENE_PULSE_H_
 
 #include "Phenomene.h"
-#include <vector>
 
 namespace Domotique {
 
@@ -19,10 +18,16 @@ public:
 	virtual ~Phenomene_pulse();
 	double calcul_valphen();
 	void run(void);
-	void init(Etat* p_etat, vector<double> param);
-	enum pulse_param{V_LOW,V_HIGH,T_DEL,T_RISE,PWIDTH,T_FALL,PERIOD};
+	void init(Etat* p_etat, double v_low, double v_high, long int t_del,
+				long int t_rise, long int pwidth, long int t_fall, long int period);
 private:
-	vector<double> param_;
+	double v_low_;
+	double v_high_;
+	long int t_del_;
+	long int t_rise_;
+	long int pwidth_;
+	long int t_fall_;
+	long int period_;
 };
 
 } /* namespace Domotique */

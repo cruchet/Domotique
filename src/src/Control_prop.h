@@ -12,7 +12,7 @@
 
 namespace Domotique {
 
-class Control_prop {
+class Control_prop: public Control {
 public:
 	Control_prop(string nom);
 	virtual ~Control_prop();

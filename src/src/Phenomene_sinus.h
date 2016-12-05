@@ -10,6 +10,7 @@
 
 #include "Phenomene.h"
 #include <vector>
+#include <limits>
 
 namespace Domotique {
 
@@ -18,10 +19,17 @@ public:
 	Phenomene_sinus(string nom);
 	virtual ~Phenomene_sinus();
 	void run(void);
-	void init(Etat* p_etat, vector<double> param);
-	enum pulse_param{OFFS,AMPL,PHASE,PERIOD,SAT_MAX,SAT_MIN};
+	void init(Etat* p_etat, double ampl, long int period,
+			double sat_max= std::numeric_limits<double>::infinity(),
+			double sat_min = -1*numeric_limits<double>:: infinity(),
+			double offs = 0.0, long int phase=0);
 private:
-	vector<double> param_;
+	double ampl_;
+	long int period_;
+	double sat_max_;
+	double sat_min_;
+	double offs_;
+	long int phase_;
 };
 
 } /* namespace Domotique */

@@ -17,16 +17,12 @@ public:
 	Etat(string nom);
 	virtual ~Etat();
 	void run(void);
+	void init(double Iphen, double Ictrl, double etat_init);
 	void put_valphen(double valphen);
 	void put_valctrl(double valctrl);
-	void init(vector<double> param);
-	enum param_etat{IPHEN,ICTRL,VALPHEN_INIT,ETAT_INIT, VALCTRL_INIT};
 private:
 	double Iphen_;
 	double Ictrl_;
-	double valphen_init;
-	double etat_init;
-	double valctrl_init;
 	double valphen_;
 	double etat_;
 	double valctrl_;
