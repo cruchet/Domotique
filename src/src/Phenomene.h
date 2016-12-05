@@ -17,8 +17,8 @@ public:
 	virtual ~Phenomene();
 	double get_valphen(){return 0;}
 	vector<double> run(vector<double> param);
+	virtual double calcul_valphen() = 0;
 private:
-	double calcul_valphen();
 	string modephen_;
 };
 
