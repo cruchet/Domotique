@@ -14,7 +14,7 @@ Serveur::Serveur(string nom, string nom_fichier): Processus(nom), nom_fichier_(n
 	string dest_name(nom_fichier_);
 
 	// ouverture du flot de sortie
-	f_dest_(dest_name.c_str(), ios::out); // ouverture du fichier destination
+	f_dest_=(dest_name.c_str(), ios::out); // ouverture du fichier destination
 	// verification que le fichier a pu etre ouvert (en mode ecriture)
 	if (f_dest_.fail()) {
 		cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en ecriture" << endl;
