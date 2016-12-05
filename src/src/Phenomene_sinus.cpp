@@ -18,14 +18,17 @@ Phenomene_sinus::Phenomene_sinus(string nom): Phenomene(nom), ampl_(0), period_(
 Phenomene_sinus::~Phenomene_sinus() {
 	// TODO Auto-generated destructor stub
 }
-void Phenomene_sinus::init(Etat* p_etat, double ampl, long int period, double sat_max,
-			  double sat_min, double offs = 0.0, long int phase=0)
+void Phenomene_sinus::init(Etat* p_etat, double ampl, long int period,
+		double sat_max,
+			  double sat_min,
+			  double offs, long int phase)
 {
 	cout << "[Phenomene_sinus] Initilisation de "<< nom_ << endl;
 	p_etat_=p_etat;ampl_=ampl;
 	period_=period;
 	sat_max_=sat_max;
-	sat_min_=sat_min;offs_=offs;
+	sat_min_=sat_min;
+	offs_=offs;
 	phase_=phase;
 }
 
