@@ -12,7 +12,7 @@
 
 namespace Domotique {
 
-class Phenomene_pulse: Phenomene {
+class Phenomene_pulse: public Phenomene {
 public:
 	Phenomene_pulse(string nom);
 	virtual ~Phenomene_pulse();

@@ -12,7 +12,7 @@ using namespace Domotique;
 void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 	vector<string> nom_zone;
 	vector<double> setting;
-	Serveur * serveur = new Serveur("Serveur");
+	Serveur * serveur = new Serveur("Serveur", "data_serveur.dat");
 
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
 	TiXmlDocument doc_=nom_fichier;
