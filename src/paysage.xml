@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  Description du paysage de simulation -->
-<paysage >
-	<zone nom="zone 1" ID="0">
-		<phenomene nom="phen1" mode="aleatoire" >
-			<parametres valmin="-10" valmax="10"/>
-		</phenomene>
-		<control nom="ctrl_phen1" mode="saturation" >
-         <parametres valsat="5"/>
-      </control>     
-		<etat nom="etat_zone1" etat_initial="7" Iphen="1" Ictrl="1" />
-	</zone>
-		<zone nom="zone 2" ID="0">
-		<phenomene nom="phen1" mode="aleatoire" >
-			<parametres valmin="-10" valmax="10"/>
-		</phenomene>
-		<control nom="ctrl_phen1" mode="saturation" >
-         <parametres valsat="5"/>
-      </control>     
-		<etat nom="etat_zone1" etat_initial="7" Iphen="1" Ictrl="1" />
-	</zone>
-</paysage>
-<simulation nb_tic="10"/>
+<application >
+	<paysage >
+		<zone nom="Chambre" ID="0">
+			<phenomene nom="temperature_externe" mode="sinus" >
+				<offset>	0 </offset>
+				<amplitude>	4 </amplitude>
+				<phase>		0 </phase>
+				<period>	10 </period>			
+			</phenomene>
+			<control nom="ctrl_temp" mode="on_off" >
+	        	<seuil_max>	21 </seuil_max>
+	        	<seuil_min>	19 </seuil_min>
+	        	<val_min>	5 </val_min>
+	        	<val_max>	40 </val_max>
+	        </control>     
+			<etat nom="etat_chambre" etat_initial="20" Iphen="1" Ictrl="1" />
+		</zone>
+			<zone nom="Aquarium" ID="1">
+			<phenomene nom="pH" mode="pulse" >
+				<val_low>	3 </val_low>
+				<val_high>	12 </val_high>
+				<t_delai>	0 </t_delai>
+				<t_rise>	0 </t_rise>
+				<pwidth>	10 </pwidth>
+				<t_fall>	0 </t_fall>
+				<period>	10 </period>
+			</phenomene>
+			<control nom="ctrl_pH" mode="proportionnel" >
+	         <set_point> 7 </set_point>
+	         <gain> 10 </gain>
+	      </control>     
+			<etat nom="etat_aquarium" etat_initial="7" Iphen="1" Ictrl="1" />
+		</zone>
+	</paysage>
+	<simulation nb_tic="10"/>
+</application>
