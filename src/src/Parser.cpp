@@ -35,47 +35,68 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			nom_zone.push_back(child2->Attribute( "nom"));
 
 			// EXTRACTION DU PHENOMENE: NIVEAU 2
-			vector<double> phen_param(0);
 			TiXmlElement* child3 = child2->FirstChild("phenomene")->ToElement () ;
 			string nom_phen = child3->Attribute( "nom");
 			string mode_phen=  child3->Attribute( "mode");
 
-			for(TiXmlElement* param = child3->FirstChild()->ToElement(); param; param=param->NextSiblingElement()) {
-				double val;
-				//TODO
-				phen_param.push_back(val);
+			if(strcmp(child3->Attribute("mode"),"sinus")==0) {
+				TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
+
+				double offset = 	get_attr_dbl(child4,"offset", true, 0);
+				double ampl = 		get_attr_dbl(child4,"amplitude", true, 1);
+				long int phase = 	get_attr_int(child4,"phase", true, 0);
+				long int period = 	get_attr_int(child4,"periode", true, 1);
+				Phenomene_sinus* phen = new Phenomene_sinus(nom_phen);
+				simulateur->set_process(phen);
+
+			}
+			else if(strcmp(child3->Attribute("mode"),"pulse")==0) {
+				TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
+
+				double v_low = 		get_attr_dbl(child4,"val_low", true, 0);
+				double v_high = 	get_attr_dbl(child4,"val_high", true, 1);
+				long int t_rise =	get_attr_int(child4,"t_rise", true, 0);
+				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
+				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
+				long int period = 	get_attr_int(child4,"periode", true, 1);
+				Phenomene_pulse* phen = new Phenomene_pulse(nom_phen);
+				simulateur->set_process(phen);
+
 			}
 
-			/*if (strcmp(child3->Attribute("mode"),"aleatoire")==0){
-				TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
-				vector<double> phen_param(2);
-				phen_param.at(0) = get_attr_dbl(child4,"valmin", true, 1);
-				phen_param.at(1) =  get_attr_dbl(child4,"valmax", true, 10);
-				Phenomene* phen = new Phenomene(nom_phen);
-				simulateur->set_process(phen);
-			}*/
 
 			// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
 			TiXmlElement* child5 = child2->FirstChild("control")->ToElement();
-			vector<double> param_ctrl(0);
-			string nom_ctrl = child5->Attribute( "nom");
-			string mode_ctrl=  child5->Attribute( "mode");
-			if (strcmp(child5->Attribute("mode"),"saturation")==0){
+			string nom_ctrl = child5->Attribute("nom");
+
+
+			if(strcmp(child3->Attribute("mode"),"on_off")==0) {
 				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
-				param_ctrl.push_back (get_attr_dbl(child7,"valsat", true, 1));
+
+				double seuil_max =	get_attr_dbl(child5,"seuil_max", true, 1);
+				double seuil_min =	get_attr_dbl(child5,"seuil_min", true, 0);
+				double val_max =	get_attr_dbl(child5,"val_max", true, 1);
+				double val_min =	get_attr_dbl(child5,"val_min", true, 0);
+				Control_ON_OFF* ctrl = new Control_ON_OFF(nom_ctrl);
+				simulateur->set_process(ctrl);
 			}
-			Control* ctrl = new Control(nom_ctrl);
-			simulateur->set_process(ctrl);
+			else if(strcmp(child3->Attribute("mode"),"proportionnel")==0) {
+				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
+
+				double set_point =	get_attr_dbl(child5,"set_point", true, 0);
+				double gain =		get_attr_dbl(child5,"seuil_min", true, 1);
+				Control_prop* ctrl = new Control_prop(nom_ctrl);
+				simulateur->set_process(ctrl);
+			}
 
 			// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
 			TiXmlElement* child6 = child2->FirstChild("etat")->ToElement();
 			string nom_etat = child6->Attribute( "nom");
-			//TODO: simulateur->set_etat_initial(get_attr_dbl(child6,"etat_initial"));
 
-			vector<double> param_etat(2);
+			double Iphen = 			get_attr_dbl(child6,"Iphen", true, 1);
+			double Ictrl = 			get_attr_dbl(child6,"Ictrl", true, 1);
+			double etat_initial = 	get_attr_dbl(child6,"etat_initial", true, 0);
 
-			param_etat.at(0)= get_attr_dbl(child6,"Iphen", true, 1);
-			param_etat.at(1)= get_attr_dbl(child6,"Ictrl", true, 1);
 			Etat* etat = new Etat(nom_etat);
 			simulateur->set_process(etat);
 

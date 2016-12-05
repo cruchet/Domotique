@@ -11,9 +11,11 @@
 #include "Serveur.h"
 #include "Sim.h"
 #include "Processus.h"
-#include "Control.h"
+#include "Control_ON_OFF.h"
+#include "Control_prop.h"
 #include "Etat.h"
-#include "Phenomene.h"
+#include "Phenomene_sinus.h"
+#include "Phenomene_pulse.h"
 #include "tinyxml_epfl/xml_utils.h"
 #include "tinyxml_epfl/tinyxml.h"
 

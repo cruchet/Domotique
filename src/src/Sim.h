@@ -19,8 +19,9 @@ class Sim {
 public:
 	Sim(unsigned int max_tic);
 	virtual ~Sim();
-	string run(Serveur* serveur,vector<double> etat_initial, vector<string> nom_zone); //gere la simulation et
-														  //retourne le nom du fichier de sortie
+
+	//gere la simulation et retourne le nom du fichier de sortie
+	string run(vector<string> nom_zone);
 	void set_process (Processus* process){process_.push_back(process);};
 	enum Sim_id {PHEN, CTRL, ETAT};
 private:
