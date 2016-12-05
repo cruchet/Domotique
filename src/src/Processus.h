@@ -18,7 +18,6 @@ public:
 	Processus(string nom);
 	virtual ~Processus();
 	virtual void run(void) = 0;
-	virtual void init(vector<double> param) = 0;
 private:
 	string nom_;
 

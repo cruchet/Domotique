@@ -26,8 +26,6 @@ private:
 	double valphen_;
 	double etat_;
 	double valctrl_;
-	double calcul_etat_eff();
-
 };
 
 } /* namespace Domotique */
