@@ -14,12 +14,24 @@ namespace Domotique {
 
 class Etat: public Processus {
 public:
-	Etat(string nom, vector<double> setting);
+	Etat(string nom);
 	virtual ~Etat();
-	vector<double> run(vector<double> param);
-
+	void run(void);
+	void put_valphen(double valphen);
+	void put_valctrl(double valctrl);
+	void init(vector<double> param);
+	enum param_etat{IPHEN,ICTRL,VALPHEN_INIT,ETAT_INIT, VALCTRL_INIT};
 private:
-	double calcul_etat_eff(vector<double> param);
+	double Iphen_;
+	double Ictrl_;
+	double valphen_init;
+	double etat_init;
+	double valctrl_init;
+	double valphen_;
+	double etat_;
+	double valctrl_;
+	double calcul_etat_eff();
+
 };
 
 } /* namespace Domotique */

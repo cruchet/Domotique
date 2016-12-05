@@ -1,20 +1,21 @@
 /*
- * Phenomene_pulse.cpp
+ * Control_ON_OFF.cpp
  *
  *  Created on: 5 déc. 2016
  *      Author: jordanmetz
  */
 
-#include "Phenomene_pulse.h"
+#include "Control_ON_OFF.h"
 
 namespace Domotique {
 
-Phenomene_pulse::Phenomene_pulse(string nom): Phenomene(nom) {
+Control_ON_OFF::Control_ON_OFF(string nom): Control(nom), seuil_min_(0),
+		seuil_max_(0), val_min_(0), val_max_(0){
 	// TODO Auto-generated constructor stub
 
 }
 
-Phenomene_pulse::~Phenomene_pulse() {
+Control_ON_OFF::~Control_ON_OFF() {
 	// TODO Auto-generated destructor stub
 }
 

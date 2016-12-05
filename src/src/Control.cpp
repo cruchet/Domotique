@@ -13,13 +13,14 @@ using namespace std;
 
 namespace Domotique {
 
-Control::Control(string nom, string mode, vector<double> setting_ctrl):
-		Processus(nom, "ctrl", setting_ctrl), mode_(mode) {}
+Control::Control(string nom):
+		Processus(nom), p_serveur_(NULL), p_etat_(NULL) {}
 
-vector<double> Control::run(vector<double> param) {
+/*vector<double> Control::run(vector<double> param) {
 	param.at(VALCTRL) = calcul_valctrl(param.at(ETAT_COURANT));
 	return param;
-}
+}*/
+
 double Control::calcul_valctrl(double etat_courant) {
 	vector<double> param_ctrl = this->get_setting();
 	double valctrl;

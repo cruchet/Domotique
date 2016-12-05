@@ -9,7 +9,7 @@
 
 namespace Domotique {
 
-Phenomene_sinus::Phenomene_sinus() {
+Phenomene_sinus::Phenomene_sinus(string nom): Phenomene(nom) {
 	// TODO Auto-generated constructor stub
 
 }

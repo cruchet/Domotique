@@ -9,15 +9,17 @@
 #define SERVEUR_H_
 
 #include "Processus.h"
+#include <vector>
 
 namespace Domotique {
 using namespace std;
 
 class Serveur: public Processus {
 public:
-	Serveur(string nom, vector<double> setting);
+	Serveur(string nom);
 	virtual ~Serveur();
-	vector<double> run(vector<double> param);
+	void run(void);
+	void init(vector<double> param);
 	string ecriture(vector<string> nom_zone);
 private:
 	const string nom_fichier_;

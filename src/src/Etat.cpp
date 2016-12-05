@@ -12,8 +12,7 @@
 
 namespace Domotique {
 
-Etat::Etat(string nom, vector<double> setting):
-	Processus(nom, "etat", setting) {}
+Etat::Etat(string nom): Processus(nom) {}
 
 double Etat::calcul_etat_eff(vector<double> param) {
 	double Iphen = (this->get_setting()).at(0);
@@ -24,7 +23,7 @@ double Etat::calcul_etat_eff(vector<double> param) {
 	return etat_eff;
 }
 
-vector<double> Etat::run(vector<double> param) {
+void Etat::run(void) {
 	param.at(ETAT_COURANT)= calcul_etat_eff(param);
 	return param;
 }

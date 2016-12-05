@@ -53,7 +53,7 @@ string Serveur::ecriture(vector<string> nom_zone){
 	f_dest.close();
 	return nom_fichier_;
 }
-vector<double> Serveur::run(vector<double> param){
+void Serveur::run(void){
 	(data_.at(zone_courante_)).push_back(param);
 	zone_courante_++;
 	if (zone_courante_==nb_zone_){

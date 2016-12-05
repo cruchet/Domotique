@@ -1,20 +1,20 @@
 /*
- * Phenomene_pulse.cpp
+ * Control_prop.cpp
  *
  *  Created on: 5 déc. 2016
  *      Author: jordanmetz
  */
 
-#include "Phenomene_pulse.h"
+#include "Control_prop.h"
 
 namespace Domotique {
 
-Phenomene_pulse::Phenomene_pulse(string nom): Phenomene(nom) {
+Control_prop::Control_prop(string nom): Control(nom), val_cons_(0), gain_(0) {
 	// TODO Auto-generated constructor stub
 
 }
 
-Phenomene_pulse::~Phenomene_pulse() {
+Control_prop::~Control_prop() {
 	// TODO Auto-generated destructor stub
 }
 
