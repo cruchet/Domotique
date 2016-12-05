@@ -21,9 +21,9 @@ public:
 	virtual ~Sim();
 
 	//gere la simulation et retourne le nom du fichier de sortie
-	string run(vector<string> nom_zone);
+	void run(vector<string> nom_zone);
 	void set_process (Processus* process){process_.push_back(process);};
-	enum Sim_id {PHEN, CTRL, ETAT};
+
 private:
 	vector<Processus*> process_;
 	int nb_zone_;
