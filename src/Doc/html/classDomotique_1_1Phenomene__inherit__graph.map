@@ -1,3 +1,5 @@
 <map id="Domotique::Phenomene" name="Domotique::Phenomene">
-<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="Domotique::Processus" alt="" coords="9,5,164,32"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Phenomene__pulse.html" title="{Domotique::Phenomene\l_pulse\n||+ Phenomene_pulse()\l+ ~Phenomene_pulse()\l+ calcul_valphen()\l}" alt="" coords="5,417,168,539"/>
+<area shape="rect" id="node4" href="$classDomotique_1_1Phenomene__sinus.html" title="{Domotique::Phenomene\l_sinus\n||+ Phenomene_sinus()\l+ ~Phenomene_sinus()\l+ calcul_valphen()\l}" alt="" coords="192,417,355,539"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="103,5,257,185"/>
 </map>

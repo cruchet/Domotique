@@ -1,3 +1,3 @@
 <map id="Domotique::Phenomene" name="Domotique::Phenomene">
-<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="Domotique::Processus" alt="" coords="9,5,164,32"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="9,5,164,185"/>
 </map>
