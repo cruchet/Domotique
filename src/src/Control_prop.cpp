@@ -25,6 +25,8 @@ void Control_prop::run(void){
 	//Enregistrement de valphen, etat et valctrl dans le serveur
 	double valphen= p_etat_->get_phen();
 	p_serveur_->save(valphen,etat,valctrl);
+	//Donne à etat valctrl
+	p_etat_->put_valctrl(valctrl);
 }
 void Control_prop::init(Serveur* p_serveur, Etat* p_etat, double val_cons, double gain)
 {
