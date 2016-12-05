@@ -21,13 +21,13 @@ using namespace Domotique;
 int main(void) {
 	srand(std::time(NULL));
 	unsigned int nb_tic;
-	string nom_fichier = "paysage.xml"
+	string nom_fichier = "paysage.xml";
 
 	//----- Creation du simulateur et lancement de la simulation ------//
 	Sim * sim = new Sim(nb_tic);
 	lecture_xml(nom_fichier, &nb_tic, sim);
 
-	string out_file = sim->run(serveur,etat_initial, nom_zone);
+	sim->run();
 
 	return 0;
 }

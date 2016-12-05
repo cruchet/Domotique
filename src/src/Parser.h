@@ -25,6 +25,8 @@
 #include <stdio.h>
 #include <iostream>
 
+using namespace Domotique;
+
 void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur);
 
 #endif /* SRC_PARSER_H_ */

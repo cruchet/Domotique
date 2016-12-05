@@ -19,7 +19,7 @@ Sim::Sim(unsigned int max_tic): ntic_(max_tic){}
 
 Sim::~Sim() {}
 
-void Sim::run(vector<string> nom_zone) {
+void Sim::run(void) {
 	cout << "#Lancement de la simulation:" << endl<<endl;
 
 	for(tic_=0; tic_<=ntic_;tic_++) {
