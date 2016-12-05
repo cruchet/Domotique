@@ -18,7 +18,7 @@ public:
 	Processus(string nom);
 	virtual ~Processus();
 	virtual void run(void) = 0;
-private:
+protected:
 	string nom_;
 
 };

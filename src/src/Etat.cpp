@@ -23,8 +23,13 @@ void Etat::run(void) {
 	etat_ = etat_+(valphen_-etat_)*Iphen_+(valctrl_ - etat_) * Ictrl_;
 }
 
-void Etat::init(double Iphen, double Ictrl, double etat_init):
-Iphen_(Iphen), Ictrl_(Ictrl), valphen_(0), etat_(etat_init), valctrl_(0){
+void Etat::init(double Iphen, double Ictrl, double etat_init)
+{
+	Iphen_=Iphen;
+	Ictrl_=Ictrl;
+	valphen_=0;
+	etat_=etat_init;
+	valctrl_=0;
 	cout << "[Etat] Initialisation de "<<nom_<<endl;
 }
 

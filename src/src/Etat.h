@@ -20,6 +20,8 @@ public:
 	void init(double Iphen, double Ictrl, double etat_init);
 	void put_valphen(double valphen);
 	void put_valctrl(double valctrl);
+	double get_etat(void){return etat_;};
+	double get_phen(void){return valphen_;};
 private:
 	double Iphen_;
 	double Ictrl_;

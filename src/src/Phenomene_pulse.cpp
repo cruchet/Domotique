@@ -20,10 +20,17 @@ Phenomene_pulse::~Phenomene_pulse() {}
 
 void Phenomene_pulse::init(Etat* p_etat, double v_low, double v_high, long int t_del,
 							long int t_rise, long int pwidth, long int t_fall,
-							long int period): p_etat_(p_etat), v_low_(0),
-v_high_(0), t_del_(0), t_rise_(0), pwidth_(0), t_fall_(0), period_(0)
+							long int period)
 {
 	cout << "[Phenomene_pulse] Initilisation de "<< nom_ << endl;
+	p_etat_=p_etat;
+	v_low_=v_low;
+	v_high_=v_high;
+	t_del_=t_del;
+	t_rise_=t_rise;
+	pwidth_=pwidth;
+	t_fall_=t_fall;
+	period_=period;
 }
 
 } /* namespace Domotique */

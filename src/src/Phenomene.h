@@ -16,7 +16,7 @@ class Phenomene: public Processus{
 public:
 	Phenomene(string nom);
 	virtual ~Phenomene();
-private:
+protected:
 	Etat* p_etat_;
 };
 

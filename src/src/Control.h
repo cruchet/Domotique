@@ -18,7 +18,7 @@ class Control: public Processus {
 public:
 	Control(string nom);
 	virtual ~Control();
-private:
+protected:
 	Serveur* p_serveur_;
 	Etat* p_etat_;
 
