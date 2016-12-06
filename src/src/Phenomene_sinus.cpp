@@ -7,6 +7,7 @@
 
 #include "Phenomene_sinus.h"
 #include <iostream>
+
 using namespace std;
 namespace Domotique {
 
@@ -24,6 +25,7 @@ void Phenomene_sinus::init(Etat* p_etat, double ampl, long int period,
 			  double offs, long int phase)
 {
 	cout << "[Phenomene_sinus] Initilisation de "<< nom_ << endl;
+	assert(period >0);
 	p_etat_=p_etat;ampl_=ampl;
 	period_=period;
 	sat_max_=sat_max;

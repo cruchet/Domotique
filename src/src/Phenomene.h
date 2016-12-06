@@ -9,6 +9,7 @@
 #define PHENOMENE_H_
 #include "Processus.h"
 #include "Etat.h"
+#include <cassert>
 
 namespace Domotique {
 

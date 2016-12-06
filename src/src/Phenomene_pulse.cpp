@@ -7,6 +7,7 @@
 
 #include "Phenomene_pulse.h"
 #include <iostream>
+
 using namespace std;
 
 namespace Domotique {
@@ -23,6 +24,11 @@ void Phenomene_pulse::init(Etat* p_etat, double v_low, double v_high, long int t
 							long int period)
 {
 	cout << "[Phenomene_pulse] Initilisation de "<< nom_ << endl;
+	assert(t_del >=0);
+	assert(t_rise >=0);
+	assert(pwidth >=0);
+	assert(t_fall >=0);
+	assert(period >0);
 	p_etat_=p_etat;
 	v_low_=v_low;
 	v_high_=v_high;
