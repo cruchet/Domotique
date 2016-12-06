@@ -27,7 +27,6 @@ public:
 
 private:
 	const string nom_fichier_;
-	ofstream f_dest_;
 	int tic_;
 
 };
