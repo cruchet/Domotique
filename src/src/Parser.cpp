@@ -25,11 +25,22 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 	else {
 		printf( "#Lecture correcte du fichier 'paysage_.xml'.\n\n");
 	}
+
+	// Déclaration des pointeurs pour init.
+	// Seront initialises ensuite.
+	Phenomene* phen;
+	Control* ctrl;
+	Etat* etat;
+
 	TiXmlElement* child1 = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
 
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
 	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
+
+		// Vecteurs pour stocker les parametres et les transmettre a init().
+		vector<double> param_dbl(0);
+		vector<long int> param_int(0);
 
 		if (strcmp(child2->Value(),"zone")==0){
 			nom_zone.push_back(child2->Attribute( "nom"));
@@ -46,7 +57,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double ampl = 		get_attr_dbl(child4,"amplitude", true, 1);
 				long int phase = 	get_attr_int(child4,"phase", true, 0);
 				long int period = 	get_attr_int(child4,"periode", true, 1);
-				Phenomene_sinus* phen = new Phenomene_sinus(nom_phen);
+				phen = new Phenomene_sinus(nom_phen);
 				simulateur->set_process(phen);
 
 			}
@@ -59,7 +70,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
 				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
 				long int period = 	get_attr_int(child4,"periode", true, 1);
-				Phenomene_pulse* phen = new Phenomene_pulse(nom_phen);
+				phen = new Phenomene_pulse(nom_phen);
 				simulateur->set_process(phen);
 
 			}
@@ -77,7 +88,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double seuil_min =	get_attr_dbl(child5,"seuil_min", true, 0);
 				double val_max =	get_attr_dbl(child5,"val_max", true, 1);
 				double val_min =	get_attr_dbl(child5,"val_min", true, 0);
-				Control_ON_OFF* ctrl = new Control_ON_OFF(nom_ctrl);
+				ctrl = new Control_ON_OFF(nom_ctrl);
 				simulateur->set_process(ctrl);
 			}
 			else if(strcmp(child3->Attribute("mode"),"proportionnel")==0) {
@@ -85,7 +96,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 				double set_point =	get_attr_dbl(child5,"set_point", true, 0);
 				double gain =		get_attr_dbl(child5,"seuil_min", true, 1);
-				Control_prop* ctrl = new Control_prop(nom_ctrl);
+				ctrl = new Control_prop(nom_ctrl);
 				simulateur->set_process(ctrl);
 			}
 
@@ -97,7 +108,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			double Ictrl = 			get_attr_dbl(child6,"Ictrl", true, 1);
 			double etat_initial = 	get_attr_dbl(child6,"etat_initial", true, 0);
 
-			Etat* etat = new Etat(nom_etat);
+			etat = new Etat(nom_etat);
 			simulateur->set_process(etat);
 
 			simulateur->set_process(serveur);
