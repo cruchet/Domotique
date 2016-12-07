@@ -26,21 +26,17 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 		printf( "#Lecture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 
-	// Déclaration des pointeurs pour init.
-	// Seront initialises ensuite.
-	Phenomene* phen;
-	Control* ctrl;
-	Etat* etat;
-
 	TiXmlElement* child1 = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
 
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
 	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
 
-		// Vecteurs pour stocker les parametres et les transmettre a init().
-		vector<double> param_dbl(0);
-		vector<long int> param_int(0);
+		// Déclaration des pointeurs et valeurs pour init().
+		// Seront initialises ensuite.
+		Phenomene* phen;
+		Control* ctrl;
+		Etat* etat;
 
 		if (strcmp(child2->Value(),"zone")==0){
 			nom_zone.push_back(child2->Attribute( "nom"));

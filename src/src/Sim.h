@@ -26,7 +26,6 @@ public:
 
 private:
 	vector<Processus*> process_;
-	int nb_zone_;
 	unsigned int ntic_;
 	unsigned int tic_;
 };

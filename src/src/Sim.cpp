@@ -15,7 +15,7 @@ using namespace std;
 
 namespace Domotique {
 
-Sim::Sim(unsigned int max_tic): ntic_(max_tic){}
+Sim::Sim(unsigned int max_tic): ntic_(max_tic), tic_(0){}
 
 Sim::~Sim() {}
 
