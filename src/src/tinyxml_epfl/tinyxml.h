@@ -51,7 +51,7 @@ distribution.
 	#include <sstream>
 	#define TIXML_STRING		std::string
 #else
-	#include "../../src/tinyxml_epfl/tinystr.h"
+	#include "tinystr.h"
 	#define TIXML_STRING		TiXmlString
 #endif
 

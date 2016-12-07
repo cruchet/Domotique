@@ -25,5 +25,9 @@ Phenomene_pulse::Phenomene_pulse(string nom, double v_low, double v_high, long i
 }
 
 Phenomene_pulse::~Phenomene_pulse() {}
+void Phenomene_pulse::run(void)
+{
+	// TODO Run
+}
 
 } /* namespace Domotique */

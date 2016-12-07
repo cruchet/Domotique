@@ -23,5 +23,9 @@ Phenomene_sinus::Phenomene_sinus(string nom, double ampl, long int period,
 Phenomene_sinus::~Phenomene_sinus() {
 	// TODO Auto-generated destructor stub
 }
+void Phenomene_sinus::run(void)
+{
+	// TODO Run
+}
 
 } /* namespace Domotique */
