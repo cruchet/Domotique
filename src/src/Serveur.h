@@ -22,7 +22,6 @@ public:
 	Serveur(string nom, string nom_fichier);
 	virtual ~Serveur();
 	void run(void);
-	void init(vector<double> param);
 	void save(double valphen, double etat, double val_ctrl);
 
 private:

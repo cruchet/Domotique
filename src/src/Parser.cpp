@@ -53,7 +53,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double ampl = 		get_attr_dbl(child4,"amplitude", true, 1);
 				long int phase = 	get_attr_int(child4,"phase", true, 0);
 				long int period = 	get_attr_int(child4,"periode", true, 1);
-				phen = new Phenomene_sinus(nom_phen);
+				phen = new Phenomene_sinus(nom_phen, offset, ampl, phase, period);
 				simulateur->set_process(phen);
 
 			}
@@ -62,11 +62,12 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 				double v_low = 		get_attr_dbl(child4,"val_low", true, 0);
 				double v_high = 	get_attr_dbl(child4,"val_high", true, 1);
+				long int t_del =	get_attr_int(child4,"t_delai", true, 0);
 				long int t_rise =	get_attr_int(child4,"t_rise", true, 0);
 				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
 				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
 				long int period = 	get_attr_int(child4,"periode", true, 1);
-				phen = new Phenomene_pulse(nom_phen);
+				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_rise,pwidth,t_fall,period);
 				simulateur->set_process(phen);
 
 			}
@@ -84,7 +85,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double seuil_min =	get_attr_dbl(child5,"seuil_min", true, 0);
 				double val_max =	get_attr_dbl(child5,"val_max", true, 1);
 				double val_min =	get_attr_dbl(child5,"val_min", true, 0);
-				ctrl = new Control_ON_OFF(nom_ctrl);
+				ctrl = new Control_ON_OFF(nom_ctrl,seuil_max,seuil_min,val_max,val_min);
 				simulateur->set_process(ctrl);
 			}
 			else if(strcmp(child3->Attribute("mode"),"proportionnel")==0) {
@@ -92,7 +93,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 				double set_point =	get_attr_dbl(child5,"set_point", true, 0);
 				double gain =		get_attr_dbl(child5,"seuil_min", true, 1);
-				ctrl = new Control_prop(nom_ctrl);
+				ctrl = new Control_prop(nom_ctrl,set_point, gain);
 				simulateur->set_process(ctrl);
 			}
 
@@ -104,10 +105,14 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			double Ictrl = 			get_attr_dbl(child6,"Ictrl", true, 1);
 			double etat_initial = 	get_attr_dbl(child6,"etat_initial", true, 0);
 
-			etat = new Etat(nom_etat);
+			etat = new Etat(nom_etat, Iphen, Ictrl, etat_initial);
 			simulateur->set_process(etat);
 
 			simulateur->set_process(serveur);
+
+			//intiations des pointeurs entre processus
+			phen->init(etat);
+			ctrl->init(serveur, etat);
 		}
 
 		else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
