@@ -7,19 +7,21 @@
 
 #ifndef CONTROL_H_
 #define CONTROL_H_
-#include "Etat.h"
+
 #include "Processus.h"
 #include "Serveur.h"
+#include "Etat.h"
 
 namespace Domotique {
 
 class Control: public Processus {
 public:
-	Control(string nom, string mode, vector<double> param_ctrl);
+	Control(string nom);
 	virtual ~Control();
-	vector<double> run(vector<double> param);
-private:
-	string mode_;
+	void init(Serveur* p_serveur, Etat* p_etat);
+protected:
+	Serveur* p_serveur_;
+	Etat* p_etat_;
 
 	double calcul_valctrl(double etat_courant);
 };

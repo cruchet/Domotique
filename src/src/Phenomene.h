@@ -8,18 +8,18 @@
 #ifndef PHENOMENE_H_
 #define PHENOMENE_H_
 #include "Processus.h"
+#include "Etat.h"
+#include <cassert>
 
 namespace Domotique {
 
 class Phenomene: public Processus{
 public:
-	Phenomene(string nom, string mode, vector<double> setting);
+	Phenomene(string nom);
 	virtual ~Phenomene();
-	double get_valphen(){return 0;}
-	vector<double> run(vector<double> param);
-	virtual double calcul_valphen() = 0;
-private:
-	string modephen_;
+	void init(Etat* p_etat);
+protected:
+	Etat* p_etat_;
 };
 
 } /* namespace Domotique */

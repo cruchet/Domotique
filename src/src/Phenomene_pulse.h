@@ -8,13 +8,25 @@
 #ifndef SRC_PHENOMENE_PULSE_H_
 #define SRC_PHENOMENE_PULSE_H_
 
+#include "Phenomene.h"
+
 namespace Domotique {
 
-class Phenomene_pulse: Phenomene {
+class Phenomene_pulse: public Phenomene {
 public:
-	Phenomene_pulse();
+	Phenomene_pulse(string nom, double v_low, double v_high, long int t_del,
+			long int t_rise, long int pwidth, long int t_fall, long int period);
 	virtual ~Phenomene_pulse();
 	double calcul_valphen();
+	void run(void);
+private:
+	double v_low_;
+	double v_high_;
+	long int t_del_;
+	long int t_rise_;
+	long int pwidth_;
+	long int t_fall_;
+	long int period_;
 };
 
 } /* namespace Domotique */
