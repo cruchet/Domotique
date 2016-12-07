@@ -11,10 +11,11 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <math.h>
 
 namespace Domotique {
 using namespace std;
-
+using namespace math_const;
 Phenomene::Phenomene(string nom): Processus(nom), p_etat_(NULL) {
 	// TODO Auto-generated constructor stub
 
@@ -27,6 +28,13 @@ void Phenomene::init(Etat* p_etat)
 {
 	cout << "[Phenomene] Initilisation de "<< nom_ << endl;
 	p_etat_=p_etat;
+}
+double Phenomene::box_mull(double val){
+	double x1=rand();
+	double x2=rand();
+	double y= sqrt(-2*logl(x1))* cos((x2)*2*PI);
+	double z = val + y * SIGMA;
+	return z;
 }
 
 } /* namespace Domotique */

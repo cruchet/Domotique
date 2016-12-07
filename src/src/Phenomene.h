@@ -12,13 +12,17 @@
 #include <cassert>
 
 namespace Domotique {
-
+namespace math_const{
+	const double PI=3.14151696;
+	const double SIGMA = 34.1/100;
+};
 class Phenomene: public Processus{
 public:
 	Phenomene(string nom);
 	virtual ~Phenomene();
 	void init(Etat* p_etat);
 protected:
+	double box_mull(double val);
 	Etat* p_etat_;
 };
 
