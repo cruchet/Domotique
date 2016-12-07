@@ -23,6 +23,7 @@ public:
 	virtual ~Phenomene_sinus();
 	void run(void);
 private:
+	int tic_;
 	double ampl_;
 	long int period_;
 	double sat_max_;

@@ -10,12 +10,14 @@
 #include "Processus.h"
 #include "Etat.h"
 #include <cassert>
+#include <math.h>
 
-namespace Domotique {
 namespace math_const{
 	const double PI=3.14151696;
 	const double SIGMA = 34.1/100;
 };
+namespace Domotique {
+
 class Phenomene: public Processus{
 public:
 	Phenomene(string nom);
