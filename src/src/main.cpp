@@ -36,7 +36,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur);
 
 int main(void) {
 	srand(std::time(NULL));
-	unsigned int nb_tic;
+	unsigned int nb_tic = 100;
 	string nom_fichier = "paysage.xml";
 
 	//----- Creation du simulateur et lancement de la simulation ------//
@@ -72,8 +72,8 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 		// Déclaration des pointeurs et valeurs pour init().
 		// Seront initialises ensuite.
-		Phenomene* phen;
-		Control* ctrl;
+		Phenomene* phen = NULL;
+		Control* ctrl = NULL;
 		Etat* etat;
 
 		if (strcmp(child2->Value(),"zone")==0){
