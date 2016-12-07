@@ -18,6 +18,7 @@ class Control: public Processus {
 public:
 	Control(string nom);
 	virtual ~Control();
+	void init(Serveur* p_serveur, Etat* p_etat);
 protected:
 	Serveur* p_serveur_;
 	Etat* p_etat_;

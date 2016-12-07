@@ -23,6 +23,11 @@ Phenomene::Phenomene(string nom): Processus(nom), p_etat_(NULL) {
 Phenomene::~Phenomene() {
 	// TODO Auto-generated destructor stub
 }
+void Phenomene::init(Etat* p_etat)
+{
+	cout << "[Phenomene] Initilisation de "<< nom_ << endl;
+	p_etat_=p_etat;
+}
 
 } /* namespace Domotique */
 

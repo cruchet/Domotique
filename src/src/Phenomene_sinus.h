@@ -16,13 +16,12 @@ namespace Domotique {
 
 class Phenomene_sinus: public Phenomene {
 public:
-	Phenomene_sinus(string nom);
-	virtual ~Phenomene_sinus();
-	void run(void);
-	void init(Etat* p_etat, double ampl, long int period,
+	Phenomene_sinus(string nom, double ampl, long int period,
 			double sat_max= std::numeric_limits<double>::infinity(),
 			double sat_min = -1* std::numeric_limits<double>::infinity(),
 			double offs = 0.0, long int phase=0);
+	virtual ~Phenomene_sinus();
+	void run(void);
 private:
 	double ampl_;
 	long int period_;

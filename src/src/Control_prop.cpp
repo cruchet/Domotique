@@ -11,7 +11,8 @@
 using namespace std;
 namespace Domotique {
 
-Control_prop::Control_prop(string nom): Control(nom), val_cons_(0), gain_(0) {
+Control_prop::Control_prop(string nom, double val_cons, double gain): Control(nom),
+		val_cons_(val_cons), gain_(gain) {
 	cout << "[Control_prop] Création de "<< nom<<endl;
 
 }
@@ -27,14 +28,6 @@ void Control_prop::run(void){
 	p_serveur_->save(valphen,etat,valctrl);
 	//Donne à etat valctrl
 	p_etat_->put_valctrl(valctrl);
-}
-void Control_prop::init(Serveur* p_serveur, Etat* p_etat, double val_cons, double gain)
-{
-	cout << "[Control_prop] Initialisation de "<< nom_ << endl;
-	p_serveur_=p_serveur;
-	p_etat_=p_etat;
-	val_cons_=val_cons;
-	gain_=gain;
 }
 
 } /* namespace Domotique */

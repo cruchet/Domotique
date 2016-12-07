@@ -14,11 +14,10 @@ namespace Domotique {
 
 class Control_ON_OFF: public Control {
 public:
-	Control_ON_OFF(string nom);
+	Control_ON_OFF(string nom, double seuil_min,
+			double seuil_max, double val_min, double val_max);
 	virtual ~Control_ON_OFF();
 	void run(void);
-	void init(Serveur* p_serveur, Etat* p_etat, double seuil_min,
-				double seuil_max, double val_min, double val_max);
 private:
 	double seuil_min_;
 	double seuil_max_;

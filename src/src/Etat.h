@@ -14,10 +14,9 @@ namespace Domotique {
 
 class Etat: public Processus {
 public:
-	Etat(string nom);
+	Etat(string nom, double Iphen, double Ictrl, double etat_init);
 	virtual ~Etat();
 	void run(void);
-	void init(double Iphen, double Ictrl, double etat_init);
 	void put_valphen(double valphen);
 	void put_valctrl(double valctrl);
 	double get_etat(void){return etat_;};

@@ -18,4 +18,10 @@ Control::Control(string nom):
 
 Control::~Control() {}
 
+void Control::init(Serveur* p_serveur, Etat* p_etat)
+{
+	cout << "[Control] Initialisation de "<< nom_ << endl;
+	p_serveur_=p_serveur;
+	p_etat_=p_etat;
+}
 } /* namespace Domotique */

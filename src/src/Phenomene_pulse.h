@@ -14,12 +14,11 @@ namespace Domotique {
 
 class Phenomene_pulse: public Phenomene {
 public:
-	Phenomene_pulse(string nom);
+	Phenomene_pulse(string nom, double v_low, double v_high, long int t_del,
+			long int t_rise, long int pwidth, long int t_fall, long int period);
 	virtual ~Phenomene_pulse();
 	double calcul_valphen();
 	void run(void);
-	void init(Etat* p_etat, double v_low, double v_high, long int t_del,
-				long int t_rise, long int pwidth, long int t_fall, long int period);
 private:
 	double v_low_;
 	double v_high_;

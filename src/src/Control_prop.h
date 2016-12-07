@@ -14,10 +14,9 @@ namespace Domotique {
 
 class Control_prop: public Control {
 public:
-	Control_prop(string nom);
+	Control_prop(string nom, double val_cons, double gain);
 	virtual ~Control_prop();
 	void run(void);
-	void init(Serveur* p_serveur, Etat* p_etat, double val_cons, double gain);
 private:
 	double val_cons_;
 	double gain_;
