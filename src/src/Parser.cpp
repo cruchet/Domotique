@@ -67,7 +67,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
 				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
 				long int period = 	get_attr_int(child4,"periode", true, 1);
-				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_rise,pwidth,t_fall,period);
+				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_del,t_rise,pwidth,t_fall,period);
 				simulateur->set_process(phen);
 
 			}
