@@ -20,6 +20,7 @@ public:
 	double calcul_valphen();
 	void run(void);
 private:
+	unsigned int tic_;
 	double v_low_;
 	double v_high_;
 	long int t_del_;
