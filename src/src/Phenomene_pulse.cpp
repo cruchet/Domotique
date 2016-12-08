@@ -44,7 +44,7 @@ void Phenomene_pulse::run(void)
 	else if(tic_rel >= (t_rise_+pwidth_+t_fall_))
 		y=v_low_;
 
-	p_etat_->put_valphen(y);
+	p_etat_->put_valphen(box_mull(y));
 	tic_++;
 }
 
