@@ -145,8 +145,6 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			etat = new Etat(nom_etat, Iphen, Ictrl, etat_initial);
 			simulateur->set_process(etat);
 
-			simulateur->set_process(serveur);
-
 			//intiations des pointeurs entre processus
 			phen->init(etat);
 			ctrl->init(serveur, etat);
@@ -157,6 +155,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 	}
 	TiXmlElement* simulation = paysage->NextSiblingElement();
 	*nb_tic = get_attr_int(simulation,"nb_tic", true, 1);
+	simulateur->set_process(serveur);
 	cout << "#Lecture Correcte du fichier XML" << endl;
 }
 
