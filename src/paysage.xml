@@ -5,7 +5,7 @@
 	<paysage >
 		<zone nom="Chambre" ID="0">
 			<phenomene nom="temperature_externe" mode="sinus" >
-				<parametres offset="0" amplitude="4" phase ="0" period="3"/>			
+				<parametres offset="1" amplitude="4" phase ="0" period="20"/>			
 			</phenomene>
 			<control nom="ctrl_temp" mode="on_off" >
 				<parametres seuil_max="21" seuil_min="19" val_max="40" val_min="5" />

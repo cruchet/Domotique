@@ -27,9 +27,10 @@ Phenomene_sinus::~Phenomene_sinus() {
 }
 void Phenomene_sinus::run(int tic)
 {
+	cout <<"period "<< period_<<" amp "<<ampl_<<" phase "<<phase_<<" offset "<<offs_<<endl;
 	double offs = box_mull(offs_);
 	double ampl = box_mull(ampl_);
-	double y = offs+ ampl*sin(2*PI*(tic+phase_)/period_);
+	double y = offs + ampl*sin(2*PI*(tic+phase_)/period_);
 	p_etat_->put_valphen(y);
 }
 
