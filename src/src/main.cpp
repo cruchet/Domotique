@@ -57,12 +57,12 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 	TiXmlDocument doc_=nom_fichier;
 	bool loadOkay = doc_.LoadFile();
 	if ( !loadOkay ) {
-		printf( "#Lecture impossible du fichier 'paysage_.xml'. "
+		printf( "#Ouverture impossible du fichier 'paysage_.xml'. "
 				"Error='%s' \n", doc_.ErrorDesc() );
 		exit( 1 );
 	}
 	else {
-		printf( "#Lecture correcte du fichier 'paysage_.xml'.\n\n");
+		printf( "#Ouverture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 
 	TiXmlElement* child1 = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
@@ -159,5 +159,6 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 	}
 	TiXmlElement* child1_2 = child1->NextSiblingElement();
 	*nb_tic = get_attr_int(child1_2,"nb_tic", true, 1);
+	cout << "#Lecture Correcte du fichier XML" << endl;
 }
 
