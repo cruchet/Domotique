@@ -5,22 +5,22 @@
 	<paysage >
 		<zone nom="Chambre" ID="0">
 			<phenomene nom="temperature_externe" mode="sinus" >
-				<parametres offset="0" amplitude="4" phase ="0" period="10"/>			
+				<parametres offset="0" amplitude="4" phase ="0" period="3"/>			
 			</phenomene>
 			<control nom="ctrl_temp" mode="on_off" >
 				<parametres seuil_max="21" seuil_min="19" val_max="40" val_min="5" />
 	        </control>     
-			<etat nom="etat_chambre" etat_initial="20" Iphen="1" Ictrl="1" />
+			<etat nom="etat_chambre" etat_initial="20" Iphen="0.1" Ictrl="0.1" />
 		</zone>
 			<zone nom="Aquarium" ID="1">
 			<phenomene nom="pH" mode="pulse" >
-				<parametres val_low="3" val_high="2" t_delai="0" t_rise="0" pwidth="10" t_fall="0" period="10"/>
+				<parametres val_low="1" val_high="2" t_delai="2" t_rise="2" pwidth="5" t_fall="0" period="15"/>
 			</phenomene>
 			<control nom="ctrl_pH" mode="proportionnel" >
-				<parametres set_point="7" gain="10"/>
+				<parametres set_point="7" gain="11"/>
 	      </control>     
-			<etat nom="etat_aquarium" etat_initial="7" Iphen="1" Ictrl="1" />
+			<etat nom="etat_aquarium" etat_initial="7" Iphen="0.1" Ictrl="0.1" />
 		</zone>
 	</paysage>
-	<simulation nb_tic="10"/>
+	<simulation nb_tic="100"/>
 </application>

@@ -30,19 +30,31 @@ void Phenomene_pulse::run(int tic)
 	double y = 0;
 	int tic_rel = (tic-t_del_)%period_;
 
-	if (tic_rel < t_rise_)
-		y=v_low_ + ((v_high_-v_low_)/t_rise_) * tic_rel;
+	while(tic_rel < 0)
+		tic_rel += period_;
+
+	if (tic_rel < t_rise_) {
+		if(t_rise_ > 0)
+			y=v_low_ + ((v_high_-v_low_)/t_rise_) * tic_rel;
+		else
+			y=v_high_;
+	}
 
 	else if(tic_rel >= t_rise_ && tic_rel < (t_rise_+pwidth_))
 		y=v_high_;
 
-	else if(tic_rel >= (t_rise_+pwidth_) && tic_rel < (t_rise_+pwidth_+t_fall_))
-		y=v_high_ - ((v_high_-v_low_)/t_fall_) * tic_rel;
+	else if(tic_rel >= (t_rise_+pwidth_) && tic_rel < (t_rise_+pwidth_+t_fall_)) {
+		if(t_fall_ > 0)
+			{y=v_high_ - ((v_high_-v_low_)/t_fall_) * (tic_rel-(t_rise_ + pwidth_)); cout << "y " <<y<<endl;}
+		else
+			y=v_low_;
+	}
 
 	else if(tic_rel >= (t_rise_+pwidth_+t_fall_))
 		y=v_low_;
 
 	p_etat_->put_valphen(box_mull(y));
+	//cout << y << endl;
 }
 
 } /* namespace Domotique */
