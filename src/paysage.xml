@@ -17,7 +17,7 @@
 				<parametres val_low="3" val_high="2" t_delai="0" t_rise="0" pwidth="10" t_fall="0" period="10"/>
 			</phenomene>
 			<control nom="ctrl_pH" mode="proportionnel" >
-				<param set_point="7" gain="10"/>
+				<parametres set_point="7" gain="10"/>
 	      </control>     
 			<etat nom="etat_aquarium" etat_initial="7" Iphen="1" Ictrl="1" />
 		</zone>
