@@ -18,7 +18,7 @@ public:
 			long int t_rise, long int pwidth, long int t_fall, long int period);
 	virtual ~Phenomene_pulse();
 	double calcul_valphen();
-	void run(void);
+	void run(int tic);
 private:
 	double v_low_;
 	double v_high_;
