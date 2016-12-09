@@ -38,6 +38,7 @@ void Serveur::save(double valphen, double etat, double val_ctrl) {
 		cout << "Erreur: impossible d'ouvrir le fichier " << dest_name << " en ecriture" << endl;
 	}
 
+
 	// Ecriture sur une ligne du fichier
 	f_dest << tic_ << "\t" << valphen << "\t" << etat << "\t" << val_ctrl << endl;
 

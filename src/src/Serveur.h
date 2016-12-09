@@ -27,7 +27,6 @@ public:
 private:
 	const string nom_fichier_;
 	int tic_;
-
 };
 
 } /* namespace Domotique */
