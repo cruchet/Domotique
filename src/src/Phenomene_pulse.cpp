@@ -13,7 +13,7 @@ using namespace std;
 namespace Domotique {
 
 Phenomene_pulse::Phenomene_pulse(string nom, double v_low, double v_high, long int t_del,
-		long int t_rise, long int pwidth, long int t_fall, long int period): tic_(0), Phenomene(nom),
+		long int t_rise, long int pwidth, long int t_fall, long int period): Phenomene(nom),
 				v_low_(v_low), v_high_(v_high), t_del_(t_del), t_rise_(t_rise),
 				pwidth_(pwidth), t_fall_(t_fall), period_(period){
 	cout << "[Phenomene_pulse] Création de " << nom << endl;
@@ -25,12 +25,12 @@ Phenomene_pulse::Phenomene_pulse(string nom, double v_low, double v_high, long i
 }
 
 Phenomene_pulse::~Phenomene_pulse() {}
-void Phenomene_pulse::run(void)
+void Phenomene_pulse::run(int tic)
 {
 	double y;
-	unsigned int tic_rel = (tic_-t_del_)%period_;
+	unsigned int tic_rel = (tic-t_del_)%period_;
 
-	if(tic_< t_del_)
+	if(tic< t_del_)
 		y=v_low_;
 	else if(tic_rel >= 0 || tic_rel < t_rise_)
 		y=v_low_ + ((v_high_-v_low_)/t_rise_) * tic_rel;
@@ -45,7 +45,6 @@ void Phenomene_pulse::run(void)
 		y=v_low_;
 
 	p_etat_->put_valphen(box_mull(y));
-	tic_++;
 }
 
 } /* namespace Domotique */
