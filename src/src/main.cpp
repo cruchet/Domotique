@@ -116,22 +116,20 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			TiXmlElement* child5 = child2->FirstChild("control")->ToElement();
 			string nom_ctrl = child5->Attribute("nom");
 
-
-			if(strcmp(child3->Attribute("mode"),"on_off")==0) {
+			if(strcmp(child5->Attribute("mode"),"on_off")==0) {
 				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
-
-				double seuil_max =	get_attr_dbl(child5,"seuil_max", true, 1);
-				double seuil_min =	get_attr_dbl(child5,"seuil_min", true, 0);
-				double val_max =	get_attr_dbl(child5,"val_max", true, 1);
-				double val_min =	get_attr_dbl(child5,"val_min", true, 0);
+				double seuil_max =	get_attr_dbl(child7,"seuil_max", true, 1);
+				double seuil_min =	get_attr_dbl(child7,"seuil_min", true, 0);
+				double val_max =	get_attr_dbl(child7,"val_max", true, 1);
+				double val_min =	get_attr_dbl(child7,"val_min", true, 0);
 				ctrl = new Control_ON_OFF(nom_ctrl,seuil_max,seuil_min,val_max,val_min);
 				simulateur->set_process(ctrl);
 			}
-			else if(strcmp(child3->Attribute("mode"),"proportionnel")==0) {
+			else if(strcmp(child5->Attribute("mode"),"proportionnel")==0) {
 				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
 
-				double set_point =	get_attr_dbl(child5,"set_point", true, 0);
-				double gain =		get_attr_dbl(child5,"seuil_min", true, 1);
+				double set_point =	get_attr_dbl(child7,"set_point", true, 0);
+				double gain =		get_attr_dbl(child7,"seuil_min", true, 1);
 				ctrl = new Control_prop(nom_ctrl,set_point, gain);
 				simulateur->set_process(ctrl);
 			}
