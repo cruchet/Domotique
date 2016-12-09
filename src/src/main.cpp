@@ -127,9 +127,8 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			}
 			else if(strcmp(control->Attribute("mode"),"proportionnel")==0) {
 				TiXmlElement* parametres = control->FirstChild("parametres")->ToElement();
-
 				double set_point =	get_attr_dbl(parametres,"set_point", true, 0);
-				double gain =		get_attr_dbl(parametres,"seuil_min", true, 1);
+				double gain =		get_attr_dbl(parametres,"gain", true, 1);
 				ctrl = new Control_prop(nom_ctrl,set_point, gain);
 				simulateur->set_process(ctrl);
 			}
