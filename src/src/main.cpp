@@ -91,9 +91,11 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 				double offset = 	get_attr_dbl(parametres,"offset", true, 0);
 				double ampl = 		get_attr_dbl(parametres,"amplitude", true, 1);
+				double sat_max =	get_attr_dbl(parametres,"sat_max", true, 1000);
+				double sat_min =	get_attr_dbl(parametres,"sat_min", true, -1000);
 				long int phase = 	get_attr_int(parametres,"phase", true, 0);
 				long int period = 	get_attr_int(parametres,"period", true, 1);
-				phen = new Phenomene_sinus(nom_phen, offset, ampl, phase, period);
+				phen = new Phenomene_sinus(nom_phen, ampl, period, sat_max, sat_min, offset, phase);
 				simulateur->set_process(phen);
 
 			}
@@ -123,7 +125,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double seuil_min =	get_attr_dbl(parametres,"seuil_min", true, 0);
 				double val_max =	get_attr_dbl(parametres,"val_max", true, 1);
 				double val_min =	get_attr_dbl(parametres,"val_min", true, 0);
-				ctrl = new Control_ON_OFF(nom_ctrl,seuil_max,seuil_min,val_max,val_min);
+				ctrl = new Control_ON_OFF(nom_ctrl,seuil_min,seuil_max,val_min,val_max);
 				simulateur->set_process(ctrl);
 			}
 			else if(strcmp(control->Attribute("mode"),"proportionnel")==0) {
