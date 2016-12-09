@@ -43,7 +43,6 @@ void Phenomene_pulse::run(int tic)
 		y=v_low_;
 
 	p_etat_->put_valphen(box_mull(y));
-	cout << "Valphen: " << y << "  box_mull(y): " <<box_mull(y)<<endl;
 }
 
 } /* namespace Domotique */
