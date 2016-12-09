@@ -65,8 +65,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 		printf( "#Ouverture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 
-	TiXmlElement* application = doc_.FirstChildElement()->FirstChild("application")->ToElement();
-	TiXmlElement* paysage = application->FirstChild("paysage")->ToElement();
+	TiXmlElement* paysage = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
 
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
 	for(TiXmlElement* zone = paysage->FirstChild("zone")->ToElement(); zone; zone=zone->NextSiblingElement())
@@ -74,9 +73,9 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 		// Déclaration des pointeurs et valeurs pour init().
 		// Seront initialises ensuite.
-		Phenomene* phen;
-		Control* ctrl;
-		Etat* etat;
+		Phenomene* phen = NULL;
+		Control* ctrl = NULL;
+		Etat* etat = NULL;
 
 		if (strcmp(zone->Value(),"zone")==0){
 			nom_zone.push_back(zone->Attribute( "nom"));
