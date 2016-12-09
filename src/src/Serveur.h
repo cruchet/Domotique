@@ -13,6 +13,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 namespace Domotique {
 using namespace std;
@@ -27,6 +28,7 @@ public:
 private:
 	const string nom_fichier_;
 	int tic_;
+	string ligne_;
 };
 
 } /* namespace Domotique */
