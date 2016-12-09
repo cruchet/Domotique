@@ -16,8 +16,7 @@
 #include "Etat.h"
 #include "Phenomene_sinus.h"
 #include "Phenomene_pulse.h"
-#include "tinyxml_epfl/xml_utils.h"
-#include "tinyxml_epfl/tinyxml.h"
+
 
 #include <vector>
 #include <list>
@@ -27,6 +26,6 @@
 
 using namespace Domotique;
 
-void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur);
+
 
 #endif /* SRC_PARSER_H_ */
