@@ -29,8 +29,8 @@ void Phenomene::init(Etat* p_etat)
 	p_etat_=p_etat;
 }
 double Phenomene::box_mull(double val){
-	double x1=rand();
-	double x2=rand();
+	double x1=(double)rand()/(double)RAND_MAX;
+	double x2=(double)rand()/(double)RAND_MAX;
 	double y= sqrt(-2*logl(x1))* cos((x2)*2*PI);
 	double z = val + y * SIGMA;
 	return z;
