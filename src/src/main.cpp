@@ -65,10 +65,11 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 		printf( "#Ouverture correcte du fichier 'paysage_.xml'.\n\n");
 	}
 
-	TiXmlElement* child1 = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
+	TiXmlElement* application = doc_.FirstChildElement()->FirstChild("application")->ToElement();
+	TiXmlElement* paysage = application->FirstChild("paysage")->ToElement();
 
 	//--------------------- EXTRACTION DES TRIPLETS: NIVEAU 1
-	for(TiXmlElement* child2 = child1->FirstChild("zone")->ToElement(); child2; child2=child2->NextSiblingElement())
+	for(TiXmlElement* zone = paysage->FirstChild("zone")->ToElement(); zone; zone=zone->NextSiblingElement())
 	{ 		//BOUCLE pour extraire l'ensemble des triplets "zone" du paysage
 
 		// Déclaration des pointeurs et valeurs pour init().
@@ -77,35 +78,35 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 		Control* ctrl;
 		Etat* etat;
 
-		if (strcmp(child2->Value(),"zone")==0){
-			nom_zone.push_back(child2->Attribute( "nom"));
+		if (strcmp(zone->Value(),"zone")==0){
+			nom_zone.push_back(zone->Attribute( "nom"));
 
 			// EXTRACTION DU PHENOMENE: NIVEAU 2
-			TiXmlElement* child3 = child2->FirstChild("phenomene")->ToElement () ;
-			string nom_phen = child3->Attribute( "nom");
-			string mode_phen=  child3->Attribute( "mode");
+			TiXmlElement* phenomene = zone->FirstChild("phenomene")->ToElement () ;
+			string nom_phen = phenomene->Attribute( "nom");
+			string mode_phen=  phenomene->Attribute( "mode");
 
-			if(strcmp(child3->Attribute("mode"),"sinus")==0) {
-				TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
+			if(strcmp(phenomene->Attribute("mode"),"sinus")==0) {
+				TiXmlElement* parametres = phenomene->FirstChild("parametres")->ToElement();
 
-				double offset = 	get_attr_dbl(child4,"offset", true, 0);
-				double ampl = 		get_attr_dbl(child4,"amplitude", true, 1);
-				long int phase = 	get_attr_int(child4,"phase", true, 0);
-				long int period = 	get_attr_int(child4,"period", true, 1);
+				double offset = 	get_attr_dbl(parametres,"offset", true, 0);
+				double ampl = 		get_attr_dbl(parametres,"amplitude", true, 1);
+				long int phase = 	get_attr_int(parametres,"phase", true, 0);
+				long int period = 	get_attr_int(parametres,"period", true, 1);
 				phen = new Phenomene_sinus(nom_phen, offset, ampl, phase, period);
 				simulateur->set_process(phen);
 
 			}
-			else if(strcmp(child3->Attribute("mode"),"pulse")==0) {
-				TiXmlElement* child4 = child3->FirstChild("parametres")->ToElement();
+			else if(strcmp(phenomene->Attribute("mode"),"pulse")==0) {
+				TiXmlElement* parametres = phenomene->FirstChild("parametres")->ToElement();
 
-				double v_low = 		get_attr_dbl(child4,"val_low", true, 0);
-				double v_high = 	get_attr_dbl(child4,"val_high", true, 1);
-				long int t_del =	get_attr_int(child4,"t_delai", true, 0);
-				long int t_rise =	get_attr_int(child4,"t_rise", true, 0);
-				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
-				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
-				long int period = 	get_attr_int(child4,"period", true, 1);
+				double v_low = 		get_attr_dbl(parametres,"val_low", true, 0);
+				double v_high = 	get_attr_dbl(parametres,"val_high", true, 1);
+				long int t_del =	get_attr_int(parametres,"t_delai", true, 0);
+				long int t_rise =	get_attr_int(parametres,"t_rise", true, 0);
+				long int pwidth = 	get_attr_int(parametres,"pwidth", true, 1);
+				long int t_fall = 	get_attr_int(parametres,"t_fall", true, 0);
+				long int period = 	get_attr_int(parametres,"period", true, 1);
 				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_del,t_rise,pwidth,t_fall,period);
 				simulateur->set_process(phen);
 
@@ -113,34 +114,34 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 
 
 			// EXTRACTION DU CONTROLE DE LA ZONE: NIVEAU 2
-			TiXmlElement* child5 = child2->FirstChild("control")->ToElement();
-			string nom_ctrl = child5->Attribute("nom");
+			TiXmlElement* control = zone->FirstChild("control")->ToElement();
+			string nom_ctrl = control->Attribute("nom");
 
-			if(strcmp(child5->Attribute("mode"),"on_off")==0) {
-				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
-				double seuil_max =	get_attr_dbl(child7,"seuil_max", true, 1);
-				double seuil_min =	get_attr_dbl(child7,"seuil_min", true, 0);
-				double val_max =	get_attr_dbl(child7,"val_max", true, 1);
-				double val_min =	get_attr_dbl(child7,"val_min", true, 0);
+			if(strcmp(control->Attribute("mode"),"on_off")==0) {
+				TiXmlElement* parametres = control->FirstChild("parametres")->ToElement();
+				double seuil_max =	get_attr_dbl(parametres,"seuil_max", true, 1);
+				double seuil_min =	get_attr_dbl(parametres,"seuil_min", true, 0);
+				double val_max =	get_attr_dbl(parametres,"val_max", true, 1);
+				double val_min =	get_attr_dbl(parametres,"val_min", true, 0);
 				ctrl = new Control_ON_OFF(nom_ctrl,seuil_max,seuil_min,val_max,val_min);
 				simulateur->set_process(ctrl);
 			}
-			else if(strcmp(child5->Attribute("mode"),"proportionnel")==0) {
-				TiXmlElement* child7 = child5->FirstChild("parametres")->ToElement();
+			else if(strcmp(control->Attribute("mode"),"proportionnel")==0) {
+				TiXmlElement* parametres = control->FirstChild("parametres")->ToElement();
 
-				double set_point =	get_attr_dbl(child7,"set_point", true, 0);
-				double gain =		get_attr_dbl(child7,"seuil_min", true, 1);
+				double set_point =	get_attr_dbl(parametres,"set_point", true, 0);
+				double gain =		get_attr_dbl(parametres,"seuil_min", true, 1);
 				ctrl = new Control_prop(nom_ctrl,set_point, gain);
 				simulateur->set_process(ctrl);
 			}
 
 			// EXTRACTION DE l'ETAT DE LA ZONE: NIVEAU 2
-			TiXmlElement* child6 = child2->FirstChild("etat")->ToElement();
-			string nom_etat = child6->Attribute( "nom");
+			TiXmlElement* state = zone->FirstChild("etat")->ToElement();
+			string nom_etat = state->Attribute( "nom");
 
-			double Iphen = 			get_attr_dbl(child6,"Iphen", true, 1);
-			double Ictrl = 			get_attr_dbl(child6,"Ictrl", true, 1);
-			double etat_initial = 	get_attr_dbl(child6,"etat_initial", true, 0);
+			double Iphen = 			get_attr_dbl(state,"Iphen", true, 1);
+			double Ictrl = 			get_attr_dbl(state,"Ictrl", true, 1);
+			double etat_initial = 	get_attr_dbl(state,"etat_initial", true, 0);
 
 			etat = new Etat(nom_etat, Iphen, Ictrl, etat_initial);
 			simulateur->set_process(etat);
@@ -152,11 +153,11 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 			ctrl->init(serveur, etat);
 		}
 
-		else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << child2->Value() << endl;}
+		else {cout << "Ce n'est pas une zone, il s'agit de la balise : " << zone->Value() << endl;}
 		// element autre que zone
 	}
-	TiXmlElement* child1_2 = child1->NextSiblingElement();
-	*nb_tic = get_attr_int(child1_2,"nb_tic", true, 1);
+	TiXmlElement* simulation = paysage->NextSiblingElement();
+	*nb_tic = get_attr_int(simulation,"nb_tic", true, 1);
 	cout << "#Lecture Correcte du fichier XML" << endl;
 }
 
