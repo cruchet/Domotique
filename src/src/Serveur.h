@@ -21,7 +21,7 @@ class Serveur: public Processus {
 public:
 	Serveur(string nom, string nom_fichier);
 	virtual ~Serveur();
-	void run(void);
+	void run(int tic);
 	void save(double valphen, double etat, double val_ctrl);
 
 private:

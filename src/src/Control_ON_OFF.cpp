@@ -19,7 +19,7 @@ Control_ON_OFF::Control_ON_OFF(string nom, double seuil_min,
 
 Control_ON_OFF::~Control_ON_OFF() {}
 
-void Control_ON_OFF::run(){
+void Control_ON_OFF::run(int tic){
 	//Calcul de l'état
 	double etat= p_etat_->get_etat();
 	double valctrl;

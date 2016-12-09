@@ -16,7 +16,7 @@ class Etat: public Processus {
 public:
 	Etat(string nom, double Iphen, double Ictrl, double etat_init);
 	virtual ~Etat();
-	void run(void);
+	void run(int tic);
 	void put_valphen(double valphen){valphen_=valphen;};
 	void put_valctrl(double valctrl){valctrl_=valctrl;};
 	double get_etat(void){return etat_;};

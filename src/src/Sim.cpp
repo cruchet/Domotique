@@ -24,7 +24,7 @@ void Sim::run(void) {
 
 	for(tic_=0; tic_<=ntic_;tic_++) {
 		for(unsigned int i=0; i<process_.size(); i++){
-			(process_.at(tic_))->run();
+			(process_.at(tic_))->run(tic_);
 		}
 	}
 }

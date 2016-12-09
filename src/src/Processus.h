@@ -17,7 +17,7 @@ class Processus {
 public:
 	Processus(string nom);
 	virtual ~Processus();
-	virtual void run(void) = 0;
+	virtual void run(int tic) = 0;
 protected:
 	string nom_;
 

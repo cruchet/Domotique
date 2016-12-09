@@ -35,8 +35,8 @@ void Serveur::save(double valphen, double etat, double val_ctrl) {
 	f_dest.close();
 }
 
-void Serveur::run(void){
-	tic_++;
+void Serveur::run(int tic){
+	tic_ = tic + 1;
 }
 
 } /* namespace Domotique */

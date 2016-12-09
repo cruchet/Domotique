@@ -19,7 +19,7 @@ Etat::Etat(string nom, double Iphen, double Ictrl, double etat_init): Processus(
 
 Etat::~Etat() {}
 
-void Etat::run(void) {
+void Etat::run(int tic) {
 	etat_ = etat_+(valphen_-etat_)*Iphen_+(valctrl_ - etat_) * Ictrl_;
 }
 

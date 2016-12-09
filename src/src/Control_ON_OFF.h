@@ -17,7 +17,7 @@ public:
 	Control_ON_OFF(string nom, double seuil_min,
 			double seuil_max, double val_min, double val_max);
 	virtual ~Control_ON_OFF();
-	void run(void);
+	void run(int tic);
 private:
 	double seuil_min_;
 	double seuil_max_;
