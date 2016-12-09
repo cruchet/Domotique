@@ -91,7 +91,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				double offset = 	get_attr_dbl(child4,"offset", true, 0);
 				double ampl = 		get_attr_dbl(child4,"amplitude", true, 1);
 				long int phase = 	get_attr_int(child4,"phase", true, 0);
-				long int period = 	get_attr_int(child4,"periode", true, 1);
+				long int period = 	get_attr_int(child4,"period", true, 1);
 				phen = new Phenomene_sinus(nom_phen, offset, ampl, phase, period);
 				simulateur->set_process(phen);
 
@@ -105,7 +105,7 @@ void lecture_xml(string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
 				long int t_rise =	get_attr_int(child4,"t_rise", true, 0);
 				long int pwidth = 	get_attr_int(child4,"pwidth", true, 1);
 				long int t_fall = 	get_attr_int(child4,"t_fall", true, 0);
-				long int period = 	get_attr_int(child4,"periode", true, 1);
+				long int period = 	get_attr_int(child4,"period", true, 1);
 				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_del,t_rise,pwidth,t_fall,period);
 				simulateur->set_process(phen);
 
