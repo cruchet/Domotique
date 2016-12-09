@@ -40,8 +40,9 @@ int main(void) {
 	string nom_fichier = "paysage.xml";
 
 	//----- Creation du simulateur et lancement de la simulation ------//
-	Sim * sim = new Sim(nb_tic);
+	Sim * sim = new Sim();
 	lecture_xml(nom_fichier, &nb_tic, sim);
+	sim->init(nb_tic);
 
 	sim->run();
 
