@@ -1,5 +1,5 @@
 <map id="Domotique::Phenomene" name="Domotique::Phenomene">
-<area shape="rect" id="node3" href="$classDomotique_1_1Phenomene__pulse.html" title="{Domotique::Phenomene\l_pulse\n||+ Phenomene_pulse()\l+ ~Phenomene_pulse()\l+ calcul_valphen()\l}" alt="" coords="5,417,168,539"/>
-<area shape="rect" id="node4" href="$classDomotique_1_1Phenomene__sinus.html" title="{Domotique::Phenomene\l_sinus\n||+ Phenomene_sinus()\l+ ~Phenomene_sinus()\l+ calcul_valphen()\l}" alt="" coords="192,417,355,539"/>
-<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="103,5,257,185"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Phenomene__pulse.html" title="{Domotique::Phenomene\l_pulse\n|&#45; v_low_\l&#45; v_high_\l&#45; t_del_\l&#45; t_rise_\l&#45; pwidth_\l&#45; t_fall_\l&#45; period_\l|+ Phenomene_pulse()\l+ ~Phenomene_pulse()\l+ calcul_valphen()\l+ run()\l}" alt="" coords="5,329,168,553"/>
+<area shape="rect" id="node4" href="$classDomotique_1_1Phenomene__sinus.html" title="{Domotique::Phenomene\l_sinus\n|&#45; ampl_\l&#45; period_\l&#45; sat_max_\l&#45; sat_min_\l&#45; offs_\l&#45; phase_\l|+ Phenomene_sinus()\l+ ~Phenomene_sinus()\l+ run()\l}" alt="" coords="192,344,355,539"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="103,5,257,112"/>
 </map>

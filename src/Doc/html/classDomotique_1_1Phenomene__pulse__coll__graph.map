@@ -1,4 +1,5 @@
 <map id="Domotique::Phenomene_pulse" name="Domotique::Phenomene_pulse">
-<area shape="rect" id="node2" href="$classDomotique_1_1Phenomene.html" title="{Domotique::Phenomene\n|&#45; modephen_\l|+ Phenomene()\l+ ~Phenomene()\l+ get_valphen()\l+ run()\l+ calcul_valphen()\l}" alt="" coords="5,233,168,369"/>
-<area shape="rect" id="node3" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="9,5,164,185"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Phenomene.html" title="{Domotique::Phenomene\n||+ Phenomene()\l+ ~Phenomene()\l+ init()\l# box_mull()\l}" alt="" coords="5,448,168,569"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="20,5,175,112"/>
+<area shape="rect" id="node4" href="$classDomotique_1_1Etat.html" title="{Domotique::Etat\n|&#45; Iphen_\l&#45; Ictrl_\l&#45; valphen_\l&#45; etat_\l&#45; valctrl_\l|+ Etat()\l+ ~Etat()\l+ run()\l+ put_valphen()\l+ put_valctrl()\l+ get_etat()\l+ get_phen()\l}" alt="" coords="103,161,220,385"/>
 </map>
