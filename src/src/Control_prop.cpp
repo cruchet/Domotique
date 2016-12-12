@@ -13,7 +13,7 @@ namespace Domotique {
 
 Control_prop::Control_prop(string nom, double val_cons, double gain): Control(nom),
 		val_cons_(val_cons), gain_(gain) {
-	cout << "[Control_prop] Création de "<< nom<<endl;
+	cout << "[Control_prop]\t\tCréation de "<< nom<<endl;
 
 }
 

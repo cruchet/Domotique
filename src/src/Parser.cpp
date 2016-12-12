@@ -135,7 +135,7 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 	TiXmlElement* simulation = paysage->NextSiblingElement();
 	*nb_tic = get_attr_int(simulation,"nb_tic", true, 1);
 	simulateur->set_process(serveur);
-	cout << "#Lecture Correcte du fichier XML" << endl;
+	cout << "\n#Lecture Correcte du fichier XML" << endl;
 }
 
 

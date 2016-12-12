@@ -14,7 +14,7 @@ namespace Domotique {
 Control_ON_OFF::Control_ON_OFF(string nom, double seuil_min,
 		double seuil_max, double val_min, double val_max): Control(nom),
 				seuil_min_(seuil_min), seuil_max_(seuil_min), val_min_(val_min), val_max_(val_max){
-	cout<<"[Control_ON_OFF] Création de "<< nom << endl;
+	cout<<"[Control_ON_OFF]\tCréation de "<< nom << endl;
 }
 
 Control_ON_OFF::~Control_ON_OFF() {}

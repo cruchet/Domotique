@@ -17,7 +17,7 @@ Phenomene_sinus::Phenomene_sinus(string nom, double ampl, long int period,
 				Phenomene(nom),  ampl_(ampl),
 				period_(period), sat_max_(sat_max),
 				sat_min_(sat_min), offs_(offs), phase_(phase){
-	cout<< "[Phenomene_sinus] Création de "<< nom << endl;
+	cout<< "[Phenomene_sinus]\tCréation de "<< nom << endl;
 	assert(period >0);
 }
 
