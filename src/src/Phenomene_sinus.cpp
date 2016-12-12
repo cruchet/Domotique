@@ -2,7 +2,7 @@
  * Phenomene_sinus.cpp
  *
  *  Created on: 5 déc. 2016
- *      Author: Jordan Metz & Vassili Cruchet
+ *      Author: jordanmetz
  */
 
 #include "Phenomene_sinus.h"
@@ -13,10 +13,10 @@ using namespace math_const;
 namespace Domotique {
 
 Phenomene_sinus::Phenomene_sinus(string nom, double ampl, long int period,
-		double offs, long int phase, double sat_max,	double sat_min):
-				Phenomene(nom),  ampl_(ampl),
-				period_(period), offs_(offs), phase_(phase),
-				sat_max_(sat_max), sat_min_(sat_min){
+		double sat_max, double sat_min, double offs, long int phase):
+				Phenomene(nom),  ampl_(ampl), period_(period),
+				sat_max_(sat_max), sat_min_(sat_min),
+				offs_(offs), phase_(phase) {
 	cout<< "[Phenomene_sinus]\tCréation de "<< nom << endl;
 	assert(period >0);
 }
