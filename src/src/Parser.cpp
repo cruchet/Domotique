@@ -2,7 +2,7 @@
  * Parser.cpp
  *
  *  Created on: 5 déc. 2016
- *      Author: vassili
+ *      Author: Jordan Metz & Vassili Cruchet
  */
 
 #include "Parser.h"
@@ -68,11 +68,11 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 
 				double offset = 	get_attr_dbl(parametres,"offset", true, 0);
 				double ampl = 		get_attr_dbl(parametres,"amplitude", true, 1);
-				double sat_max =	get_attr_dbl(parametres,"sat_max", true, 1000);
-				double sat_min =	get_attr_dbl(parametres,"sat_min", true, -1000);
+				/*double sat_max =	get_attr_dbl(parametres,"sat_max", true, 1000);
+				double sat_min =	get_attr_dbl(parametres,"sat_min", true, -1000);*/
 				long int phase = 	get_attr_int(parametres,"phase", true, 0);
 				long int period = 	get_attr_int(parametres,"period", true, 1);
-				phen = new Phenomene_sinus(nom_phen, ampl, period, sat_max, sat_min, offset, phase);
+				phen = new Phenomene_sinus(nom_phen, ampl, period, offset, phase);
 				simulateur->set_process(phen);
 
 			}
