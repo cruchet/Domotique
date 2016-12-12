@@ -25,10 +25,10 @@ public:
 private:
 	double ampl_;
 	long int period_;
-	double sat_max_;
-	double sat_min_;
 	double offs_;
 	long int phase_;
+	double sat_max_;
+	double sat_min_;
 };
 
 } /* namespace Domotique */
