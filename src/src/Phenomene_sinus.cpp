@@ -2,7 +2,7 @@
  * Phenomene_sinus.cpp
  *
  *  Created on: 5 déc. 2016
- *      Author: jordanmetz
+ *      Author: Jordan Metz & Vassili Cruchet
  */
 
 #include "Phenomene_sinus.h"
