@@ -28,7 +28,6 @@ void Phenomene_sinus::run(int tic)
 	double offs = box_mull(offs_);
 	double ampl = box_mull(ampl_);
 	double y = offs + ampl*sin(2*PI*(tic+phase_)/period_);
-	y = box_mull(y);
 	if (y>sat_max_)	y=sat_max_;
 	else if(y<sat_min_) y=sat_min_;
 
