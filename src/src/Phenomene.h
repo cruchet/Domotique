@@ -8,18 +8,24 @@
 #ifndef PHENOMENE_H_
 #define PHENOMENE_H_
 #include "Processus.h"
+#include "Etat.h"
+#include <cassert>
+#include <math.h>
 
+namespace math_const{
+	const double PI=3.14151696;
+	const double SIGMA = 0.34;
+};
 namespace Domotique {
 
 class Phenomene: public Processus{
 public:
-	Phenomene(string nom, string mode, vector<double> setting);
+	Phenomene(string nom);
 	virtual ~Phenomene();
-	double get_valphen(){return 0;}
-	vector<double> run(vector<double> param);
-private:
-	double calcul_valphen();
-	string modephen_;
+	void init(Etat* p_etat);
+protected:
+	double box_mull(double val);
+	Etat* p_etat_;
 };
 
 } /* namespace Domotique */

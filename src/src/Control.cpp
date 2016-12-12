@@ -13,28 +13,15 @@ using namespace std;
 
 namespace Domotique {
 
-Control::Control(string nom, string mode, vector<double> setting_ctrl):
-		Processus(nom, "ctrl", setting_ctrl), mode_(mode) {}
-
-vector<double> Control::run(vector<double> param) {
-	param.at(VALCTRL) = calcul_valctrl(param.at(ETAT_COURANT));
-	return param;
-}
-double Control::calcul_valctrl(double etat_courant) {
-	vector<double> param_ctrl = this->get_setting();
-	double valctrl;
-	if (mode_ == "saturation"){
-		double valsat = param_ctrl.at(0);
-		if(etat_courant > valsat)
-			valctrl = valsat;
-		else
-			valctrl = etat_courant;
-		return valctrl;
-	}
-	else {return etat_courant;}
-
-}
+Control::Control(string nom):
+		Processus(nom), p_serveur_(NULL), p_etat_(NULL) {}
 
 Control::~Control() {}
 
+void Control::init(Serveur* p_serveur, Etat* p_etat)
+{
+	cout << "[Control]\t\tInitialisation de "<< nom_ << endl;
+	p_serveur_=p_serveur;
+	p_etat_=p_etat;
+}
 } /* namespace Domotique */

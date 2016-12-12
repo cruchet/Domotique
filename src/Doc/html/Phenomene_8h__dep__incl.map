@@ -1,4 +1,10 @@
 <map id="src/Phenomene.h" name="src/Phenomene.h">
-<area shape="rect" id="node2" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="5,80,103,107"/>
-<area shape="rect" id="node3" href="$Phenomene_8cpp.html" title="src/Phenomene.cpp" alt="" coords="127,80,266,107"/>
+<area shape="rect" id="node2" href="$Phenomene__sinus_8h.html" title="src/Phenomene_sinus.h" alt="" coords="44,80,207,107"/>
+<area shape="rect" id="node7" href="$Phenomene__pulse_8h.html" title="src/Phenomene_pulse.h" alt="" coords="259,80,422,107"/>
+<area shape="rect" id="node9" href="$Phenomene_8cpp.html" title="src/Phenomene.cpp" alt="" coords="446,80,584,107"/>
+<area shape="rect" id="node3" href="$Parser_8h.html" title="src/Parser.h" alt="" coords="224,155,318,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="264,229,361,256"/>
+<area shape="rect" id="node6" href="$Phenomene__sinus_8cpp.html" title="src/Phenomene_sinus.cpp" alt="" coords="24,155,200,181"/>
+<area shape="rect" id="node5" href="$Parser_8cpp.html" title="src/Parser.cpp" alt="" coords="132,229,239,256"/>
+<area shape="rect" id="node8" href="$Phenomene__pulse_8cpp.html" title="src/Phenomene_pulse.cpp" alt="" coords="392,155,568,181"/>
 </map>

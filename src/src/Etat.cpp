@@ -2,7 +2,7 @@
  * Etat.cpp
  *
  *  Created on: 14 nov. 2016
- *      Author: Vassili
+ *      Author: Jordan Metz & Vassili Cruchet
  */
 
 #include "Etat.h"
@@ -12,22 +12,15 @@
 
 namespace Domotique {
 
-Etat::Etat(string nom, vector<double> setting):
-	Processus(nom, "etat", setting) {}
-
-double Etat::calcul_etat_eff(vector<double> param) {
-	double Iphen = (this->get_setting()).at(0);
-	double Ictrl = (this->get_setting()).at(1);
-	double etat_eff = param.at(ETAT_COURANT)
-					+ (param.at(VALPHEN) - param.at(ETAT_COURANT))*Iphen
-					+ (param.at(VALCTRL) - param.at(ETAT_COURANT))*Ictrl;
-	return etat_eff;
+Etat::Etat(string nom, double Iphen, double Ictrl, double etat_init): Processus(nom),
+		Iphen_(Iphen), Ictrl_(Ictrl), valphen_(0), etat_(etat_init), valctrl_(0){
+	cout << "[Etat]\t\t\tCréation de "<< nom << endl;
 }
 
-vector<double> Etat::run(vector<double> param) {
-	param.at(ETAT_COURANT)= calcul_etat_eff(param);
-	return param;
-}
 Etat::~Etat() {}
+
+void Etat::run(int tic) {
+	etat_ = etat_+(valphen_-etat_)*Iphen_ + (valctrl_ - etat_)*Ictrl_;
+}
 
 } /* namespace Domotique */

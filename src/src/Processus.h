@@ -15,18 +15,11 @@ using namespace std;
 
 class Processus {
 public:
-	Processus(string nom, string type, vector<double> setting);
+	Processus(string nom);
 	virtual ~Processus();
-	virtual vector<double> run(vector<double> param) = 0;
-	string get_type(void){return type_;};
-	vector<double> get_setting(void){return setting_;};
-	void set_setting(vector<double> setting){setting_=setting;};
-
-	enum Param_id {VALPHEN, VALCTRL, ETAT_COURANT};
-private:
+	virtual void run(int tic) = 0;
+protected:
 	string nom_;
-	string type_;
-	vector<double> setting_;
 
 };
 

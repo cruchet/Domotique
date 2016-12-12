@@ -1,3 +1,5 @@
 <map id="Domotique::Control" name="Domotique::Control">
-<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="Domotique::Processus" alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="33,5,187,112"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Serveur.html" title="{Domotique::Serveur\n|&#45; nom_fichier_\l&#45; tic_\l&#45; ligne_\l|+ Serveur()\l+ ~Serveur()\l+ run()\l+ save()\l}" alt="" coords="41,198,179,349"/>
+<area shape="rect" id="node4" href="$classDomotique_1_1Etat.html" title="{Domotique::Etat\n|&#45; Iphen_\l&#45; Ictrl_\l&#45; valphen_\l&#45; etat_\l&#45; valctrl_\l|+ Etat()\l+ ~Etat()\l+ run()\l+ put_valphen()\l+ put_valctrl()\l+ get_etat()\l+ get_phen()\l}" alt="" coords="203,161,321,385"/>
 </map>

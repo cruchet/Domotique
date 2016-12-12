@@ -14,9 +14,8 @@
 
 namespace Domotique {
 using namespace std;
-
-Phenomene::Phenomene(string nom, string mode, vector<double> setting):
-	Processus(nom, "phen", setting),modephen_(mode) {
+using namespace math_const;
+Phenomene::Phenomene(string nom): Processus(nom), p_etat_(NULL) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -24,23 +23,17 @@ Phenomene::Phenomene(string nom, string mode, vector<double> setting):
 Phenomene::~Phenomene() {
 	// TODO Auto-generated destructor stub
 }
-
-vector<double> Phenomene::run(vector<double> param){
-	param.at(VALPHEN)=calcul_valphen();
-	return param;
+void Phenomene::init(Etat* p_etat)
+{
+	cout << "[Phenomene]\t\tInitilisation de "<< nom_ << endl;
+	p_etat_=p_etat;
 }
-double Phenomene::calcul_valphen(void){
-	vector<double> phen_param = this->get_setting();
-
-	if (modephen_ == "aleatoire")
-	{
-		double valmin = phen_param.at(0);
-		double valmax = phen_param.at(1);
-		return (static_cast<double>(rand())/RAND_MAX)*(valmax-valmin) + valmin;
-
-	}
-	else return 0;
-
+double Phenomene::box_mull(double val){
+	double x1=(double)rand()/(double)RAND_MAX;
+	double x2=(double)rand()/(double)RAND_MAX;
+	double y= sqrt(-2*logl(x1))* cos((x2)*2*PI);
+	double z = val + y * SIGMA;
+	return z;
 }
 
 } /* namespace Domotique */

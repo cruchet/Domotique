@@ -1,3 +1,4 @@
 <map id="Domotique::Phenomene" name="Domotique::Phenomene">
-<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="Domotique::Processus" alt="" coords="9,5,164,32"/>
+<area shape="rect" id="node2" href="$classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="20,5,175,112"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Etat.html" title="{Domotique::Etat\n|&#45; Iphen_\l&#45; Ictrl_\l&#45; valphen_\l&#45; etat_\l&#45; valctrl_\l|+ Etat()\l+ ~Etat()\l+ run()\l+ put_valphen()\l+ put_valctrl()\l+ get_etat()\l+ get_phen()\l}" alt="" coords="103,161,220,385"/>
 </map>
