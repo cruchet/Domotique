@@ -6,7 +6,7 @@ unset log
 unset label
 set xtic auto
 set ytic auto
-set xlabel "tic (4/heure)"
+set xlabel "tic (1/min)"
 set grid ytics
 #
 set multiplot layout 2,1
