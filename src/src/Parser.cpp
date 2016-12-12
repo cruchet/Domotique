@@ -28,10 +28,6 @@
 using namespace Domotique;
 
 void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur){
-	vector<string> nom_zone;
-	vector<double> setting;
-	Serveur * serveur = new Serveur("Serveur", "data_serveur.dat");
-
 	//-------------LECTURE DU FICHIER XML ET GESTION ERREUR -------------------
 	TiXmlDocument doc_=nom_fichier;
 	bool loadOkay = doc_.LoadFile();
@@ -43,6 +39,10 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 	else {
 		printf( "#Ouverture correcte du fichier 'paysage_.xml'.\n\n");
 	}
+
+	vector<string> nom_zone;
+	vector<double> setting;
+	Serveur * serveur = new Serveur("Serveur", "data_serveur.dat");
 
 	TiXmlElement* paysage = doc_.FirstChildElement()->FirstChild("paysage")->ToElement();
 

@@ -23,12 +23,11 @@ Serveur::Serveur(string nom, string nom_fichier): Processus(nom),
 	f_dest << "# Ordre: tic\tVALPHEN\tVALCTRL\tETAT COURANT" << endl;
 	f_dest << tic_ << "\t";
 	f_dest.close();
+	cout << "[Serveur]\t\tCréation du Serveur et du fichier: "<< nom_fichier<<endl;
 }
 
 
-Serveur::~Serveur() {
-
-}
+Serveur::~Serveur() {}
 
 void Serveur::save(double valphen, double etat, double val_ctrl) {
 	string add;          // string which will contain the result
