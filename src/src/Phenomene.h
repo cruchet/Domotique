@@ -14,7 +14,7 @@
 
 namespace math_const{
 	const double PI=3.14151696;
-	const double SIGMA = 0.2;
+	const double SIGMA = 0.34;
 };
 namespace Domotique {
 
