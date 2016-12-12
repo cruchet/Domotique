@@ -20,7 +20,7 @@ Control::~Control() {}
 
 void Control::init(Serveur* p_serveur, Etat* p_etat)
 {
-	cout << "[Control] Initialisation de "<< nom_ << endl;
+	cout << "[Control]\t\tInitialisation de "<< nom_ << endl;
 	p_serveur_=p_serveur;
 	p_etat_=p_etat;
 }

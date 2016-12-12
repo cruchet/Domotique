@@ -25,7 +25,7 @@ Phenomene::~Phenomene() {
 }
 void Phenomene::init(Etat* p_etat)
 {
-	cout << "[Phenomene] Initilisation de "<< nom_ << endl;
+	cout << "[Phenomene]\t\tInitilisation de "<< nom_ << endl;
 	p_etat_=p_etat;
 }
 double Phenomene::box_mull(double val){
