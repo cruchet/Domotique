@@ -8,23 +8,13 @@
 #ifndef SRC_PARSER_H_
 #define SRC_PARSER_H_
 
-#include "Serveur.h"
 #include "Sim.h"
-#include "Processus.h"
-#include "Control_ON_OFF.h"
-#include "Control_prop.h"
-#include "Etat.h"
-#include "Phenomene_sinus.h"
-#include "Phenomene_pulse.h"
 
-
-#include <vector>
-#include <list>
 #include <string>
-#include <stdio.h>
-#include <iostream>
 
 using namespace Domotique;
+
+void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur);
 
 
 
