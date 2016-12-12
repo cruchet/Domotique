@@ -22,6 +22,7 @@
 #include <list>
 #include <stdio.h>
 #include <iostream>
+#include <limits>
 
 
 using namespace Domotique;
@@ -66,26 +67,26 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 			if(strcmp(phenomene->Attribute("mode"),"sinus")==0) {
 				TiXmlElement* parametres = phenomene->FirstChild("parametres")->ToElement();
 
-				double offset = 	get_attr_dbl(parametres,"offset", true, 0);
-				double ampl = 		get_attr_dbl(parametres,"amplitude", true, 1);
-				/*double sat_max =	get_attr_dbl(parametres,"sat_max", true, 1000);
-				double sat_min =	get_attr_dbl(parametres,"sat_min", true, -1000);*/
-				long int phase = 	get_attr_int(parametres,"phase", true, 0);
-				long int period = 	get_attr_int(parametres,"period", true, 1);
-				phen = new Phenomene_sinus(nom_phen, ampl, period, offset, phase);
+				double offset = 	get_attr_dbl(parametres,"offset", false, 0);
+				double ampl = 		get_attr_dbl(parametres,"amplitude", true);
+				double sat_max =	get_attr_dbl(parametres,"sat_max", false, std::numeric_limits<double>::infinity());
+				double sat_min =	get_attr_dbl(parametres,"sat_min", false, -std::numeric_limits<double>::infinity());
+				long int phase = 	get_attr_int(parametres,"phase", false, 0);
+				long int period = 	get_attr_int(parametres,"period", true);
+				phen = new Phenomene_sinus(nom_phen, ampl, period, sat_max, sat_min, offset, phase);
 				simulateur->set_process(phen);
 
 			}
 			else if(strcmp(phenomene->Attribute("mode"),"pulse")==0) {
 				TiXmlElement* parametres = phenomene->FirstChild("parametres")->ToElement();
 
-				double v_low = 		get_attr_dbl(parametres,"val_low", true, 0);
-				double v_high = 	get_attr_dbl(parametres,"val_high", true, 1);
-				long int t_del =	get_attr_int(parametres,"t_delai", true, 0);
-				long int t_rise =	get_attr_int(parametres,"t_rise", true, 0);
-				long int pwidth = 	get_attr_int(parametres,"pwidth", true, 1);
-				long int t_fall = 	get_attr_int(parametres,"t_fall", true, 0);
-				long int period = 	get_attr_int(parametres,"period", true, 1);
+				double v_low = 		get_attr_dbl(parametres,"val_low", true);
+				double v_high = 	get_attr_dbl(parametres,"val_high", true);
+				long int t_del =	get_attr_int(parametres,"t_delai", true);
+				long int t_rise =	get_attr_int(parametres,"t_rise", true);
+				long int pwidth = 	get_attr_int(parametres,"pwidth", true);
+				long int t_fall = 	get_attr_int(parametres,"t_fall", true);
+				long int period = 	get_attr_int(parametres,"period", true);
 				phen = new Phenomene_pulse(nom_phen,v_low,v_high,t_del,t_rise,pwidth,t_fall,period);
 				simulateur->set_process(phen);
 
@@ -98,17 +99,17 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 
 			if(strcmp(control->Attribute("mode"),"on_off")==0) {
 				TiXmlElement* parametres = control->FirstChild("parametres")->ToElement();
-				double seuil_max =	get_attr_dbl(parametres,"seuil_max", true, 1);
-				double seuil_min =	get_attr_dbl(parametres,"seuil_min", true, 0);
-				double val_max =	get_attr_dbl(parametres,"val_max", true, 1);
-				double val_min =	get_attr_dbl(parametres,"val_min", true, 0);
+				double seuil_max =	get_attr_dbl(parametres,"seuil_max", true);
+				double seuil_min =	get_attr_dbl(parametres,"seuil_min", true);
+				double val_max =	get_attr_dbl(parametres,"val_max", true);
+				double val_min =	get_attr_dbl(parametres,"val_min", true);
 				ctrl = new Control_ON_OFF(nom_ctrl,seuil_min,seuil_max,val_min,val_max);
 				simulateur->set_process(ctrl);
 			}
 			else if(strcmp(control->Attribute("mode"),"proportionnel")==0) {
 				TiXmlElement* parametres = control->FirstChild("parametres")->ToElement();
-				double set_point =	get_attr_dbl(parametres,"set_point", true, 0);
-				double gain =		get_attr_dbl(parametres,"gain", true, 1);
+				double set_point =	get_attr_dbl(parametres,"set_point", true);
+				double gain =		get_attr_dbl(parametres,"gain", true);
 				ctrl = new Control_prop(nom_ctrl,set_point, gain);
 				simulateur->set_process(ctrl);
 			}
@@ -133,7 +134,7 @@ void lecture_xml(std::string nom_fichier, unsigned int* nb_tic, Sim* simulateur)
 		// element autre que zone
 	}
 	TiXmlElement* simulation = paysage->NextSiblingElement();
-	*nb_tic = get_attr_int(simulation,"nb_tic", true, 1);
+	*nb_tic = get_attr_int(simulation,"nb_tic", true);
 	simulateur->set_process(serveur);
 	cout << "\n#Lecture Correcte du fichier XML" << endl;
 }

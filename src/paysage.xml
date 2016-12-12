@@ -5,7 +5,7 @@
 	<paysage >
 		<zone nom="Chambre" ID="0">
 			<phenomene nom="temperature_externe" mode="sinus" >
-				<parametres offset="20" amplitude="4" phase ="0" period="24"/>			
+				<parametres  amplitude="10" phase ="0" period="24"/>			
 			</phenomene>
 			<control nom="ctrl_temp" mode="on_off" >
 				<parametres seuil_max="21" seuil_min="19" val_max="40" val_min="5" />
@@ -17,7 +17,7 @@
 				<parametres val_low="1" val_high="13" t_delai="2" t_rise="2" pwidth="8" t_fall="4" period="24"/>
 			</phenomene>
 			<control nom="ctrl_pH" mode="proportionnel" >
-				<parametres set_point="7" gain="11"/>
+				<parametres set_point="7" gain="5"/>
 	      </control>     
 			<etat nom="etat_aquarium" etat_initial="7" Iphen="0.1" Ictrl="0.2" />
 		</zone>

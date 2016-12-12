@@ -2,7 +2,7 @@
  * Etat.cpp
  *
  *  Created on: 14 nov. 2016
- *      Author: Vassili
+ *      Author: Jordan Metz & Vassili Cruchet
  */
 
 #include "Etat.h"
@@ -20,7 +20,7 @@ Etat::Etat(string nom, double Iphen, double Ictrl, double etat_init): Processus(
 Etat::~Etat() {}
 
 void Etat::run(int tic) {
-	etat_ = etat_+(valphen_-etat_)*Iphen_+(valctrl_ - etat_) * Ictrl_;
+	etat_ = etat_+(valphen_-etat_)*Iphen_ + (valctrl_ - etat_)*Ictrl_;
 }
 
 } /* namespace Domotique */
