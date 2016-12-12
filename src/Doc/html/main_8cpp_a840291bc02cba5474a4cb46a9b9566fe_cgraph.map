@@ -1,8 +1,5 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$main_8cpp.html#aca3bc45da6a6a5367c85507ad36e1c74" title="lecture_xml" alt="" coords="131,78,220,105"/>
-<area shape="rect" id="node6" href="$classDomotique_1_1Sim.html#a666b0dccb686f7b96bf6b7f15835b608" title="Domotique::Sim::init" alt="" coords="105,129,246,155"/>
-<area shape="rect" id="node7" href="$classDomotique_1_1Sim.html#a6ae741136675f12687b33d346a853867" title="Domotique::Sim::run" alt="" coords="104,179,247,206"/>
-<area shape="rect" id="node3" href="$classDomotique_1_1Sim.html#a430839948f0ccc82c6f0d99c9038bda6" title="Domotique::Sim::set\l_process" alt="" coords="305,5,447,47"/>
-<area shape="rect" id="node4" href="$classDomotique_1_1Phenomene.html#adc655bc26939771f04899afb2c3b4be1" title="Domotique::Phenomene\l::init" alt="" coords="295,71,457,112"/>
-<area shape="rect" id="node5" href="$classDomotique_1_1Control.html#a51fde0f30782eade0dedff599eb1b279" title="Domotique::Control\l::init" alt="" coords="309,136,443,177"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#aca3bc45da6a6a5367c85507ad36e1c74" title="lecture_xml" alt="" coords="131,5,220,32"/>
+<area shape="rect" id="node3" href="$classDomotique_1_1Sim.html#a666b0dccb686f7b96bf6b7f15835b608" title="Domotique::Sim::init" alt="" coords="105,56,246,83"/>
+<area shape="rect" id="node4" href="$classDomotique_1_1Sim.html#a6ae741136675f12687b33d346a853867" title="Domotique::Sim::run" alt="" coords="104,107,247,133"/>
 </map>

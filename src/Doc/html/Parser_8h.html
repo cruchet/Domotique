@@ -85,38 +85,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Parser.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Serveur_8h_source.html">Serveur.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Sim_8h_source.html">Sim.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Processus_8h_source.html">Processus.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Control__ON__OFF_8h_source.html">Control_ON_OFF.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Control__prop_8h_source.html">Control_prop.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Etat_8h_source.html">Etat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Phenomene__sinus_8h_source.html">Phenomene_sinus.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Phenomene__pulse_8h_source.html">Phenomene_pulse.h</a>&quot;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;list&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Sim_8h_source.html">Sim.h</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Parser.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Parser_8h__incl.png" border="0" usemap="#src_2Parser_8h" alt=""/></div>
 <map name="src_2Parser_8h" id="src_2Parser_8h">
-<area shape="rect" id="node2" href="Serveur_8h.html" title="Serveur.h" alt="" coords="199,229,277,256"/>
-<area shape="rect" id="node3" href="Processus_8h.html" title="Processus.h" alt="" coords="425,304,520,331"/>
-<area shape="rect" id="node9" href="Sim_8h.html" title="Sim.h" alt="" coords="210,155,266,181"/>
-<area shape="rect" id="node10" href="Control__ON__OFF_8h.html" title="Control_ON_OFF.h" alt="" coords="145,80,280,107"/>
-<area shape="rect" id="node12" href="Etat_8h.html" title="Etat.h" alt="" coords="455,229,512,256"/>
-<area shape="rect" id="node13" href="Control__prop_8h.html" title="Control_prop.h" alt="" coords="305,80,411,107"/>
-<area shape="rect" id="node14" href="Phenomene__sinus_8h.html" title="Phenomene_sinus.h" alt="" coords="752,80,892,107"/>
-<area shape="rect" id="node19" href="Phenomene__pulse_8h.html" title="Phenomene_pulse.h" alt="" coords="588,80,728,107"/>
-<area shape="rect" id="node11" href="Control_8h.html" title="Control.h" alt="" coords="321,155,395,181"/>
-<area shape="rect" id="node15" href="Phenomene_8h.html" title="Phenomene.h" alt="" coords="608,155,711,181"/>
+<area shape="rect" id="node2" href="Sim_8h.html" title="Sim.h" alt="" coords="199,80,255,107"/>
+<area shape="rect" id="node3" href="Processus_8h.html" title="Processus.h" alt="" coords="351,229,445,256"/>
+<area shape="rect" id="node6" href="Serveur_8h.html" title="Serveur.h" alt="" coords="188,155,267,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -130,6 +114,57 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="Parser_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aee2436165ee785b25cc5fcd265a63f56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Parser_8h.html#aee2436165ee785b25cc5fcd265a63f56">lecture_xml</a> (std::string nom_fichier, unsigned int *nb_tic, <a class="el" href="classDomotique_1_1Sim.html">Sim</a> *simulateur)</td></tr>
+<tr class="separator:aee2436165ee785b25cc5fcd265a63f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aee2436165ee785b25cc5fcd265a63f56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lecture_xml </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nom_fichier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>nb_tic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDomotique_1_1Sim.html">Sim</a> *&#160;</td>
+          <td class="paramname"><em>simulateur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="Parser_8h_aee2436165ee785b25cc5fcd265a63f56_cgraph.png" border="0" usemap="#Parser_8h_aee2436165ee785b25cc5fcd265a63f56_cgraph" alt=""/></div>
+<map name="Parser_8h_aee2436165ee785b25cc5fcd265a63f56_cgraph" id="Parser_8h_aee2436165ee785b25cc5fcd265a63f56_cgraph">
+<area shape="rect" id="node2" href="classDomotique_1_1Sim.html#a430839948f0ccc82c6f0d99c9038bda6" title="Domotique::Sim::set\l_process" alt="" coords="153,5,295,47"/>
+<area shape="rect" id="node3" href="classDomotique_1_1Phenomene.html#adc655bc26939771f04899afb2c3b4be1" title="Domotique::Phenomene\l::init" alt="" coords="143,71,305,112"/>
+<area shape="rect" id="node4" href="classDomotique_1_1Control.html#a51fde0f30782eade0dedff599eb1b279" title="Domotique::Control\l::init" alt="" coords="157,136,291,177"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
