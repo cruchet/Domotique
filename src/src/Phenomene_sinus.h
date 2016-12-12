@@ -21,7 +21,7 @@ public:
 			double sat_min = -1* std::numeric_limits<double>::infinity(),
 			double offs = 0.0, long int phase=0);
 	virtual ~Phenomene_sinus();
-	void run(void);
+	void run(int tic);
 private:
 	double ampl_;
 	long int period_;

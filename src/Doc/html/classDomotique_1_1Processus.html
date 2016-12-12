@@ -88,9 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classDomotique_1_1Processus-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Domotique::Processus Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -103,77 +102,38 @@ Inheritance diagram for Domotique::Processus:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDomotique_1_1Processus__inherit__graph.png" border="0" usemap="#Domotique_1_1Processus_inherit__map" alt="Inheritance graph"/></div>
 <map name="Domotique_1_1Processus_inherit__map" id="Domotique_1_1Processus_inherit__map">
-<area shape="rect" id="node2" href="classDomotique_1_1Control.html" title="{Domotique::Control\n|&#45; mode_\l|+ Control()\l+ ~Control()\l+ run()\l&#45; calcul_valctrl()\l}" alt="" coords="5,263,140,384"/>
-<area shape="rect" id="node3" href="classDomotique_1_1Etat.html" title="{Domotique::Etat\n||+ Etat()\l+ ~Etat()\l+ run()\l&#45; calcul_etat_eff()\l}" alt="" coords="165,263,287,384"/>
-<area shape="rect" id="node4" href="classDomotique_1_1Phenomene.html" title="{Domotique::Phenomene\n|&#45; modephen_\l|+ Phenomene()\l+ ~Phenomene()\l+ get_valphen()\l+ run()\l+ calcul_valphen()\l}" alt="" coords="311,255,474,391"/>
-<area shape="rect" id="node7" href="classDomotique_1_1Serveur.html" title="{Domotique::Serveur\n|&#45; nom_fichier_\l&#45; data_\l&#45; nb_zone_\l&#45; zone_courante_\l&#45; nb_tic_\l|+ Serveur()\l+ ~Serveur()\l+ run()\l+ ecriture()\l}" alt="" coords="498,233,637,413"/>
-<area shape="rect" id="node5" href="classDomotique_1_1Phenomene__pulse.html" title="{Domotique::Phenomene\l_pulse\n||+ Phenomene_pulse()\l+ ~Phenomene_pulse()\l+ calcul_valphen()\l}" alt="" coords="218,461,381,583"/>
-<area shape="rect" id="node6" href="classDomotique_1_1Phenomene__sinus.html" title="{Domotique::Phenomene\l_sinus\n||+ Phenomene_sinus()\l+ ~Phenomene_sinus()\l+ calcul_valphen()\l}" alt="" coords="405,461,567,583"/>
+<area shape="rect" id="node2" href="classDomotique_1_1Control.html" title="{Domotique::Control\n|# p_serveur_\l# p_etat_\l|+ Control()\l+ ~Control()\l+ init()\l# calcul_valctrl()\l}" alt="" coords="166,204,301,340"/>
+<area shape="rect" id="node5" href="classDomotique_1_1Etat.html" title="{Domotique::Etat\n|&#45; Iphen_\l&#45; Ictrl_\l&#45; valphen_\l&#45; etat_\l&#45; valctrl_\l|+ Etat()\l+ ~Etat()\l+ run()\l+ put_valphen()\l+ put_valctrl()\l+ get_etat()\l+ get_phen()\l}" alt="" coords="325,160,443,384"/>
+<area shape="rect" id="node6" href="classDomotique_1_1Phenomene.html" title="{Domotique::Phenomene\n|# p_etat_\l|+ Phenomene()\l+ ~Phenomene()\l+ init()\l# box_mull()\l}" alt="" coords="467,211,629,333"/>
+<area shape="rect" id="node9" href="classDomotique_1_1Serveur.html" title="{Domotique::Serveur\n|&#45; nom_fichier_\l&#45; tic_\l&#45; ligne_\l|+ Serveur()\l+ ~Serveur()\l+ run()\l+ save()\l}" alt="" coords="653,197,792,347"/>
+<area shape="rect" id="node3" href="classDomotique_1_1Control__ON__OFF.html" title="{Domotique::Control\l_ON_OFF\n|&#45; seuil_min_\l&#45; seuil_max_\l&#45; val_min_\l&#45; val_max_\l|+ Control_ON_OFF()\l+ ~Control_ON_OFF()\l+ run()\l}" alt="" coords="5,461,157,627"/>
+<area shape="rect" id="node4" href="classDomotique_1_1Control__prop.html" title="{Domotique::Control_prop\n|&#45; val_cons_\l&#45; gain_\l|+ Control_prop()\l+ ~Control_prop()\l+ run()\l}" alt="" coords="182,483,349,605"/>
+<area shape="rect" id="node7" href="classDomotique_1_1Phenomene__pulse.html" title="{Domotique::Phenomene\l_pulse\n|&#45; v_low_\l&#45; v_high_\l&#45; t_del_\l&#45; t_rise_\l&#45; pwidth_\l&#45; t_fall_\l&#45; period_\l|+ Phenomene_pulse()\l+ ~Phenomene_pulse()\l+ calcul_valphen()\l+ run()\l}" alt="" coords="436,432,599,656"/>
+<area shape="rect" id="node8" href="classDomotique_1_1Phenomene__sinus.html" title="{Domotique::Phenomene\l_sinus\n|&#45; ampl_\l&#45; period_\l&#45; sat_max_\l&#45; sat_min_\l&#45; offs_\l&#45; phase_\l|+ Phenomene_sinus()\l+ ~Phenomene_sinus()\l+ run()\l}" alt="" coords="623,447,785,641"/>
 </map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Domotique::Processus:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDomotique_1_1Processus__coll__graph.png" border="0" usemap="#Domotique_1_1Processus_coll__map" alt="Collaboration graph"/></div>
-<map name="Domotique_1_1Processus_coll__map" id="Domotique_1_1Processus_coll__map">
-</map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a7f5a86c6f380a8d145c11ebd93fe694a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694a">Param_id</a> { <a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aae7c7f168564a3e718407b595e8bf8642">VALPHEN</a>, 
-<a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aa99bcc774884825bbf781f54c221f1ae8">VALCTRL</a>, 
-<a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aa16023714ee1aa702409ce1ab8b1e98ac">ETAT_COURANT</a>
- }</td></tr>
-<tr class="separator:a7f5a86c6f380a8d145c11ebd93fe694a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a193f2de71d1c9a0ec689e6b2d22e53a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a193f2de71d1c9a0ec689e6b2d22e53a9">Processus</a> (string nom, string type, vector&lt; double &gt; setting)</td></tr>
-<tr class="separator:a193f2de71d1c9a0ec689e6b2d22e53a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1216766be36c19ab908c80b75ff67f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#abb1216766be36c19ab908c80b75ff67f">Processus</a> (string nom)</td></tr>
+<tr class="separator:abb1216766be36c19ab908c80b75ff67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a377a415f75b3ae3400bbf656524e2fb1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a377a415f75b3ae3400bbf656524e2fb1">~Processus</a> ()</td></tr>
 <tr class="separator:a377a415f75b3ae3400bbf656524e2fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f9c2976940b97ec55b88d2b5c7b927"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#ae3f9c2976940b97ec55b88d2b5c7b927">run</a> (vector&lt; double &gt; param)=0</td></tr>
-<tr class="separator:ae3f9c2976940b97ec55b88d2b5c7b927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab06f9b0962302af704b31fbe5f87c1d4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#ab06f9b0962302af704b31fbe5f87c1d4">get_type</a> (void)</td></tr>
-<tr class="separator:ab06f9b0962302af704b31fbe5f87c1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d8bd52abe011cd5847c96dba8dcd45"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a61d8bd52abe011cd5847c96dba8dcd45">get_setting</a> (void)</td></tr>
-<tr class="separator:a61d8bd52abe011cd5847c96dba8dcd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746a9b56efd55e6ed20990a148baa32c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a746a9b56efd55e6ed20990a148baa32c">set_setting</a> (vector&lt; double &gt; setting)</td></tr>
-<tr class="separator:a746a9b56efd55e6ed20990a148baa32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7638d00597af6e910c2d0fcf7b3fc864"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a7638d00597af6e910c2d0fcf7b3fc864">run</a> (int tic)=0</td></tr>
+<tr class="separator:a7638d00597af6e910c2d0fcf7b3fc864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a3a149d7974814d1eafdc9133a9dfc355"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a3a149d7974814d1eafdc9133a9dfc355">nom_</a></td></tr>
 <tr class="separator:a3a149d7974814d1eafdc9133a9dfc355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fa9a76e7fe355febe9371d115867689"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a9fa9a76e7fe355febe9371d115867689">type_</a></td></tr>
-<tr class="separator:a9fa9a76e7fe355febe9371d115867689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f5377a33507f85b18a5c181fe536ad"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a90f5377a33507f85b18a5c181fe536ad">setting_</a></td></tr>
-<tr class="separator:a90f5377a33507f85b18a5c181fe536ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a7f5a86c6f380a8d145c11ebd93fe694a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694a">Domotique::Processus::Param_id</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a7f5a86c6f380a8d145c11ebd93fe694aae7c7f168564a3e718407b595e8bf8642"></a>VALPHEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a7f5a86c6f380a8d145c11ebd93fe694aa99bcc774884825bbf781f54c221f1ae8"></a>VALCTRL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a7f5a86c6f380a8d145c11ebd93fe694aa16023714ee1aa702409ce1ab8b1e98ac"></a>ETAT_COURANT&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a193f2de71d1c9a0ec689e6b2d22e53a9"></a>
+<a class="anchor" id="abb1216766be36c19ab908c80b75ff67f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -181,24 +141,8 @@ Private Attributes</h2></td></tr>
           <td class="memname">Domotique::Processus::Processus </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>nom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>nom</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>setting</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -229,7 +173,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a61d8bd52abe011cd5847c96dba8dcd45"></a>
+<a class="anchor" id="a7638d00597af6e910c2d0fcf7b3fc864"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -237,58 +181,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;double&gt; Domotique::Processus::get_setting </td>
+          <td class="memname">virtual void Domotique::Processus::run </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab06f9b0962302af704b31fbe5f87c1d4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Domotique::Processus::get_type </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae3f9c2976940b97ec55b88d2b5c7b927"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual vector&lt;double&gt; Domotique::Processus::run </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>param</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tic</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -299,31 +195,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classDomotique_1_1Control.html#abb898bc7840616822b78eec7a217486d">Domotique::Control</a>, <a class="el" href="classDomotique_1_1Serveur.html#a35baa579c12b64536de52f230027db20">Domotique::Serveur</a>, <a class="el" href="classDomotique_1_1Etat.html#a0d3608b48e13be8e95312aebbc456375">Domotique::Etat</a>, and <a class="el" href="classDomotique_1_1Phenomene.html#a0b1b7590b262a106c5e28e9a6cca2fc3">Domotique::Phenomene</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a746a9b56efd55e6ed20990a148baa32c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Domotique::Processus::set_setting </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>setting</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="classDomotique_1_1Serveur.html#aa045b265db6eec92a379686a4597ced4">Domotique::Serveur</a>, <a class="el" href="classDomotique_1_1Phenomene__sinus.html#a43080a73ad1a7d144e19b009f1b5e283">Domotique::Phenomene_sinus</a>, <a class="el" href="classDomotique_1_1Phenomene__pulse.html#a1c6d393b0be0dfce6b2aa6aff1582453">Domotique::Phenomene_pulse</a>, <a class="el" href="classDomotique_1_1Control__ON__OFF.html#a6c3e3c9716596b1f37c94add8a2d03cc">Domotique::Control_ON_OFF</a>, <a class="el" href="classDomotique_1_1Control__prop.html#a132a39982719537a203bc4481f79769b">Domotique::Control_prop</a>, and <a class="el" href="classDomotique_1_1Etat.html#aa777a0d393f09e3b0d61a9e49986020d">Domotique::Etat</a>.</p>
 
 </div>
 </div>
@@ -341,47 +213,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a90f5377a33507f85b18a5c181fe536ad"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt;double&gt; Domotique::Processus::setting_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9fa9a76e7fe355febe9371d115867689"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Domotique::Processus::type_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -21,8 +21,6 @@ must not be misrepresented as being the original software.
 3. This notice may not be removed or altered from any source
 distribution.
 */
-
-
 #ifndef TINYXML_INCLUDED
 #define TINYXML_INCLUDED
 
@@ -51,7 +49,7 @@ distribution.
 	#include <sstream>
 	#define TIXML_STRING		std::string
 #else
-	#include "../../src/tinyxml_epfl/tinystr.h"
+	#include "tinystr.h"
 	#define TIXML_STRING		TiXmlString
 #endif
 

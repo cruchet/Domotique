@@ -17,13 +17,13 @@ namespace Domotique {
 
 class Sim {
 public:
-	Sim(unsigned int max_tic);
+	Sim(void);
 	virtual ~Sim();
 
 	//gere la simulation et retourne le nom du fichier de sortie
 	void run(void);
 	void set_process (Processus* process){process_.push_back(process);};
-
+	void init(unsigned int max_tic);
 private:
 	vector<Processus*> process_;
 	unsigned int ntic_;

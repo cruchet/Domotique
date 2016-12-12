@@ -16,7 +16,7 @@ class Control_prop: public Control {
 public:
 	Control_prop(string nom, double val_cons, double gain);
 	virtual ~Control_prop();
-	void run(void);
+	void run(int tic);
 private:
 	double val_cons_;
 	double gain_;

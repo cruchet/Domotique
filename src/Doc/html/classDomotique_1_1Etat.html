@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classDomotique_1_1Etat-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Domotique::Etat Class Reference</div>  </div>
@@ -102,7 +102,7 @@ Inheritance diagram for Domotique::Etat:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDomotique_1_1Etat__inherit__graph.png" border="0" usemap="#Domotique_1_1Etat_inherit__map" alt="Inheritance graph"/></div>
 <map name="Domotique_1_1Etat_inherit__map" id="Domotique_1_1Etat_inherit__map">
-<area shape="rect" id="node2" href="classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="5,5,160,185"/>
+<area shape="rect" id="node2" href="classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="5,5,160,112"/>
 </map>
 </div>
 <div class="dynheader">
@@ -110,46 +110,53 @@ Collaboration diagram for Domotique::Etat:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDomotique_1_1Etat__coll__graph.png" border="0" usemap="#Domotique_1_1Etat_coll__map" alt="Collaboration graph"/></div>
 <map name="Domotique_1_1Etat_coll__map" id="Domotique_1_1Etat_coll__map">
-<area shape="rect" id="node2" href="classDomotique_1_1Processus.html" title="{Domotique::Processus\n|&#45; nom_\l&#45; type_\l&#45; setting_\l|+ Processus()\l+ ~Processus()\l+ run()\l+ get_type()\l+ get_setting()\l+ set_setting()\l}" alt="" coords="5,5,160,185"/>
+<area shape="rect" id="node2" href="classDomotique_1_1Processus.html" title="{Domotique::Processus\n|# nom_\l|+ Processus()\l+ ~Processus()\l+ run()\l}" alt="" coords="5,5,160,112"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac776f3f12bbc492e5bc7a986bf71d44d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#ac776f3f12bbc492e5bc7a986bf71d44d">Etat</a> (string nom, vector&lt; double &gt; setting)</td></tr>
-<tr class="separator:ac776f3f12bbc492e5bc7a986bf71d44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198fd784b0512aa36fdd5588b1c1ce99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a198fd784b0512aa36fdd5588b1c1ce99">Etat</a> (string nom, double Iphen, double Ictrl, double etat_init)</td></tr>
+<tr class="separator:a198fd784b0512aa36fdd5588b1c1ce99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca34087c775d9902575b787d6de2e1b4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#aca34087c775d9902575b787d6de2e1b4">~Etat</a> ()</td></tr>
 <tr class="separator:aca34087c775d9902575b787d6de2e1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d3608b48e13be8e95312aebbc456375"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a0d3608b48e13be8e95312aebbc456375">run</a> (vector&lt; double &gt; param)</td></tr>
-<tr class="separator:a0d3608b48e13be8e95312aebbc456375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa777a0d393f09e3b0d61a9e49986020d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#aa777a0d393f09e3b0d61a9e49986020d">run</a> (int tic)</td></tr>
+<tr class="separator:aa777a0d393f09e3b0d61a9e49986020d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a366f3a46b6dd8bd40e1836ed1e0718"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a8a366f3a46b6dd8bd40e1836ed1e0718">put_valphen</a> (double valphen)</td></tr>
+<tr class="separator:a8a366f3a46b6dd8bd40e1836ed1e0718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b724ea3e715d5cc37c76e258b15f552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a6b724ea3e715d5cc37c76e258b15f552">put_valctrl</a> (double valctrl)</td></tr>
+<tr class="separator:a6b724ea3e715d5cc37c76e258b15f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7c2a6ec6e9f690c9deee13e4881333"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a3d7c2a6ec6e9f690c9deee13e4881333">get_etat</a> (void)</td></tr>
+<tr class="separator:a3d7c2a6ec6e9f690c9deee13e4881333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa16b7aa71b8bb626cb953b802243f2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#aeaa16b7aa71b8bb626cb953b802243f2">get_phen</a> (void)</td></tr>
+<tr class="separator:aeaa16b7aa71b8bb626cb953b802243f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDomotique_1_1Processus"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDomotique_1_1Processus')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDomotique_1_1Processus.html">Domotique::Processus</a></td></tr>
-<tr class="memitem:a193f2de71d1c9a0ec689e6b2d22e53a9 inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a193f2de71d1c9a0ec689e6b2d22e53a9">Processus</a> (string nom, string type, vector&lt; double &gt; setting)</td></tr>
-<tr class="separator:a193f2de71d1c9a0ec689e6b2d22e53a9 inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1216766be36c19ab908c80b75ff67f inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#abb1216766be36c19ab908c80b75ff67f">Processus</a> (string nom)</td></tr>
+<tr class="separator:abb1216766be36c19ab908c80b75ff67f inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a377a415f75b3ae3400bbf656524e2fb1 inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a377a415f75b3ae3400bbf656524e2fb1">~Processus</a> ()</td></tr>
 <tr class="separator:a377a415f75b3ae3400bbf656524e2fb1 inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab06f9b0962302af704b31fbe5f87c1d4 inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#ab06f9b0962302af704b31fbe5f87c1d4">get_type</a> (void)</td></tr>
-<tr class="separator:ab06f9b0962302af704b31fbe5f87c1d4 inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d8bd52abe011cd5847c96dba8dcd45 inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a61d8bd52abe011cd5847c96dba8dcd45">get_setting</a> (void)</td></tr>
-<tr class="separator:a61d8bd52abe011cd5847c96dba8dcd45 inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746a9b56efd55e6ed20990a148baa32c inherit pub_methods_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a746a9b56efd55e6ed20990a148baa32c">set_setting</a> (vector&lt; double &gt; setting)</td></tr>
-<tr class="separator:a746a9b56efd55e6ed20990a148baa32c inherit pub_methods_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab24105c540968fd500eac3ba8f395c88"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#ab24105c540968fd500eac3ba8f395c88">calcul_etat_eff</a> (vector&lt; double &gt; param)</td></tr>
-<tr class="separator:ab24105c540968fd500eac3ba8f395c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1c93fa5192e4806522125f4cab30e6b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a1c93fa5192e4806522125f4cab30e6b6">Iphen_</a></td></tr>
+<tr class="separator:a1c93fa5192e4806522125f4cab30e6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0786bfcfa9b1726e3bd78a8a5ff4d890"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a0786bfcfa9b1726e3bd78a8a5ff4d890">Ictrl_</a></td></tr>
+<tr class="separator:a0786bfcfa9b1726e3bd78a8a5ff4d890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08f305f7dd5ae0e6378535363977516"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#ac08f305f7dd5ae0e6378535363977516">valphen_</a></td></tr>
+<tr class="separator:ac08f305f7dd5ae0e6378535363977516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18145a081d0029beed964086bac1595c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a18145a081d0029beed964086bac1595c">etat_</a></td></tr>
+<tr class="separator:a18145a081d0029beed964086bac1595c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79ac0b9fbdf60965cd4c6997c3544eff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Etat.html#a79ac0b9fbdf60965cd4c6997c3544eff">valctrl_</a></td></tr>
+<tr class="separator:a79ac0b9fbdf60965cd4c6997c3544eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_classDomotique_1_1Processus"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classDomotique_1_1Processus')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classDomotique_1_1Processus.html">Domotique::Processus</a></td></tr>
-<tr class="memitem:a7f5a86c6f380a8d145c11ebd93fe694a inherit pub_types_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694a">Param_id</a> { <a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aae7c7f168564a3e718407b595e8bf8642">VALPHEN</a>, 
-<a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aa99bcc774884825bbf781f54c221f1ae8">VALCTRL</a>, 
-<a class="el" href="classDomotique_1_1Processus.html#a7f5a86c6f380a8d145c11ebd93fe694aa16023714ee1aa702409ce1ab8b1e98ac">ETAT_COURANT</a>
- }</td></tr>
-<tr class="separator:a7f5a86c6f380a8d145c11ebd93fe694a inherit pub_types_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classDomotique_1_1Processus"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classDomotique_1_1Processus')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classDomotique_1_1Processus.html">Domotique::Processus</a></td></tr>
+<tr class="memitem:a3a149d7974814d1eafdc9133a9dfc355 inherit pro_attribs_classDomotique_1_1Processus"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDomotique_1_1Processus.html#a3a149d7974814d1eafdc9133a9dfc355">nom_</a></td></tr>
+<tr class="separator:a3a149d7974814d1eafdc9133a9dfc355 inherit pro_attribs_classDomotique_1_1Processus"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac776f3f12bbc492e5bc7a986bf71d44d"></a>
+<a class="anchor" id="a198fd784b0512aa36fdd5588b1c1ce99"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -162,8 +169,20 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>setting</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Iphen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Ictrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>etat_init</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -199,7 +218,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab24105c540968fd500eac3ba8f395c88"></a>
+<a class="anchor" id="a3d7c2a6ec6e9f690c9deee13e4881333"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -207,33 +226,23 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double Domotique::Etat::calcul_etat_eff </td>
+          <td class="memname">double Domotique::Etat::get_etat </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>param</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDomotique_1_1Etat_ab24105c540968fd500eac3ba8f395c88_cgraph.png" border="0" usemap="#classDomotique_1_1Etat_ab24105c540968fd500eac3ba8f395c88_cgraph" alt=""/></div>
-<map name="classDomotique_1_1Etat_ab24105c540968fd500eac3ba8f395c88_cgraph" id="classDomotique_1_1Etat_ab24105c540968fd500eac3ba8f395c88_cgraph">
-<area shape="rect" id="node2" href="classDomotique_1_1Processus.html#a61d8bd52abe011cd5847c96dba8dcd45" title="Domotique::Processus\l::get_setting" alt="" coords="212,5,367,47"/>
-</map>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="a0d3608b48e13be8e95312aebbc456375"></a>
+<a class="anchor" id="aeaa16b7aa71b8bb626cb953b802243f2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -241,10 +250,82 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; double &gt; Domotique::Etat::run </td>
+          <td class="memname">double Domotique::Etat::get_phen </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>param</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b724ea3e715d5cc37c76e258b15f552"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domotique::Etat::put_valctrl </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>valctrl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8a366f3a46b6dd8bd40e1836ed1e0718"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domotique::Etat::put_valphen </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>valphen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa777a0d393f09e3b0d61a9e49986020d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Domotique::Etat::run </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tic</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -255,18 +336,108 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classDomotique_1_1Processus.html#ae3f9c2976940b97ec55b88d2b5c7b927">Domotique::Processus</a>.</p>
+<p>Implements <a class="el" href="classDomotique_1_1Processus.html#a7638d00597af6e910c2d0fcf7b3fc864">Domotique::Processus</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classDomotique_1_1Etat_a0d3608b48e13be8e95312aebbc456375_cgraph.png" border="0" usemap="#classDomotique_1_1Etat_a0d3608b48e13be8e95312aebbc456375_cgraph" alt=""/></div>
-<map name="classDomotique_1_1Etat_a0d3608b48e13be8e95312aebbc456375_cgraph" id="classDomotique_1_1Etat_a0d3608b48e13be8e95312aebbc456375_cgraph">
-<area shape="rect" id="node2" href="classDomotique_1_1Etat.html#ab24105c540968fd500eac3ba8f395c88" title="Domotique::Etat::calcul\l_etat_eff" alt="" coords="196,5,355,47"/>
-<area shape="rect" id="node3" href="classDomotique_1_1Processus.html#a61d8bd52abe011cd5847c96dba8dcd45" title="Domotique::Processus\l::get_setting" alt="" coords="403,5,557,47"/>
-</map>
 </div>
-</p>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a18145a081d0029beed964086bac1595c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Domotique::Etat::etat_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0786bfcfa9b1726e3bd78a8a5ff4d890"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Domotique::Etat::Ictrl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c93fa5192e4806522125f4cab30e6b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Domotique::Etat::Iphen_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a79ac0b9fbdf60965cd4c6997c3544eff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Domotique::Etat::valctrl_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac08f305f7dd5ae0e6378535363977516"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Domotique::Etat::valphen_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -18,7 +18,7 @@ Control_prop::Control_prop(string nom, double val_cons, double gain): Control(no
 }
 
 Control_prop::~Control_prop() {}
-void Control_prop::run(void){
+void Control_prop::run(int tic){
 	//Calcul de l'état
 	double etat= p_etat_->get_etat();
 	double erreur= etat -val_cons_;

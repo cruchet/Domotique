@@ -5,10 +5,10 @@
  *      Author: vachoux
  */
 
-#ifndef SRC_XML_UTILS_H_
-#define SRC_XML_UTILS_H_
+#ifndef XML_UTILS_H_
+#define XML_UTILS_H_
 
-#include "../../src/tinyxml_epfl/tinyxml.h"
+#include "tinyxml.h"
 
 //! Check if element exists.
 //! Throw an exception if element is missing.
@@ -192,4 +192,4 @@ int get_elem_int (TiXmlElement* p_elem,
 	else return atoi(p_elem->FirstChildElement(name)->GetText());
 }
 
-#endif /* SRC_XML_UTILS_H_ */
+#endif /* XML_UTILS_H_ */
